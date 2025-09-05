@@ -1,0 +1,108 @@
+﻿@model webControlAsistencia.Models.ClassCrearTarea
+
+@{
+    ViewData["Title"] = "CrearTarea";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/CrearTareaEstilo.css" />
+</head>
+
+<br />
+<br />
+
+<h1>Ingresar actividad nueva</h1>
+
+<div class="crear-wrapper">
+  <form asp-action="CrearTarea" class="crear-form">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    @* Si el Id lo genera la BD, puedes ocultarlo *@
+    <div class="field" style="display:none">
+      <label asp-for="Id" class="label"></label>
+      <input asp-for="Id" class="input"/>
+    </div>
+
+    <div class="field">
+      <label asp-for="Actividad" class="label">Actividad:</label>
+      <input asp-for="Actividad" class="input" />
+      <span asp-validation-for="Actividad" class="text-danger"></span>
+    </div>
+
+    <div class="field">
+      <label asp-for="Descripcion" class="label">Descripción:</label>
+      <input asp-for="Descripcion" class="input" />
+      <span asp-validation-for="Descripcion" class="text-danger"></span>
+    </div>
+
+    <div class="field">
+      <label asp-for="FechaInicio" class="label">Fecha y hora de inicio:</label>
+      <input asp-for="FechaInicio" class="input" />
+      <span asp-validation-for="FechaInicio" class="text-danger"></span>
+    </div>
+
+    <div class="field">
+      <label asp-for="FechaFin" class="label">Fecha y hora fin:</label>
+      <input asp-for="FechaFin" class="input" />
+      <span asp-validation-for="FechaFin" class="text-danger"></span>
+    </div>
+
+    <div class="acciones">
+      <input type="submit" value="Guardar tarea" class="btn-primar" />
+    </div>
+  </form>
+</div>
+
+
+@* 
+<h1>Ingresar actividad nueva</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="CrearTarea">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Id" class="control-label"></label>
+                <input asp-for="Id" class="form-control" />
+                <span asp-validation-for="Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Actividad" class="control-label"></label>
+                <input asp-for="Actividad" class="form-control" />
+                <span asp-validation-for="Actividad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaInicio" class="control-label"></label>
+                <input asp-for="FechaInicio" class="form-control" />
+                <span asp-validation-for="FechaInicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaFin" class="control-label"></label>
+                <input asp-for="FechaFin" class="form-control" />
+                <span asp-validation-for="FechaFin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div> *@
+
+@* <div>
+    <a asp-action="Index">Back to List</a>
+</div> *@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

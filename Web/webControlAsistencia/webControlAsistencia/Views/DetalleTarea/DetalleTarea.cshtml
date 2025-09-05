@@ -1,0 +1,85 @@
+﻿@model webControlAsistencia.Models.ClassDetalleTarea
+
+@{
+    ViewData["Title"] = "DetalleTarea";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/DetallesTareaEstilo.css" />
+</head>
+
+<br />
+<br />
+
+<div class="detalle-wrapper">
+    <div class="detalle">
+        <h4 class="detalle-title">Detalles de actividad</h4>
+        <hr class="detalle-hr" />
+        <dl class="detalle-grid">
+            <dt>@Html.DisplayNameFor(m => m.Actividad)</dt>
+            <dd>@Html.DisplayFor(m => m.Actividad)</dd>
+
+            <dt>@Html.DisplayNameFor(m => m.Descripcion)</dt>
+            <dd>@Html.DisplayFor(m => m.Descripcion)</dd>
+
+            <dt>Fecha y hora de inicio:</dt>
+            <dd>@Html.DisplayFor(m => m.FechaInicio)</dd>
+
+            <dt>Fecha y hora fin:</dt>
+            <dd>@Html.DisplayFor(m => m.FechaFin)</dd>
+        </dl>
+
+        <div class="detalle-actions">
+            <input type="submit" value="Finalizada" class="btn-primar" />
+        </div>
+    </div>
+</div>
+
+@* 
+<h1>DetalleTarea</h1>
+
+<div>
+    <h4>ClassDetalleTarea</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Actividad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Actividad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Descripcion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaInicio)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaInicio)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaFin)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaFin)
+        </dd>
+    </dl>
+</div>
+<div class="form-group">
+    <input type="submit" value="Finalizada" class="btn-primar" />
+</div>
+ *@

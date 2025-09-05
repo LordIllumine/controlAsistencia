@@ -1,0 +1,70 @@
+﻿/* Contenedor centrado */
+.detalle-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+}
+
+/* Bloque de detalle */
+.detalle {
+    font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #1b1b1b;
+    background: #fff;
+}
+
+/* Título y línea */
+.detalle-title {
+    margin: 4px 0 0;
+    font-weight: 700;
+    text-align: left;
+}
+
+.detalle-hr {
+    margin: 10px 0 14px;
+    border: 0;
+    height: 1px;
+    background: #e9e9e9;
+}
+
+/* Grid etiqueta / valor */
+.detalle-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    column-gap: 18px;
+    row-gap: 10px;
+}
+
+    .detalle-grid dt {
+        font-weight: 600;
+    }
+
+    .detalle-grid dd {
+        font-weight: 500;
+        margin: 0;
+    }
+
+/* Botón pastilla verde */
+.btn-primar {
+    border: none;
+    border-radius: 999px;
+    padding: 10px 16px;
+    background: #6BD569;
+    color: #0a0a0a;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0,0,0,.15);
+    transition: transform .05s ease, filter .15s ease;
+}
+
+    .btn-primar:hover {
+        filter: brightness(0.97);
+    }
+
+    .btn-primar:active {
+        transform: translateY(1px);
+    }
+
+.detalle-actions {
+    margin-top: 14px;
+    text-align: left;
+}

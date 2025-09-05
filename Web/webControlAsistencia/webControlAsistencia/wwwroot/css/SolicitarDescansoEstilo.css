@@ -1,0 +1,84 @@
+﻿/* Contenedor: centra horizontalmente el bloque del formulario */
+.descanso-wrapper {
+    display: flex;
+    justify-content: flex-start; 
+    padding: 6px 12px 20px;
+    font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #1b1b1b;
+}
+
+/* Formulario: ancho cómodo como el mockup */
+.descanso-form {
+    min-width: 640px;
+}
+
+/* Campos en grid: etiqueta a la izquierda, control a la derecha */
+.field {
+    display: grid;
+    grid-template-columns: 170px 1fr;
+    align-items: center;
+    column-gap: 14px;
+    margin-bottom: 14px;
+}
+
+.field-block .textarea {
+    min-height: 140px;
+}
+/* caja amplia */
+
+.label {
+    font-weight: 600;
+}
+
+/* Estilo de inputs/select/textarea: borde negro y esquinas redondeadas */
+.input {
+    width: 100%;
+    border: 2px solid #1e1e1e;
+    border-radius: 12px;
+    padding: 10px 12px;
+    outline: none;
+    background: #fff;
+    transition: box-shadow .15s ease, border-color .15s ease;
+}
+
+    .input:focus {
+        border-color: #111;
+        box-shadow: 0 0 0 3px rgba(0,0,0,.06);
+    }
+
+/* Select con flecha mínima */
+.select {
+    appearance: none;
+    padding-right: 40px;
+    background-image: linear-gradient(45deg, transparent 50%, #111 50%), linear-gradient(135deg, #111 50%, transparent 50%);
+    background-position: calc(100% - 22px) 55%, calc(100% - 16px) 55%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+}
+
+/* Botón verde como input (pastilla) */
+.btn-primar {
+    border: none;
+    border-radius: 999px;
+    padding: 12px 22px;
+    background: #6BD569;
+    color: #0a0a0a;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(0,0,0,.15);
+    transition: transform .05s ease, filter .15s ease;
+}
+
+    .btn-primar:hover {
+        filter: brightness(0.97);
+    }
+
+    .btn-primar:active {
+        transform: translateY(1px);
+    }
+
+/* Alinear el botón con las cajas, como en el mockup */
+.acciones {
+    margin-top: 6px;
+    margin-left: 170px;
+}

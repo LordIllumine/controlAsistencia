@@ -1,0 +1,94 @@
+﻿@model webControlAsistencia.Models.ClassSolicitarPermisos
+
+@{
+    ViewData["Title"] = "SolicitarPermisos";
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/SolicitarPermisoEstilo.css" />
+</head>
+<br />
+<br />
+
+<h1>SolicitarPermisos</h1>
+
+<div class="permiso-layout">
+    <form asp-action="SolicitarPermisos" class="permiso-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="field">
+            <label asp-for="TipoPermiso" class="label">Tipo de permiso:</label>
+            <select asp-for="TipoPermiso" class="input select">
+                <option value="">Seleccione un tipo de permiso</option>
+                <option value="Horas extra">Horas extra</option>
+                <option value="Vacaciones">Vacaciones</option>
+                <option value="Solicitud dia libre">Solicitud día libre</option>
+                <option value="Salida anticipada">Salida anticipada</option>
+            </select>
+            <span asp-validation-for="TipoPermiso" class="text-danger"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="Asunto" class="label">Asunto:</label>
+            <input asp-for="Asunto" class="input" />
+            <span asp-validation-for="Asunto" class="text-danger"></span>
+        </div>
+
+        <div class="field">
+            <label asp-for="Descripcion" class="label">Descripción:</label>
+            <textarea asp-for="Descripcion" class="input textarea" rows="5"></textarea>
+            <span asp-validation-for="Descripcion" class="text-danger"></span>
+        </div>
+
+        <div class="actions">
+            <input type="submit" value="Enviar Solicitud" class="btn-primar" />
+        </div>
+    </form>
+
+@* <h1>SolicitarPermisos</h1>
+
+<h4>ClassSolicitarPermisos</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="SolicitarPermisos">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TipoPermiso" class="control-label"></label>
+                <select asp-for="TipoPermiso" class="form-control">
+                    <option value="">Seleccione un tipo de permiso</option>
+                    <option value="Horas extra">Horas extra</option>
+                    <option value="Vacaciones">Vacaciones</option>
+                    <option value="Solicitud dia libre">Solicitud día libre</option>
+                    <option value="Salida anticipada">Salida anticipada</option>
+                </select>
+                <span asp-validation-for="TipoPermiso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Asunto" class="control-label"></label>
+                <input asp-for="Asunto" class="form-control" />
+                <span asp-validation-for="Asunto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descripcion" class="control-label"></label>
+                <input asp-for="Descripcion" class="form-control" />
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn-primar" />
+            </div>
+        </form>
+    </div>
+</div> *@
+
+@* <div>
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

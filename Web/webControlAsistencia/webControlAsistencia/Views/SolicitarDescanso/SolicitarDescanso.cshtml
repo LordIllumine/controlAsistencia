@@ -1,0 +1,55 @@
+﻿@model webControlAsistencia.Models.ClassDescanso
+
+@{
+    ViewData["Title"] = "SolicitarDescanso";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/SolicitarDescansoEstilo.css" />
+</head>
+
+<br />
+<br />
+
+<h1>SolicitarDescanso</h1>
+
+<div class="descanso-wrapper">
+    <form asp-action="SolicitarDescanso" class="descanso-form">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="field">
+            <label asp-for="TipoDescanso" class="label">Tipo de descanso:</label>
+            <select asp-for="TipoDescanso" class="input select">
+                <option value="">Seleccione un tipo de permiso</option>
+                <option value="Ir al baño">Ir al baño</option>
+                <option value="Salida Personal">Salida Personal</option>
+                <option value="Otro">Otro</option>
+            </select>
+            <span asp-validation-for="TipoDescanso" class="text-danger"></span>
+        </div>
+
+        <div class="field field-block">
+            <label asp-for="Descripcion" class="label">Descripción:</label>
+            <textarea asp-for="Descripcion" class="input textarea" rows="5"></textarea>
+            <span asp-validation-for="Descripcion" class="text-danger"></span>
+        </div>
+
+        <div class="acciones">
+            <input type="submit" value="Iniciar descanso" class="btn-primar" />
+        </div>
+    </form>
+</div>
+
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

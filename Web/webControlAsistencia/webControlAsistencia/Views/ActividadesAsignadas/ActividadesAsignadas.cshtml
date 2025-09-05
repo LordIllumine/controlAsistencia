@@ -1,0 +1,182 @@
+﻿@model webControlAsistencia.Models.ClassActividadesAsignadasViewModel
+
+@{
+    ViewData["Title"] = "ActividadesAsignadas";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/ActividadesAsignadasEstilo.css" />
+</head>
+
+<br />
+<br />
+
+<h1>ActividadesAsignadas</h1>
+
+<div class="toolbar">
+  <div class="toolbar-left">
+    <label class="lbl">Filtro:</label>
+    <select class="cbx-filtro">
+        <option value="">Seleccione un Filtro</option>
+        <option value="Todos">Todos</option>
+        <option value="Completadas">Completadas</option>
+        <option value="Pendientes">Pendientes</option>
+    </select>
+  </div>
+
+  <div class="toolbar-center">
+    <a asp-action="CrearTarea" asp-controller="CrearTarea" class="btn-crear">Crear actividad</a>
+  </div>
+
+  <div class="toolbar-right">
+    <label class="lbl">Buscar:</label>
+    <div class="searchwrap">
+      <input id="search" type="text" class="search" placeholder="Buscar..." />
+    </div>
+  </div>
+</div>
+
+<table class="grid">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Tarea</th>
+      <th>Descripción</th>
+      <th>Fecha inicio</th>
+      <th>Fecha Fin</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody id="table-body">
+  @if (Model.ActividadesAsig != null)
+  {
+    foreach (var item in Model.ActividadesAsig)
+    {
+      <tr>
+        <td>@item.Id</td>
+        <td>@item.Tarea</td>
+        <td>@item.Descripcion</td>
+        <td>@item.FechaInicio</td>
+        <td>@item.FechaFin</td>
+        <td class="acciones">
+          <!-- Conservo como input -->
+          <input type="button" value="Detalles" class="btn-pill"
+                 onclick="location.href='@Url.Action("DetalleTarea","DetalleTarea", new { id = item.Id })'">
+        </td>
+      </tr>
+    }
+  }
+  else
+  {
+    <tr><td colspan="6" class="nodata">No hay datos para mostrar</td></tr>
+  }
+  </tbody>
+</table>
+
+
+@* <h1>ActividadesAsignadas</h1>
+
+@if (ViewBag.Aviso != null)
+{
+    <script>alert(@ViewBag.Aviso)</script>
+}
+
+
+
+<div class="form-group">
+    <label="Filtro" class="control-label"></label>
+    <select class="form-control">
+        option
+        <option value="">Seleccione un Filtro</option>
+        <option value="Todos">Todos</option>
+        <option value="Completadas">Completadas</option>
+        <option value="Pendientes">Pendientes</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <a asp-action="CrearTarea" asp-controller="CrearTarea" class="btn btn-primary">
+        Crear actividad
+    </a>
+</div>
+
+<br>
+<input id="search" type="text" placeholder="Buscar...">
+<br>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Tarea
+            </th>
+            <th>
+                Descripción
+            </th>
+            <th>
+                FechaInicio
+            </th>
+            <th>
+                FechaFin
+            </th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody id="table-body">
+        @if (Model.ActividadesAsig != null)
+        {
+            @foreach (var item in Model.ActividadesAsig)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Tarea)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaInicio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FechaFin)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Detalles", "DetalleTarea", "DetalleTarea", new { /* id=item.PrimaryKey */ })
+
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <h4>No hay datos para mostrar</h4>
+        }
+    </tbody>
+</table>
+*@
+
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#search").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#table-body tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+        });
+    </script>
+}
