@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\API\\ApiControlTiempo\\ApiControlTiempo\\ApiControlTiempo.csproj": {}
+    "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\ApiControlTiempo.csproj": {}
   },
   "projects": {
-    "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\API\\ApiControlTiempo\\ApiControlTiempo\\ApiControlTiempo.csproj": {
+    "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\ApiControlTiempo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\API\\ApiControlTiempo\\ApiControlTiempo\\ApiControlTiempo.csproj",
+        "projectUniqueName": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\ApiControlTiempo.csproj",
         "projectName": "ApiControlTiempo",
-        "projectPath": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\API\\ApiControlTiempo\\ApiControlTiempo\\ApiControlTiempo.csproj",
+        "projectPath": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\ApiControlTiempo.csproj",
         "packagesPath": "C:\\Users\\Diego\\.nuget\\packages\\",
-        "outputPath": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\API\\ApiControlTiempo\\ApiControlTiempo\\obj\\",
+        "outputPath": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

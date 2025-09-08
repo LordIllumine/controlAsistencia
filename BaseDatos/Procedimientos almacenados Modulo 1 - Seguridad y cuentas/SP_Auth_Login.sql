@@ -5,16 +5,20 @@
 -- Procedimiento que permite la autenticación de usuarios en el login
 ----------------------------------------------------------------------------------------------------
 CREATE OR ALTER PROCEDURE SP_Auth_Login
-  @correo       NVARCHAR(150),
-  @password     NVARCHAR(200),
-  @idColaborador INT        OUT,
-  @rol          NVARCHAR(50) OUT,
-  @mensaje      NVARCHAR(200) OUT
+  @correo        NVARCHAR(150),
+  @password      NVARCHAR(200),
+  @correoResp    NVARCHAR(150) OUT,
+  @passwordResp  NVARCHAR(200) OUT,
+  @idColaborador INT           OUT,
+  @rol           NVARCHAR(50)  OUT,
+  @mensaje       NVARCHAR(200) OUT
 AS
 BEGIN
   SET NOCOUNT ON;
   BEGIN TRY
     SELECT TOP 1
+	  @correoResp	 = c.CORREO,
+	  @passwordResp  = u.CONTRASEÑA,
       @idColaborador = c.IDCOLABORADOR,
       @rol           = c.ROL
     FROM COLABORADORES c
@@ -90,3 +94,12 @@ BEGIN CATCH
 END CATCH;
 
 */
+
+
+ SELECT TOP 1
+	  c.CORREO,
+	  u.CONTRASEÑA,
+      c.IDCOLABORADOR,
+      c.ROL
+    FROM COLABORADORES c
+    JOIN USUARIO u ON u.IDCOLABORADOR = c.IDCOLABORADOR

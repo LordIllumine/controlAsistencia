@@ -1,0 +1,87 @@
+[
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.AutentificateController",
+    "Method": "Post",
+    "RelativePath": "api/Autentificate/GetToken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Log",
+        "Type": "ApiControlTiempo.Class.ClassAuthentificate",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.AutentificateController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/Autentificate/ResetPassword",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ResetPass",
+        "Type": "ApiControlTiempo.Class.ClassResetPassword",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.AutentificateController",
+    "Method": "ResetPasswordConfirm",
+    "RelativePath": "api/Autentificate/ResetPasswordConfirm",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Pass",
+        "Type": "ApiControlTiempo.Class.ClassResetPasswordComfirm",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.AutentificateController",
+    "Method": "ResetPasswordRequest",
+    "RelativePath": "api/Autentificate/ResetPasswordRequest",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ResetPass",
+        "Type": "ApiControlTiempo.Class.ClassResetPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.WeatherForecastController",
+    "Method": "Get",
+    "RelativePath": "WeatherForecast",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ApiControlTiempo.WeatherForecast, ApiControlTiempo, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ],
+    "EndpointName": "GetWeatherForecast"
+  }
+]
