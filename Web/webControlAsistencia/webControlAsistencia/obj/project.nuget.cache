@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8VlTqb6jBgo=",
+  "dgSpecHash": "ANXzgA1UVWQ=",
   "success": true,
-  "projectFilePath": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Web\\webControlAsistencia\\webControlAsistencia\\webControlAsistencia.csproj",
+  "projectFilePath": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\webControlAsistencia.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Diego\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Diego\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

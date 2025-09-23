@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "ApiControlTiempo\\Controllers\\ReportesyAnaliticaOperativaController.cs",
               "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Controllers\\ReportesyAnaliticaOperativaController.cs",
               "RelativeToolTip": "ApiControlTiempo\\Controllers\\ReportesyAnaliticaOperativaController.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAHAAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHAAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-22T06:06:54.689Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "ApiControlTiempo\\Connection\\ConnectionReportesyAnaliticaOperativa.cs",
               "ViewState": "AgIAAA8AAAAAAAAAAAAowAIBAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T06:06:10.285Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-22T06:06:10.285Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "ApiControlTiempo\\Class\\ClassReportesyAnaliticaOperativa.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAAAD8AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T05:48:30.475Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-22T05:48:30.475Z"
             }
           ]
         }

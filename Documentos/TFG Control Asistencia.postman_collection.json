@@ -1,0 +1,1115 @@
+{
+	"info": {
+		"_postman_id": "6616b4f9-73a6-4b91-9e31-b704bfe8993f",
+		"name": "TFG Control Asistencia",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19948662"
+	},
+	"item": [
+		{
+			"name": "Modulo 1 - Seguridad y cuentas",
+			"item": [
+				{
+					"name": "Autentificate/GetToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"usuario\": \"string\",\r\n  \"contrasena\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/Autentificate/GetToken",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"Autentificate",
+								"GetToken"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GestionUsuario/Resetpassword",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 1,\r\n  \"passwordActual\": \"Prueba1#2025\",\r\n  \"passwordNueva\": \"Prueba#2025\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/GestionUsuario/Resetpassword",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"GestionUsuario",
+								"Resetpassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GestionUsuario/ResetpasswordConfirm",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"correo\": \"juan.perez@empresa.com\",\r\n  \"passwordNueva\": \"Prueba#2025\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/GestionUsuario/ResetpasswordConfirm",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"GestionUsuario",
+								"ResetpasswordConfirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GestionUsuario/ResetPasswordRequest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"correo\": \"diegogv271@gmail.com\",\r\n  \"token\": \"d\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/GestionUsuario/ResetPasswordRequest",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"GestionUsuario",
+								"ResetPasswordRequest"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modulo 2 - Gestión de Colaboradores",
+			"item": [
+				{
+					"name": "GestionColaboradores/CrearColaborador",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Diego\",\r\n  \"apellido\": \"Gonz\",\r\n  \"correo\": \"diegogv271@gmail.com\",\r\n  \"telefono\": \"84342749\",\r\n  \"rol\": \"user\",\r\n  \"estado\": true,\r\n  \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/GestionColaboradores/CrearColaborador",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"GestionColaboradores",
+								"CrearColaborador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GestionColaboradores/ActualizarColaborador",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 1,\r\n  \"nombre\": \"Diego\",\r\n  \"apellido\": \"Gonz\",\r\n  \"correo\": \"diegogv271@gmail.com\",\r\n  \"telefono\": \"87615889\",\r\n  \"rol\": \"Administrador\",\r\n  \"estado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/GestionColaboradores/ActualizarColaborador",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"GestionColaboradores",
+								"ActualizarColaborador"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GestionColaboradores/ConsultarColaboradorId/IdColaborador",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/GestionColaboradores/ConsultarColaboradorId/1",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"GestionColaboradores",
+								"ConsultarColaboradorId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GestionColaboradores/ConsultarColaboradorFiltro",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"texto\": \"Diego\",\r\n  \"rol\": \"Administrador\",\r\n  \"estado\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/GestionColaboradores/ConsultarColaboradorFiltro",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"GestionColaboradores",
+								"ConsultarColaboradorFiltro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GestionColaboradores/ActColaboradorEstado",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 2,\r\n  \"rol\": \"Administrador\",\r\n  \"estado\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/GestionColaboradores/ActColaboradorEstado",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"GestionColaboradores",
+								"ActColaboradorEstado"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modulo 3 - Control de asistencia",
+			"item": [
+				{
+					"name": "{{TFGIP}}api/ControlAsistencia/editarRegistros",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idRegistro\": 1,\r\n  \"horaEntrada\": \"08:00:00\",\r\n  \"horaSalida\": \"18:00:00\",\r\n  \"mensaje\": \"usuario\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/ControlAsistencia/editarRegistros",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"ControlAsistencia",
+								"editarRegistros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ControlAsistencia/ConsultarPorIdAsistencia",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 1,\r\n  \"desde\": \"2024-08-10\",\r\n  \"hasta\": \"2025-09-21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/ControlAsistencia/ConsultarPorIdAsistencia",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"ControlAsistencia",
+								"ConsultarPorIdAsistencia"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ControlAsistencia/ConsultarAsistenciaHoras",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 1,\r\n  \"desde\": \"2024-08-10\",\r\n  \"hasta\": \"2025-09-21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/ControlAsistencia/ConsultarAsistenciaHoras",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"ControlAsistencia",
+								"ConsultarAsistenciaHoras"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ControlAsistencia/AsistenciaMarcarEntrada",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 1,\r\n  \"fecha\": \"2025-09-20\",\r\n  \"horaEntrada\": \"08:00:00\",\r\n  \"ip\": \"127.1.1.0\",\r\n  \"mac\": \"ER4RWR4444\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/ControlAsistencia/AsistenciaMarcarEntrada",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"ControlAsistencia",
+								"AsistenciaMarcarEntrada"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ControlAsistencia/AsistenciaMarcarSalida",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 1,\r\n  \"fecha\": \"2025-09-20\",\r\n  \"horaSalida\": \"17:00:00\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/ControlAsistencia/AsistenciaMarcarSalida",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"ControlAsistencia",
+								"AsistenciaMarcarSalida"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modulo 4 - Tareas y asignaciones",
+			"item": [
+				{
+					"name": "TareasyAsignaciones/AsignacionTareaCreate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 1,\r\n  \"idTarea\": 1,\r\n  \"fechaAsignacion\": \"2025-09-22T00:00:00.000Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/TareasyAsignaciones/AsignacionTareaCreate",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"TareasyAsignaciones",
+								"AsignacionTareaCreate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TareasyAsignaciones/AsignacionTareaListar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 1,\r\n  \"idTarea\": 1,\r\n  \"desde\": \"2024-09-22T01:13:18.111Z\",\r\n  \"hasta\": \"2025-09-22T01:13:18.111Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/TareasyAsignaciones/AsignacionTareaListar",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"TareasyAsignaciones",
+								"AsignacionTareaListar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TareasyAsignaciones/TareaCreate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Diego\",\r\n  \"descripcion\": \"Programar\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/TareasyAsignaciones/TareaCreate",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"TareasyAsignaciones",
+								"TareaCreate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TareasyAsignaciones/TareaUpdate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idTarea\": 1002,\r\n  \"nombre\": \"Programar Login\",\r\n  \"descripcion\": \"Login Test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/TareasyAsignaciones/TareaUpdate",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"TareasyAsignaciones",
+								"TareaUpdate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "TareasyAsignaciones/TareaList/ParamBusqueda",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idTarea\": 1002,\r\n  \"nombre\": \"Programar Login\",\r\n  \"descripcion\": \"Login Test\"\r\n}"
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/TareasyAsignaciones/TareaList/Null",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"TareasyAsignaciones",
+								"TareaList",
+								"Null"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modulo 5 - Descansos",
+			"item": [
+				{
+					"name": "Descansos/Descanso_Iniciar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idAsignacion\": 4,\r\n  \"tipoDescanso\": \"Baño\",\r\n  \"horaInicio\": \"2025-09-22T02:28:40.946Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/Descansos/Descanso_Iniciar",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"Descansos",
+								"Descanso_Iniciar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Descansos/Descanso_Finalizar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idDescanso\": 1012,\r\n  \"horaFin\": \"2025-09-22T03:02:21.979Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/Descansos/Descanso_Finalizar",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"Descansos",
+								"Descanso_Finalizar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Descansos/Descanso_Resumen",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 1,\r\n  \"desde\": \"2024-09-22T03:36:35.440Z\",\r\n  \"hasta\": \"2025-09-22T03:36:35.440Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/Descansos/Descanso_Resumen",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"Descansos",
+								"Descanso_Resumen"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modulo 6 - Permisos",
+			"item": [
+				{
+					"name": "Permisos/Permiso_Solicitar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 1,\r\n  \"fechaInicio\": \"2025-09-22T05:33:45.934Z\",\r\n  \"fechaFin\": \"2025-09-22T06:33:45.934Z\",\r\n  \"motivo\": \"Dentista\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/Permisos/Permiso_Solicitar",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"Permisos",
+								"Permiso_Solicitar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permisos/EditarPermiso_Solicitar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idPermiso\": 1002,\r\n  \"nuevoEstado\": \"Vencido\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/Permisos/EditarPermiso_Solicitar",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"Permisos",
+								"EditarPermiso_Solicitar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Permisos/ListarPermisos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"idColaborador\": 1,\r\n  \"estado\": null,\r\n  \"desde\": \"2024-09-22T05:40:05.811Z\",\r\n  \"hasta\": \"2025-09-23T05:40:05.811Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/Permisos/ListarPermisos",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"Permisos",
+								"ListarPermisos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Modulo 7 - Reportes y analítica operativa",
+			"item": [
+				{
+					"name": "ReportesyAnaliticaOperativa/ReporteAsistenciaDiaria/2025-09-20",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/ReportesyAnaliticaOperativa/ReporteAsistenciaDiaria/2025-09-20",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"ReportesyAnaliticaOperativa",
+								"ReporteAsistenciaDiaria",
+								"2025-09-20"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReportesyAnaliticaOperativa/ReporteHorasTrabajadas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"desde\": \"2024-09-22T07:11:06.195Z\",\r\n  \"hasta\": \"2025-09-22T07:11:06.195Z\",\r\n  \"idColaborador\": 1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/ReportesyAnaliticaOperativa/ReporteHorasTrabajadas",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"ReportesyAnaliticaOperativa",
+								"ReporteHorasTrabajadas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReportesyAnaliticaOperativa/ReportePermisos",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"desde\": \"2024-09-22T07:12:19.977Z\",\r\n  \"hasta\": \"2025-09-23T07:12:19.977Z\",\r\n  \"estado\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/ReportesyAnaliticaOperativa/ReportePermisos",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"ReportesyAnaliticaOperativa",
+								"ReportePermisos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReportesyAnaliticaOperativa/ReporteProductividad",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TokenTFG}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"desde\": \"2024-09-22T07:13:45.654Z\",\r\n  \"hasta\": \"2025-09-22T07:13:45.654Z\",\r\n  \"idColaborador\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{TFGIP}}api/ReportesyAnaliticaOperativa/ReporteProductividad",
+							"host": [
+								"{{TFGIP}}api"
+							],
+							"path": [
+								"ReportesyAnaliticaOperativa",
+								"ReporteProductividad"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
