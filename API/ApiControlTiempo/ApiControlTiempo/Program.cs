@@ -7,6 +7,13 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.Converters.Add(new ApiControlTiempo.Class.ClassTimeSpanToStringConverter());
+    });
+
+
 // Add services to the container.
 //builder.WebHost.ConfigureKestrel(serverOptions =>
 //{
@@ -14,7 +21,7 @@ var builder = WebApplication.CreateBuilder(args);
 //}
 //);
 
-builder.Services.AddControllers();
+//builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

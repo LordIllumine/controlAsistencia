@@ -1,0 +1,12 @@
+
+Error en Connec_Authentication The input string '' was not in a correct format. 09/11/25 23:16:35
+
+Error en Connec_Authentication The input string '' was not in a correct format. 09/11/25 23:34:21
+
+Error en Connec_Authentication The input string '' was not in a correct format. 09/11/25 23:36:18
+
+Error en Connec_Authentication The input string '' was not in a correct format. 09/11/25 23:38:50
+
+Error en Connec_ActColaborador Procedure or function SP_Colaborador_Update has too many arguments specified. 09/11/25 23:46:26
+
+Error en Connec_ActColaborador Error converting data type nvarchar to int. 09/11/25 23:49:04

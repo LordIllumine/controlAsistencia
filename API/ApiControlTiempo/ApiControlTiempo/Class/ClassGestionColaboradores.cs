@@ -1,4 +1,5 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ApiControlTiempo.Class
 {
@@ -6,19 +7,19 @@ namespace ApiControlTiempo.Class
     {
         public class ClassCrearColaborador
         {
-            [JsonRequired]
+            [Required]
             public string nombre { get; set; }
-            [JsonRequired]
+            [Required]
             public string apellido { get; set; }
-            [JsonRequired]
+            [Required]
             public string correo { get; set; }
-            [JsonRequired]
+            [Required]
             public string telefono { get; set; }
-            [JsonRequired]
+            [Required]
             public string rol { get; set; }
-            [JsonRequired]
+            [Required]
             public bool estado { get; set; }
-            [JsonRequired]
+            [Required]
             public string password { get; set; }
         }
 
@@ -30,22 +31,20 @@ namespace ApiControlTiempo.Class
 
         public class ClassActColaborador
         {
-            [JsonRequired]
+            [Required]
             public int idColaborador { get; set; }
-            [JsonRequired]
+            [Required]
             public string nombre { get; set; }
-            [JsonRequired]
+            [Required]
             public string apellido { get; set; }
-            [JsonRequired]
+            [Required]
             public string correo { get; set; }
-            [JsonRequired]
+            [Required]
             public string telefono { get; set; }
-            [JsonRequired]
+            [Required]
             public string rol { get; set; }
-            [JsonRequired]
+            [Required]
             public bool estado { get; set; }
-            [JsonRequired]
-            public string password { get; set; }
         }
 
         public class ClassActColaboradorResp
@@ -53,13 +52,27 @@ namespace ApiControlTiempo.Class
             public string? Mensaje { get; set; }
         }
 
-        public class ClassConsultarColaboradorId
+        public class ClassConsultarColaborador
         {
             public int idColaborador { get; set; }
             public string nombre { get; set; }
             public string apellido { get; set; }
             public string correo { get; set; }
             public string telefono { get; set; }
+            public string rol { get; set; }
+            public bool estado { get; set; }
+        }
+
+        public class ClassConsultarColaboradorFiltro
+        {
+            public string texto { get; set; }
+            public string rol { get; set; }
+            public bool estado { get; set; }
+        }
+
+        public class ClassActColaboradorEstado
+        {
+            public int idColaborador { get; set; }
             public string rol { get; set; }
             public bool estado { get; set; }
         }

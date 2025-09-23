@@ -1,12 +1,13 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace ApiControlTiempo.Class
 {
     public class ClassAuthentificate
     {
-        [JsonRequired]
+        [Required]
         public string Usuario { get; set; }
-        [JsonRequired]
+        [Required]
         public string Contrasena { get; set; }
 
         [JsonIgnore]
@@ -28,11 +29,11 @@ namespace ApiControlTiempo.Class
 
     public class ClassResetPassword
     {
-        [JsonRequired]
+        [Required]
         public int idColaborador { get; set; }
-        [JsonRequired]
+        [Required]
         public string passwordActual { get; set; }
-        [JsonRequired]
+        [Required]
         public string passwordNueva { get; set; }
         [JsonIgnore]
         public string? Mensaje { get; set; }
@@ -40,7 +41,7 @@ namespace ApiControlTiempo.Class
 
     public class ClassResetPasswordRequest
     {
-        //[JsonRequired]
+        //[Required]
         public string correo { get; set; }
         //[JsonIgnore]
         public string token { get; set; }
@@ -50,9 +51,9 @@ namespace ApiControlTiempo.Class
 
     public class ClassResetPasswordComfirm
     {
-        [JsonRequired]
+        [Required]
         public string correo { get; set; }
-        [JsonRequired]
+        [Required]
         public string passwordNueva { get; set; }
         [JsonIgnore]
         public string? Mensaje { get; set; }

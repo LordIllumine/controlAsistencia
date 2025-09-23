@@ -16,9 +16,217 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ApiControlTiempo.Controllers.AutentificateController",
+    "ContainingType": "ApiControlTiempo.Controllers.ControlAsistenciaController",
+    "Method": "AsistenciaMarcarEntrada",
+    "RelativePath": "api/ControlAsistencia/AsistenciaMarcarEntrada",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "obj_Json",
+        "Type": "ApiControlTiempo.Class.ClassAsistenciaMarcarEntrada",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.ControlAsistenciaController",
+    "Method": "AsistenciaMarcarSalida",
+    "RelativePath": "api/ControlAsistencia/AsistenciaMarcarSalida",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "obj_Json",
+        "Type": "ApiControlTiempo.Class.ClassAsistenciaMarcarSalida",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.ControlAsistenciaController",
+    "Method": "ConsultarAsistenciaHoras",
+    "RelativePath": "api/ControlAsistencia/ConsultarAsistenciaHoras",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassControlAsistenciaGetByRango",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.ControlAsistenciaController",
+    "Method": "ConsultarPorIdAsistencia",
+    "RelativePath": "api/ControlAsistencia/ConsultarPorIdAsistencia",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassControlAsistenciaGetByRango",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.ControlAsistenciaController",
+    "Method": "editarRegistros",
+    "RelativePath": "api/ControlAsistencia/editarRegistros",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassControlAsistencia",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.DescansosController",
+    "Method": "Descanso_Finalizar",
+    "RelativePath": "api/Descansos/Descanso_Finalizar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassDescansos\u002BClassDescanso_Finalizar",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.DescansosController",
+    "Method": "Descanso_Iniciar",
+    "RelativePath": "api/Descansos/Descanso_Iniciar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassDescansos\u002BClassDescanso_Iniciar",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.DescansosController",
+    "Method": "Descanso_Resumen",
+    "RelativePath": "api/Descansos/Descanso_Resumen",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassDescansos\u002BClassDescanso_Resumen",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.GestionColaboradoresController",
+    "Method": "ActColaboradorEstado",
+    "RelativePath": "api/GestionColaboradores/ActColaboradorEstado",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassGestionColaboradores\u002BClassActColaboradorEstado",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.GestionColaboradoresController",
+    "Method": "CrearColaborador",
+    "RelativePath": "api/GestionColaboradores/ActualizarColaborador",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassGestionColaboradores\u002BClassActColaborador",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.GestionColaboradoresController",
+    "Method": "ConsultarColaboradorFiltro",
+    "RelativePath": "api/GestionColaboradores/ConsultarColaboradorFiltro",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassGestionColaboradores\u002BClassConsultarColaboradorFiltro",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.GestionColaboradoresController",
+    "Method": "ConsultaColaboradorID",
+    "RelativePath": "api/GestionColaboradores/ConsultarColaboradorId/{Id_colaborador}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id_colaborador",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.GestionColaboradoresController",
     "Method": "ResetPassword",
-    "RelativePath": "api/Autentificate/ResetPassword",
+    "RelativePath": "api/GestionColaboradores/CrearColaborador",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassGestionColaboradores\u002BClassCrearColaborador",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.GestionUsuarioController",
+    "Method": "ResetPassword",
+    "RelativePath": "api/GestionUsuario/ResetPassword",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -32,9 +240,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ApiControlTiempo.Controllers.AutentificateController",
+    "ContainingType": "ApiControlTiempo.Controllers.GestionUsuarioController",
     "Method": "ResetPasswordConfirm",
-    "RelativePath": "api/Autentificate/ResetPasswordConfirm",
+    "RelativePath": "api/GestionUsuario/ResetPasswordConfirm",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -48,9 +256,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ApiControlTiempo.Controllers.AutentificateController",
+    "ContainingType": "ApiControlTiempo.Controllers.GestionUsuarioController",
     "Method": "ResetPasswordRequest",
-    "RelativePath": "api/Autentificate/ResetPasswordRequest",
+    "RelativePath": "api/GestionUsuario/ResetPasswordRequest",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -58,6 +266,198 @@
       {
         "Name": "ResetPass",
         "Type": "ApiControlTiempo.Class.ClassResetPasswordRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.PermisosController",
+    "Method": "EditarPermiso_Solicitar",
+    "RelativePath": "api/Permisos/EditarPermiso_Solicitar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassPermisos\u002BClassEditarPermiso_Solicitar",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.PermisosController",
+    "Method": "ListarPermisos",
+    "RelativePath": "api/Permisos/ListarPermisos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassPermisos\u002BClassPermiso_List",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.PermisosController",
+    "Method": "Permiso_Solicitar",
+    "RelativePath": "api/Permisos/Permiso_Solicitar",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassPermisos\u002BClassPermiso_Solicitar",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.ReportesyAnaliticaOperativaController",
+    "Method": "TareaList",
+    "RelativePath": "api/ReportesyAnaliticaOperativa/ReporteAsistenciaDiaria/{ParametroBusqueda}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ParametroBusqueda",
+        "Type": "System.DateTime",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.ReportesyAnaliticaOperativaController",
+    "Method": "ReporteHorasTrabajadas",
+    "RelativePath": "api/ReportesyAnaliticaOperativa/ReporteHorasTrabajadas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassReportesyAnaliticaOperativa\u002BClassReporte_HorasTrabajadas",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.ReportesyAnaliticaOperativaController",
+    "Method": "ReportePermisos",
+    "RelativePath": "api/ReportesyAnaliticaOperativa/ReportePermisos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassReportesyAnaliticaOperativa\u002BClassReporte_Permisos",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.ReportesyAnaliticaOperativaController",
+    "Method": "ReporteProductividad",
+    "RelativePath": "api/ReportesyAnaliticaOperativa/ReporteProductividad",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassReportesyAnaliticaOperativa\u002BClassReporte_Productividad",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.TareasyAsignacionesController",
+    "Method": "AsignacionTareaCreate",
+    "RelativePath": "api/TareasyAsignaciones/AsignacionTareaCreate",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "obj_Json",
+        "Type": "ApiControlTiempo.Class.ClassTareasyAsignaciones\u002BClassAsignacion_Create",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.TareasyAsignacionesController",
+    "Method": "AsignacionTareaListar",
+    "RelativePath": "api/TareasyAsignaciones/AsignacionTareaListar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "obj_Json",
+        "Type": "ApiControlTiempo.Class.ClassTareasyAsignaciones\u002BClassAsignacion_List",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.TareasyAsignacionesController",
+    "Method": "TareaCreate",
+    "RelativePath": "api/TareasyAsignaciones/TareaCreate",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "obj_Json",
+        "Type": "ApiControlTiempo.Class.ClassTareasyAsignaciones\u002BClassTarea_Create",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.TareasyAsignacionesController",
+    "Method": "TareaList",
+    "RelativePath": "api/TareasyAsignaciones/TareaList/{ParametroBusqueda}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ParametroBusqueda",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.TareasyAsignacionesController",
+    "Method": "TareaUpdate",
+    "RelativePath": "api/TareasyAsignaciones/TareaUpdate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "obj_Json",
+        "Type": "ApiControlTiempo.Class.ClassTareasyAsignaciones\u002BClassTarea_Update",
         "IsRequired": true
       }
     ],

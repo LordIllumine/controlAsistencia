@@ -4,7 +4,6 @@
 -- Fecha: 02/09/2025
 -- Procedimiento que permite actualizar un colaborador
 ----------------------------------------------------------------------------------------------------
-
 CREATE OR ALTER PROCEDURE SP_Colaborador_Update
   @idColaborador INT,
   @nombre   NVARCHAR(100) = NULL,

@@ -1,4 +1,6 @@
 ﻿using ApiControlTiempo.Class;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using System.Data;
 using static ApiControlTiempo.Class.ClassGestionColaboradores;
@@ -100,14 +102,13 @@ namespace ApiControlTiempo.Connection
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Parámetros de entrada
-                    cmd.Parameters.AddWithValue("@idColaborador", user.nombre);
+                    cmd.Parameters.AddWithValue("@idColaborador", user.idColaborador);
                     cmd.Parameters.AddWithValue("@nombre", user.nombre);
                     cmd.Parameters.AddWithValue("@apellido", user.apellido);
                     cmd.Parameters.AddWithValue("@correo", user.correo);
                     cmd.Parameters.AddWithValue("@telefono", user.telefono);
                     cmd.Parameters.AddWithValue("@rol", user.rol);
                     cmd.Parameters.AddWithValue("@estado", user.estado);
-                    cmd.Parameters.AddWithValue("@password", user.password);
 
                     // Parámetros de salida
                     var pMensaje = new SqlParameter("@mensaje", SqlDbType.NVarChar, 200)
@@ -135,7 +136,7 @@ namespace ApiControlTiempo.Connection
             }
         }
 
-        public ClassActColaboradorResp Connec_ConsultarColaborador(int idColaborador)
+        public ClassConsultarColaborador Connec_ConsultarColaboradorID(int idColaborador)
         {
             thisDay = DateTime.Now;
 
@@ -147,29 +148,145 @@ namespace ApiControlTiempo.Connection
                     .Build();
 
                 Connection cnn = new Connection(configuration);
-                ClassActColaboradorResp resp = new ClassActColaboradorResp();
+                ClassConsultarColaborador colaborador = null;
 
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = cnn.AbrirConexion();
-                    cmd.CommandText = "SP_Colaborador_Update";
+                    cmd.CommandText = "SP_Colaborador_GetById"; 
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Parámetro de entrada
+                    cmd.Parameters.AddWithValue("@idColaborador", idColaborador);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            colaborador = new ClassConsultarColaborador
+                            {
+                                idColaborador = reader["IDCOLABORADOR"] != DBNull.Value ? Convert.ToInt32(reader["IDCOLABORADOR"]) : 0,
+                                nombre = reader["NOMBRE"]?.ToString(),
+                                apellido = reader["APELLIDO"]?.ToString(),
+                                correo = reader["CORREO"]?.ToString(),
+                                telefono = reader["TELEFONO"]?.ToString(),
+                                rol = reader["ROL"]?.ToString(),
+                                estado = reader["ESTADO"] != DBNull.Value && Convert.ToBoolean(reader["ESTADO"])
+                            };
+                        }
+                    }
+                }
+
+                return colaborador;
+            }
+            catch (Exception ex)
+            {
+                logsFile.WriteLogs("\n" + "Error en Connec_ConsultarColaboradorID "
+                                   + ex.Message + " "
+                                   + thisDay.ToString("MM/dd/yy H:mm:ss"));
+                throw;
+            }
+        }
+
+        public List<ClassConsultarColaborador> Connec_ConsultarColaboradorFiltro(ClassConsultarColaboradorFiltro ObjFiltro)
+        {
+            thisDay = DateTime.Now;
+
+            try
+            {
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+
+                Connection cnn = new Connection(configuration);
+                List<ClassConsultarColaborador> listaColaboradores = new List<ClassConsultarColaborador>();
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnn.AbrirConexion();
+                    cmd.CommandText = "SP_Colaborador_List"; // Asegúrate que el SP devuelve un SELECT
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Parámetro de entrada
+                    cmd.Parameters.AddWithValue("@texto", ObjFiltro.texto);
+                    cmd.Parameters.AddWithValue("@rol", ObjFiltro.rol);
+                    cmd.Parameters.AddWithValue("@estado", ObjFiltro.estado);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var colaborador = new ClassConsultarColaborador
+                            {
+                                idColaborador = reader["IDCOLABORADOR"] != DBNull.Value ? Convert.ToInt32(reader["IDCOLABORADOR"]) : 0,
+                                nombre = reader["NOMBRE"]?.ToString(),
+                                apellido = reader["APELLIDO"]?.ToString(),
+                                correo = reader["CORREO"]?.ToString(),
+                                telefono = reader["TELEFONO"]?.ToString(),
+                                rol = reader["ROL"]?.ToString(),
+                                estado = reader["ESTADO"] != DBNull.Value && Convert.ToBoolean(reader["ESTADO"])
+                            };
+
+                            listaColaboradores.Add(colaborador);
+                        }
+                    }
+                }
+
+                return listaColaboradores;
+            }
+            catch (Exception ex)
+            {
+                logsFile.WriteLogs("\n" + "Error en Connec_ConsultarColaboradorID "
+                                   + ex.Message + " "
+                                   + thisDay.ToString("MM/dd/yy H:mm:ss"));
+                throw;
+            }
+        }
+
+        public string Connec_ActColaboradorEstado(ClassActColaboradorEstado user)
+        {
+            thisDay = DateTime.Now;
+            string Mensaje = string.Empty;
+            try
+            {
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+
+                Connection cnn = new Connection(configuration);
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnn.AbrirConexion();
+                    cmd.CommandText = "SP_Colaborador_SetEstado";
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Parámetros de entrada
-                    cmd.Parameters.AddWithValue("@idColaborador", idColaborador);
+                    cmd.Parameters.AddWithValue("@idColaborador", user.idColaborador);
+                    cmd.Parameters.AddWithValue("@estado", user.estado);
+
+                    // Parámetros de salida
+                    var pMensaje = new SqlParameter("@mensaje", SqlDbType.NVarChar, 200)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+
+                    cmd.Parameters.Add(pMensaje);
 
                     // Ejecutamos (no hay reader porque no devuelve un SELECT)
                     cmd.ExecuteNonQuery();
 
                     // Construimos el objeto de autenticación
-                    resp.Mensaje = pMensaje.Value.ToString();
+                    Mensaje = pMensaje.Value.ToString();
                 }
 
-                return resp;
+                return Mensaje;
             }
             catch (Exception ex)
             {
-                logsFile.WriteLogs("\n" + "Error en Connec_ActColaborador "
+                logsFile.WriteLogs("\n" + "Error en Connec_ActColaboradorEstado "
                                    + ex.Message.ToString() + " "
                                    + thisDay.ToString("MM/dd/yy H:mm:ss"));
                 throw;
