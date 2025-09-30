@@ -4,7 +4,23 @@
 -- Fecha: 02/09/2025
 -- Procedimiento para marcas asistencia (Salida)
 ----------------------------------------------------------------------------------------------------
-CREATE OR ALTER PROCEDURE SP_Asistencia_MarcarSalida
+USE [CONTROL_ASISTENCIA]
+GO
+
+/****** Object:  StoredProcedure [dbo].[SP_Asistencia_MarcarSalida]    Script Date: 29/9/2025 22:09:43 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+----------------------------------------------------------------------------------------------------
+-- Procedimiento almacenado SP_Asistencia_MarcarSalida
+-- Author: Damian Alvarado Avilés
+-- Fecha: 02/09/2025
+-- Procedimiento para marcas asistencia (Salida)
+----------------------------------------------------------------------------------------------------
+ALTER   PROCEDURE [dbo].[SP_Asistencia_MarcarSalida]
   @idColaborador INT,
   @fecha         DATE,
   @horaSalida    TIME,
@@ -17,6 +33,12 @@ BEGIN
     SELECT @horaIn = HORAENTRADA
     FROM REGISTROSASISTENCIA
     WHERE IDCOLABORADOR=@idColaborador AND FECHA=@fecha;
+
+	IF EXISTS (SELECT 1 FROM REGISTROSASISTENCIA WHERE IDCOLABORADOR=@idColaborador AND FECHA=@fecha)
+    BEGIN
+      SET @mensaje = N'ya hay un registro de salida para este dia.';
+      RETURN;
+    END
 
     IF @horaIn IS NULL
     BEGIN
@@ -43,7 +65,6 @@ BEGIN
   END CATCH
 END
 GO
-
 ----------------------------------------------------------------------------------------------------
 -- Sección de pruebas
 ----------------------------------------------------------------------------------------------------
