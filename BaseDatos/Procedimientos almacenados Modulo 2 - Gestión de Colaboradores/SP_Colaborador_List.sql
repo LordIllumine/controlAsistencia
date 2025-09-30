@@ -1,0 +1,26 @@
+USE [CONTROL_ASISTENCIA]
+GO
+
+/****** Object:  StoredProcedure [dbo].[SP_Colaborador_List]    Script Date: 29/9/2025 21:33:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER   PROCEDURE [dbo].[SP_Colaborador_List]
+  @texto NVARCHAR(150) = NULL,
+  @rol   NVARCHAR(50)  = NULL,
+  @estado BIT          = NULL
+AS
+BEGIN
+  SET NOCOUNT ON;
+  SELECT IDCOLABORADOR AS [IDENTIFICADOR], NOMBRE, APELLIDO, CORREO, TELEFONO, ROL, ESTADO, FECHA_CREACION AS CREACION, FECHA_ACTUALIZACION AS ACTUALIACION
+  FROM COLABORADORES
+  WHERE (@texto IS NULL OR (NOMBRE LIKE '%'+@texto+'%' OR APELLIDO LIKE '%'+@texto+'%' OR CORREO LIKE '%'+@texto+'%'))
+    AND (@rol IS NULL OR ROL = @rol)
+    AND (@estado IS NULL OR ESTADO = @estado);
+END
+GO
+
