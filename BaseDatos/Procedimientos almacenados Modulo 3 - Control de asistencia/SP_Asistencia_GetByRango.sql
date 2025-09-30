@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------------------------
 -- Procedimiento almacenado SP_Asistencia_GetByRango
--- Author: Damian Alvarado AvilÈs
+-- Author: Damian Alvarado Avil√©s
 -- Fecha: 02/09/2025
 -- Procedimiento Lista las asistencias del colaborador o las horas que ha trabajado en un rango de fechas
 ----------------------------------------------------------------------------------------------------
@@ -11,7 +11,8 @@ CREATE OR ALTER PROCEDURE SP_Asistencia_GetByRango
 AS
 BEGIN
   SET NOCOUNT ON;
-  SELECT *
+  SELECT IDREGISTRO AS REGISTRO, IDCOLABORADOR AS IDENTIFICADOR, FECHA,HORAENTRADA AS [HORA DE ENTRADA], HORASALIDA AS [HORA DE SALIDA],
+         IPREGISTRO AS [IP REGISTRO], MACADDRESS AS [MAC ADDRESS], FECHA_CREACION AS [CREACION], FECHA_ACTUALIZACION AS [ACTUALIZACION]
   FROM REGISTROSASISTENCIA
   WHERE FECHA BETWEEN @desde AND @hasta
     AND (@idColaborador IS NULL OR IDCOLABORADOR = @idColaborador)
@@ -37,7 +38,7 @@ BEGIN
 END
 GO
 ----------------------------------------------------------------------------------------------------
--- SecciÛn de pruebas
+-- Secci√≥n de pruebas
 ----------------------------------------------------------------------------------------------------
 /*
 -- 1
@@ -150,7 +151,7 @@ END CATCH;
 
 --
 
--- RESUMENHORAS D: minutos v·lidos + registro incompleto (=0)
+-- RESUMENHORAS D: minutos v√°lidos + registro incompleto (=0)
 SET NOCOUNT ON; SET XACT_ABORT ON;
 BEGIN TRY
   BEGIN TRAN;
