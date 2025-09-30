@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------------------------
 -- Procedimiento almacenado SP_Colaborador_GetById
--- Author: Damian Alvarado AvilÈs
+-- Author: Damian Alvarado Avil√©s
 -- Fecha: 02/09/2025
 -- Procedimiento lista los colaboradores con un ID y varios filtros opcionales
 ----------------------------------------------------------------------------------------------------
@@ -9,7 +9,9 @@ CREATE OR ALTER PROCEDURE SP_Colaborador_GetById
 AS
 BEGIN
   SET NOCOUNT ON;
-  SELECT * FROM COLABORADORES WHERE IDCOLABORADOR = @idColaborador;
+   SELECT IDCOLABORADOR AS [IDENTIFICADOR], NOMBRE, APELLIDO, CORREO, TELEFONO, ROL, ESTADO, FECHA_CREACION AS [CREACION], FECHA_ACTUALIZACION AS [ACTUALIZACION]
+    FROM COLABORADORES 
+   WHERE IDCOLABORADOR = @idColaborador;
 END
 GO
 
@@ -28,14 +30,14 @@ BEGIN
 END
 GO
 ----------------------------------------------------------------------------------------------------
---SecciÛn de pruebas
+--Secci√≥n de pruebas
 ----------------------------------------------------------------------------------------------------
 /*
 ---
 --- 1
 ---
 
--- GETBYID - …XITO
+-- GETBYID - √âXITO
 SET NOCOUNT ON; SET XACT_ABORT ON;
 BEGIN TRY
   BEGIN TRAN;
@@ -49,7 +51,7 @@ BEGIN TRY
   INSERT INTO #t EXEC dbo.SP_Colaborador_GetById @idColaborador=@id;
 
   SELECT
-    Caso   = N'GetById (Èxito)',
+    Caso   = N'GetById (√©xito)',
     Estado = CASE WHEN (SELECT COUNT(*) FROM #t)=1
                        AND EXISTS(SELECT 1 FROM #t WHERE IDCOLABORADOR=@id AND CORREO=@correo)
                   THEN N'OK' ELSE N'FALLO' END,
@@ -59,7 +61,7 @@ BEGIN TRY
 END TRY
 BEGIN CATCH
   IF @@TRANCOUNT>0 ROLLBACK;
-  SELECT N'GetById (Èxito)' AS Caso, N'FALLO' AS Estado, ERROR_MESSAGE() AS Detalle;
+  SELECT N'GetById (√©xito)' AS Caso, N'FALLO' AS Estado, ERROR_MESSAGE() AS Detalle;
 END CATCH;
 ---
 -- 2
@@ -98,7 +100,7 @@ BEGIN TRY
          (N'Carla',N'Texto', @pref + N'.3@example.com', N'3', N'USER', 0);
 
   SELECT TOP 0 * INTO #t FROM dbo.COLABORADORES;
-  INSERT INTO #t EXEC dbo.SP_Colaborador_List @texto=@pref;  -- buscar· en CORREO (y tambiÈn en NOMBRE/APELLIDO)
+  INSERT INTO #t EXEC dbo.SP_Colaborador_List @texto=@pref;  -- buscar√° en CORREO (y tambi√©n en NOMBRE/APELLIDO)
 
   SELECT
     Caso   = N'List (texto)',
@@ -180,7 +182,7 @@ BEGIN TRY
   DECLARE @pref NVARCHAR(80) = N'test.list.combo.' + CONVERT(NVARCHAR(36), NEWID());
 
   INSERT INTO dbo.COLABORADORES (NOMBRE,APELLIDO,CORREO,TELEFONO,ROL,ESTADO)
-  VALUES (N'AA',N'C', @pref+N'.1@example.com', N'1', N'USER', 1),  -- deberÌa coincidir
+  VALUES (N'AA',N'C', @pref+N'.1@example.com', N'1', N'USER', 1),  -- deber√≠a coincidir
          (N'BB',N'C', @pref+N'.2@example.com', N'2', N'USER', 0),
          (N'CC',N'C', @pref+N'.3@example.com', N'3', N'ADMIN',1);
 
