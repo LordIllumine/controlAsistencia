@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------------------------
 -- Procedimientos almacenados SP_Asignacion_Create / SP_Asignacion_List
--- Author: Damian Alvarado Avil閟
+-- Author: Damian Alvarado Avil茅s
 -- Fecha: 02/09/2025
 -- Procedimientos SP_Asignacion_Create asigna una tarea creada SP_Asignacion_List lista tareas asignadas
 ----------------------------------------------------------------------------------------------------
@@ -18,10 +18,10 @@ BEGIN
     VALUES (@idColaborador, @idTarea, @fechaAsignacion);
 
     SET @idAsignacion = SCOPE_IDENTITY();
-    SET @mensaje = N'Asignaci髇 creada.';
+    SET @mensaje = N'Asignaci贸n creada.';
   END TRY
   BEGIN CATCH
-    SET @mensaje = N'Error al crear la asignaci髇.';
+    SET @mensaje = N'Error al crear la asignaci贸n.';
     EXEC SP_Bitacora_LogError N'Asignacion_Create', ERROR_MESSAGE;
   END CATCH
 END
@@ -35,7 +35,8 @@ CREATE OR ALTER PROCEDURE SP_Asignacion_List
 AS
 BEGIN
   SET NOCOUNT ON;
-  SELECT *
+  SELECT IDASIGNACION AS [IDENTIFICACION], IDCOLABORADOR AS [IDENTIFICADOR DE COLABORADOR], IDTAREA AS [IDENTIFICADOR DETAREA],
+         FECHAASIGNACION AS [FECHA DE ASIGNACION], FECHA_CREACION AS [FECHA DE CREACION], FECHA_ACTUALIZACION AS [FECHA DE ACTUALIZACION]
   FROM TAREASASIGNADAS
   WHERE (@idColaborador IS NULL OR IDCOLABORADOR = @idColaborador)
     AND (@idTarea IS NULL OR IDTAREA = @idTarea)
@@ -44,13 +45,13 @@ BEGIN
 END
 GO
 ----------------------------------------------------------------------------------------------------
--- Secci髇 de pruebas
+-- Secci贸n de pruebas
 ----------------------------------------------------------------------------------------------------
 /*
 ----------------------------------------------------------------------------------------------------
 -- Prueba 1 
 ----------------------------------------------------------------------------------------------------
--- ASIGNACION_CREATE - 蒟ITO
+-- ASIGNACION_CREATE - 脡XITO
 SET NOCOUNT ON; SET XACT_ABORT ON;
 BEGIN TRY
   BEGIN TRAN;
@@ -74,20 +75,20 @@ BEGIN TRY
        @idAsignacion=@idAsig OUTPUT, @mensaje=@msg OUTPUT;
 
   SELECT
-    Caso   = N'Asignacion_Create (閤ito)',
-    Estado = CASE WHEN @msg LIKE N'Asignaci髇 creada%' AND @idAsig IS NOT NULL AND
+    Caso   = N'Asignacion_Create (茅xito)',
+    Estado = CASE WHEN @msg LIKE N'Asignaci贸n creada%' AND @idAsig IS NOT NULL AND
                         EXISTS(SELECT 1 FROM dbo.TAREASASIGNADAS
                                WHERE IDASIGNACION=@idAsig AND IDCOLABORADOR=@idCol AND IDTAREA=@idTarea
                                      AND FECHAASIGNACION=@fecha)
                    THEN N'OK' ELSE N'FALLO' END,
     Mensaje = @msg,
-    Detalle = N'ID asignaci髇=' + COALESCE(CONVERT(NVARCHAR(20),@idAsig),N'NULL');
+    Detalle = N'ID asignaci贸n=' + COALESCE(CONVERT(NVARCHAR(20),@idAsig),N'NULL');
 
   ROLLBACK;
 END TRY
 BEGIN CATCH
   IF @@TRANCOUNT>0 ROLLBACK;
-  SELECT N'Asignacion_Create (閤ito)' AS Caso, N'FALLO' AS Estado, ERROR_MESSAGE() AS Mensaje, N'TRAN revertida' AS Detalle;
+  SELECT N'Asignacion_Create (茅xito)' AS Caso, N'FALLO' AS Estado, ERROR_MESSAGE() AS Mensaje, N'TRAN revertida' AS Detalle;
 END CATCH;
 ----------------------------------------------------------------------------------------------------
 -- Prueba 2
@@ -146,7 +147,7 @@ BEGIN TRY
   VALUES (N'B2',N'Col',@pref+N'2@ex.com',N'0',N'USER',1);
   SET @idCol2 = SCOPE_IDENTITY();
 
-  INSERT INTO dbo.TAREAS(NOMBRE) VALUES (@pref+N' 趎ica'); SET @idTarea = SCOPE_IDENTITY();
+  INSERT INTO dbo.TAREAS(NOMBRE) VALUES (@pref+N' 脷nica'); SET @idTarea = SCOPE_IDENTITY();
 
   DECLARE @f DATETIME = DATEADD(HOUR, 11, CAST(GETDATE() AS DATETIME));
   INSERT INTO dbo.TAREASASIGNADAS(IDCOLABORADOR,IDTAREA,FECHAASIGNACION)
