@@ -1,11 +1,10 @@
-﻿----------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------
 -- Procedimientos almacenados SP_Descanso_Iniciar / SP_Descanso_Finalizar / SP_Descanso_Resumen
 -- Author: Damian Alvarado Avilés
 -- Fecha: 02/09/2025
 -- Procedimientos para iniciar, finalizar y listar (filtrado por colaborador & date) los descansos
 ----------------------------------------------------------------------------------------------------
-
-CREATE OR ALTER PROCEDURE SP_Descanso_Iniciar
+ALTER PROCEDURE [dbo].[SP_Descanso_Iniciar]
   @idAsignacion INT,
   @tipoDescanso NVARCHAR(50),
   @horaInicio   DATETIME,
@@ -14,18 +13,108 @@ CREATE OR ALTER PROCEDURE SP_Descanso_Iniciar
 AS
 BEGIN
   SET NOCOUNT ON;
+
   BEGIN TRY
-    INSERT INTO DESCANSOS (IDASIGNACION, TIPODESCANSO, HORAINICIO, HORAFIN)
+    BEGIN TRAN;
+
+    -- Validaciones previas claras
+    IF @idAsignacion IS NULL
+    BEGIN
+      SET @mensaje = N'Parámetro inválido: @idAsignacion es NULL.';
+      ROLLBACK TRAN;
+      RETURN;
+    END
+
+    IF @tipoDescanso IS NULL OR LTRIM(RTRIM(@tipoDescanso)) = N''
+    BEGIN
+      SET @mensaje = N'Parámetro inválido: @tipoDescanso no puede ser vacío.';
+      ROLLBACK TRAN;
+      RETURN;
+    END
+
+    IF @horaInicio IS NULL
+    BEGIN
+      SET @mensaje = N'Parámetro inválido: @horaInicio es NULL.';
+      ROLLBACK TRAN;
+      RETURN;
+    END
+
+    -- Existe la asignación?
+    IF NOT EXISTS (SELECT 1 FROM dbo.TAREASASIGNADAS WHERE IDASIGNACION = @idAsignacion)
+    BEGIN
+      SET @mensaje = N'No existe la asignación especificada (IDASIGNACION = ' + CONVERT(NVARCHAR(20), @idAsignacion) + N').';
+      ROLLBACK TRAN;
+      RETURN;
+    END
+
+    -- Evitar insertar duplicados exactos (mismo inicio ya registrado)
+    IF EXISTS (SELECT 1 FROM dbo.DESCANSOS
+               WHERE IDASIGNACION = @idAsignacion
+                 AND HORAINICIO = @horaInicio)
+    BEGIN
+      SET @mensaje = N'Ya existe un descanso con la misma fecha/hora de inicio para esa asignación.';
+      ROLLBACK TRAN;
+      RETURN;
+    END
+
+    -- Evitar solapamiento simple: si hay un descanso abierto (HORAFIN IS NULL) para la asignación, solicitar finalizarlo
+    IF EXISTS (SELECT 1 FROM dbo.DESCANSOS
+               WHERE IDASIGNACION = @idAsignacion
+                 AND HORAFIN IS NULL)
+    BEGIN
+      SET @mensaje = N'Existe un descanso abierto para esta asignación. Finalícelo antes de iniciar uno nuevo.';
+      ROLLBACK TRAN;
+      RETURN;
+    END
+
+    -- Inserción (HORAFIN inicialmente igual a HORAINICIO — comportamiento actual)
+    INSERT INTO dbo.DESCANSOS (IDASIGNACION, TIPODESCANSO, HORAINICIO, HORAFIN)
     VALUES (@idAsignacion, @tipoDescanso, @horaInicio, @horaInicio);
 
-    SET @idDescanso = SCOPE_IDENTITY();
-    SET @mensaje = N'Descanso iniciado.';
+    SET @idDescanso = CAST(SCOPE_IDENTITY() AS INT);
+
+    IF @idDescanso IS NULL OR @idDescanso = 0
+    BEGIN
+      SET @mensaje = N'Error interno: no se obtuvo ID de descanso tras la inserción.';
+      ROLLBACK TRAN;
+      RETURN;
+    END
+
+    COMMIT TRAN;
+
+    SET @mensaje = N'Descanso iniciado correctamente. ID = ' + CONVERT(NVARCHAR(20), @idDescanso) + N'.';
+    RETURN;
   END TRY
+
   BEGIN CATCH
-    SET @mensaje = N'Error al iniciar descanso.';
-    --EXEC SP_Bitacora_LogError N'Descanso_Iniciar', ERROR_MESSAGE;
-	INSERT INTO BITACORA_ERRORES ( FECHA_CREACION, MODULO , ERROR) 
-	VALUES (SYSDATETIME(), COALESCE(ERROR_PROCEDURE(), 'APLIX.ARTICULOS_EDITADOS_RECIENTEMENTE'), ERROR_MESSAGE())
+    IF @@TRANCOUNT > 0 ROLLBACK TRAN;
+
+    -- Capturar detalles del error en variables (evaluar EN EL CATCH)
+    DECLARE @errMsg NVARCHAR(MAX) = ERROR_MESSAGE();
+    DECLARE @proc   NVARCHAR(200) = COALESCE(ERROR_PROCEDURE(), N'');
+    DECLARE @line   INT = ERROR_LINE();
+    DECLARE @errno  INT = ERROR_NUMBER();
+    DECLARE @sev    INT = ERROR_SEVERITY();
+    DECLARE @state  INT = ERROR_STATE();
+    DECLARE @host   NVARCHAR(50) = HOST_NAME();
+    DECLARE @obs    NVARCHAR(250) = CONCAT(N'IniciarDesc (idAsignacion=', CONVERT(NVARCHAR(20), @idAsignacion), N')');
+
+    -- Registrar en bitácora con la nueva firma (asegúrate que SP_Bitacora_LogError acepta estos params)
+    EXEC dbo.SP_Bitacora_LogError
+         @modulo        = N'SP_Descanso_Iniciar',
+         @errorMessage  = @errMsg,
+         @procedureName = @proc,
+         @lineNum       = @line,
+         @errorNumber   = @errno,
+         @severity      = @sev,
+         @stateError    = @state,
+         @ip            = @host,
+         @observaciones = @obs;
+
+    -- Mensaje amigable de salida
+    SET @mensaje = N'Ocurrió un error al iniciar el descanso. Consulte la bitácora (SP_Descanso_Iniciar).';
+
+    RETURN;
   END CATCH
 END
 GO
