@@ -1,23 +1,34 @@
 -------------------------------------------------
 -- Procedimiento almacenado SP_Bitacora_LogError
--- Author: Damian Alvarado AvilÈs
+-- Author: Damian Alvarado Avil√©s
 -- Fecha: 02/09/2025
 -- Procedimiento que almacena en tabla BITACORA_ERRORES los errores registrados en sistema
 -------------------------------------------------
-CREATE OR ALTER PROCEDURE SP_Bitacora_LogError
-  @modulo  NVARCHAR(250),
-  @error   NVARCHAR(MAX)
+CREATE OR ALTER PROCEDURE dbo.SP_Bitacora_LogError
+  @modulo        NVARCHAR(250),
+  @errorMessage  NVARCHAR(MAX),
+  @procedureName NVARCHAR(200) = NULL,
+  @lineNum       INT = NULL,
+  @errorNumber   INT = NULL,
+  @severity      INT = NULL,
+  @stateError    INT = NULL,
+  @ip            NVARCHAR(50) = NULL,
+  @observaciones NVARCHAR(250) = NULL
 AS
 BEGIN
   SET NOCOUNT ON;
-  INSERT INTO BITACORA_ERRORES (MODULO, ERROR) VALUES (@modulo, @error);
+
+  INSERT INTO dbo.BITACORA_ERRORES
+    (MODULO, ERROR, PROCEDURE_NAME, LINEA, ERROR_NUMBER, SEVERITY, STATE_ERROR, IP, OBSERVACIONES, FECHA_CREACION, FECHA_ACTUALIZACION, FECHA)
+  VALUES
+    (@modulo, @errorMessage, COALESCE(@procedureName, ''), @lineNum, @errorNumber, @severity, @stateError, @ip, @observaciones, SYSUTCDATETIME(), SYSUTCDATETIME(), SYSUTCDATETIME());
 END
 GO
 
 /*
--- SecciÛn de pruebas
+-- Secci√≥n de pruebas
 /* =========================================================
-   PRUEBA 1: llamada directa al SP con un marcador ˙nico
+   PRUEBA 1: llamada directa al SP con un marcador √∫nico
    ========================================================= */
 DECLARE @m NVARCHAR(250) = N'PRUEBA_UNITARIA';
 DECLARE @marker CHAR(36) = CONVERT(CHAR(36), NEWID());
@@ -30,22 +41,22 @@ IF EXISTS (
     FROM dbo.BITACORA_ERRORES
     WHERE MODULO = @m AND ERROR LIKE '%' + @marker + '%'
 )
-    PRINT 'OK: se registrÛ el error de prueba (' + @marker + ').';
+    PRINT 'OK: se registr√≥ el error de prueba (' + @marker + ').';
 ELSE
-    PRINT 'FALLO: no se encontrÛ el registro de prueba (' + @marker + ').';
+    PRINT 'FALLO: no se encontr√≥ el registro de prueba (' + @marker + ').';
 
--- Vista r·pida de lo insertado para esta prueba
+-- Vista r√°pida de lo insertado para esta prueba
 SELECT TOP (5) *
 FROM dbo.BITACORA_ERRORES
 WHERE MODULO = @m;
 
 
 /* =========================================================
-   PRUEBA 2: uso tÌpico dentro de TRY...CATCH
-   (se provoca un error y se registra en la bit·cora)
+   PRUEBA 2: uso t√≠pico dentro de TRY...CATCH
+   (se provoca un error y se registra en la bit√°cora)
    ========================================================= */
 BEGIN TRY
-    SELECT 1/0;  -- fuerza divisiÛn entre cero
+    SELECT 1/0;  -- fuerza divisi√≥n entre cero
 END TRY
 BEGIN CATCH
     DECLARE @mod2 NVARCHAR(250) = N'PRUEBA_TRY_CATCH';
@@ -59,12 +70,12 @@ BEGIN CATCH
         FROM dbo.BITACORA_ERRORES
         WHERE MODULO = @mod2 AND ERROR LIKE '%' + @marker2 + '%'
     )
-        PRINT 'OK: se registrÛ el error desde TRY...CATCH (' + @marker2 + ').';
+        PRINT 'OK: se registr√≥ el error desde TRY...CATCH (' + @marker2 + ').';
     ELSE
-        PRINT 'FALLO: no se registrÛ el error desde TRY...CATCH (' + @marker2 + ').';
+        PRINT 'FALLO: no se registr√≥ el error desde TRY...CATCH (' + @marker2 + ').';
 END CATCH;
 
--- Vista r·pida de lo insertado para ambas pruebas
+-- Vista r√°pida de lo insertado para ambas pruebas
 SELECT TOP (10) *
 FROM dbo.BITACORA_ERRORES
 WHERE MODULO IN (N'PRUEBA_UNITARIA', N'PRUEBA_TRY_CATCH');
