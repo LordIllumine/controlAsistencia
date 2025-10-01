@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------------------------
 -- Procedimientos almacenados SP_Permiso_Solicitar / SP_Permiso_CambiarEstado / SP_Permiso_List
--- Author: Damian Alvarado Avilés
+-- Author: Damian Alvarado AvilÃ©s
 -- Fecha: 02/09/2025
 -- Procedimientos 
 ----------------------------------------------------------------------------------------------------
@@ -34,13 +34,13 @@ BEGIN
 END
 GO
 ----------------------------------------------------------------------------------------------------
--- Sección de pruebas para SP_Permiso_Solicitar
+-- SecciÃ³n de pruebas para SP_Permiso_Solicitar
 ----------------------------------------------------------------------------------------------------
 /*
 ----------------------------------------------------------------------------------------------------
 -- Prueba 1
 ----------------------------------------------------------------------------------------------------
--- PERMISO_SOLICITAR - ÉXITO
+-- PERMISO_SOLICITAR - Ã‰XITO
 SET NOCOUNT ON; SET XACT_ABORT ON;
 BEGIN TRY
   BEGIN TRAN;
@@ -56,11 +56,11 @@ BEGIN TRY
   DECLARE @ff DATETIME = DATEADD(HOUR, 3,  GETDATE());
 
   EXEC dbo.SP_Permiso_Solicitar
-       @idColaborador=@idCol, @fechaInicio=@fi, @fechaFin=@ff, @motivo=N'Médico',
+       @idColaborador=@idCol, @fechaInicio=@fi, @fechaFin=@ff, @motivo=N'MÃ©dico',
        @idPermiso=@idPerm OUTPUT, @mensaje=@msg OUTPUT;
 
   SELECT
-    Caso   = N'Permiso_Solicitar (éxito)',
+    Caso   = N'Permiso_Solicitar (Ã©xito)',
     Estado = CASE WHEN @msg LIKE N'Permiso solicitado%' AND @idPerm IS NOT NULL AND
                         EXISTS(SELECT 1 FROM dbo.PERMISOS
                                WHERE IDPERMISO=@idPerm AND IDCOLABORADOR=@idCol
@@ -73,12 +73,12 @@ BEGIN TRY
 END TRY
 BEGIN CATCH
   IF @@TRANCOUNT>0 ROLLBACK;
-  SELECT N'Permiso_Solicitar (éxito)' AS Caso, N'FALLO' AS Estado, ERROR_MESSAGE() AS Mensaje, N'TRAN revertida' AS Verificacion;
+  SELECT N'Permiso_Solicitar (Ã©xito)' AS Caso, N'FALLO' AS Estado, ERROR_MESSAGE() AS Mensaje, N'TRAN revertida' AS Verificacion;
 END CATCH;
 ----------------------------------------------------------------------------------------------------
 -- Prueba 2
 ----------------------------------------------------------------------------------------------------
--- PERMISO_SOLICITAR - VALIDACIÓN: fin < inicio (rechaza)
+-- PERMISO_SOLICITAR - VALIDACIÃ“N: fin < inicio (rechaza)
 SET NOCOUNT ON; SET XACT_ABORT ON;
 BEGIN TRY
   BEGIN TRAN;
@@ -103,7 +103,7 @@ BEGIN TRY
                                    WHERE IDCOLABORADOR=@idCol AND FECHAINICIO=@fi AND FECHAFIN=@ff)
                    THEN N'OK' ELSE N'FALLO' END,
     Mensaje      = @msg,
-    Verificacion = N'No se insertó ningún permiso';
+    Verificacion = N'No se insertÃ³ ningÃºn permiso';
 
   ROLLBACK;
 END TRY
@@ -127,7 +127,7 @@ BEGIN
            FECHA_ACTUALIZACION = GETDATE()
      WHERE IDPERMISO = @idPermiso;
 
-    IF @@ROWCOUNT = 0 SET @mensaje = N'No se encontró el permiso.'; ELSE SET @mensaje = N'Estado de permiso actualizado.';
+    IF @@ROWCOUNT = 0 SET @mensaje = N'No se encontrÃ³ el permiso.'; ELSE SET @mensaje = N'Estado de permiso actualizado.';
   END TRY
   BEGIN CATCH
     SET @mensaje = N'Error al cambiar estado del permiso.';
@@ -136,13 +136,13 @@ BEGIN
 END
 GO
 ----------------------------------------------------------------------------------------------------
--- Sección de pruebas para SP_Permiso_Solicitar
+-- SecciÃ³n de pruebas para SP_Permiso_Solicitar
 ----------------------------------------------------------------------------------------------------
 /*
 ----------------------------------------------------------------------------------------------------
 -- Prueba 1
 ----------------------------------------------------------------------------------------------------
--- CAMBIAR_ESTADO - ÉXITO (Aprobado)
+-- CAMBIAR_ESTADO - Ã‰XITO (Aprobado)
 SET NOCOUNT ON; SET XACT_ABORT ON;
 BEGIN TRY
   BEGIN TRAN;
@@ -160,7 +160,7 @@ BEGIN TRY
   EXEC dbo.SP_Permiso_CambiarEstado @idPermiso=@idPerm, @nuevoEstado=N'Aprobado', @mensaje=@msg OUTPUT;
 
   SELECT
-    Caso   = N'Permiso_CambiarEstado (éxito)',
+    Caso   = N'Permiso_CambiarEstado (Ã©xito)',
     Estado = CASE WHEN @msg LIKE N'Estado de permiso actualizado%' AND
                         EXISTS(SELECT 1 FROM dbo.PERMISOS
                                WHERE IDPERMISO=@idPerm AND ESTADO=N'Aprobado' AND FECHA_ACTUALIZACION IS NOT NULL)
@@ -172,7 +172,7 @@ BEGIN TRY
 END TRY
 BEGIN CATCH
   IF @@TRANCOUNT>0 ROLLBACK;
-  SELECT N'Permiso_CambiarEstado (éxito)' AS Caso, N'FALLO' AS Estado, ERROR_MESSAGE() AS Mensaje, N'TRAN revertida' AS Verificacion;
+  SELECT N'Permiso_CambiarEstado (Ã©xito)' AS Caso, N'FALLO' AS Estado, ERROR_MESSAGE() AS Mensaje, N'TRAN revertida' AS Verificacion;
 END CATCH;
 ----------------------------------------------------------------------------------------------------
 -- Prueba 2
@@ -187,7 +187,7 @@ BEGIN TRY
 
   SELECT
     Caso   = N'Permiso_CambiarEstado (ID inexistente)',
-    Estado = CASE WHEN @msg LIKE N'No se encontró el permiso%' THEN N'OK' ELSE N'FALLO' END,
+    Estado = CASE WHEN @msg LIKE N'No se encontrÃ³ el permiso%' THEN N'OK' ELSE N'FALLO' END,
     Mensaje      = @msg,
     Verificacion = N'Sin cambios en PERMISOS';
 
@@ -199,7 +199,7 @@ BEGIN CATCH
 END CATCH;
 */
 ----------------------------------------------------------------------------------------------------
-CREATE OR ALTER PROCEDURE SP_Permiso_List
+ALTER   PROCEDURE [dbo].[SP_Permiso_List]
   @idColaborador INT = NULL,
   @estado        NVARCHAR(50) = NULL,
   @desde         DATETIME = NULL,
@@ -207,7 +207,8 @@ CREATE OR ALTER PROCEDURE SP_Permiso_List
 AS
 BEGIN
   SET NOCOUNT ON;
-  SELECT *
+  SELECT IDPERMISO AS [Identificador permiso], IDCOLABORADOR AS [Identificador Colaborador], FECHASOLICITUD AS [Fecha Solicitud], FECHAINICIO AS [Fecha Inicio],
+		 FECHAFIN AS [Fecha Fin], MOTIVO AS [Motivo], ESTADO AS Estado, FECHA_CREACION AS [Fecha creacion], FECHA_ACTUALIZACION AS [Fecha actualizacion]
   FROM PERMISOS
   WHERE (@idColaborador IS NULL OR IDCOLABORADOR = @idColaborador)
     AND (@estado IS NULL OR ESTADO = @estado)
@@ -216,7 +217,7 @@ BEGIN
 END
 GO
 ----------------------------------------------------------------------------------------------------
--- Sección de pruebas para SP_Permiso_List
+-- SecciÃ³n de pruebas para SP_Permiso_List
 ----------------------------------------------------------------------------------------------------
 /*
 ----------------------------------------------------------------------------------------------------
