@@ -18,29 +18,36 @@
 @* <h1>Index</h1>
 
 <h4>ClassLogin</h4> *@
+
+    @if (ViewBag.Error != null)
+    {
+        <div class="alert">@ViewBag.Error</div>
+    }
+
 <hr />
 <div class="row">
     <div class="col-md-4">
         <div class="login-container">
             <div class="icon-user">👤</div>
-            <form asp-action="Index">
+                <form asp-action="Index" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-            
-                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                 <div class="form-group">
-                     <label asp-for="Identificacion" class="control-label"></label>
-                     <input asp-for="Identificacion" class="form-control" type="text" id="identificacion" name="identificacion" />
-                     <span asp-validation-for="Identificacion" class="text-danger"></span>
-                 </div>
-                 <div class="form-group">
-                     <label asp-for="Contrasenna" class="control-label"></label>
-                     <input asp-for="Contrasenna" class="form-control" type="password" id="contrasena" name="contrasenna" />
-                     <span asp-validation-for="Contrasenna" class="text-danger"></span>
-                 </div>
-                 <div class="form-group">
-                     <input type="submit" value="Ingresar" class="btn-primar" />
-                 </div>
-            </form>
+                    <div class="form-group">
+                        <label asp-for="usuario" class="control-label"></label>
+                        <input asp-for="usuario" class="form-control" type="text" />
+                        <span asp-validation-for="usuario" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label asp-for="contrasena" class="control-label"></label>
+                        <input asp-for="contrasena" class="form-control" type="password" />
+                        <span asp-validation-for="contrasena" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Ingresar" class="btn-primar" />
+                    </div>
+                </form>
         </div>
     </div>
 </div>

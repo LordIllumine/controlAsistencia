@@ -3,36 +3,28 @@
   "WorkspaceRootPath": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\controllers\\principalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\controllers\\principalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\models\\classlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\models\\classlogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\wwwroot\\css\\detallestareaestilo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\wwwroot\\css\\detallestareaestilo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\wwwroot\\css\\creartareaestilo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\wwwroot\\css\\creartareaestilo.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\views\\detalletarea\\detalletarea.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\views\\detalletarea\\detalletarea.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\views\\solicitardescanso\\solicitardescanso.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\views\\solicitardescanso\\solicitardescanso.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\views\\actividadesasignadas\\actividadesasignadas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\views\\actividadesasignadas\\actividadesasignadas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\views\\creartarea\\creartarea.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\views\\creartarea\\creartarea.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\views\\solicitarpermisos\\solicitarpermisos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\views\\solicitarpermisos\\solicitarpermisos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,104 +34,85 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Program.cs",
+              "RelativeDocumentMoniker": "webControlAsistencia\\Program.cs",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Program.cs",
+              "RelativeToolTip": "webControlAsistencia\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T18:52:28.131Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "PrincipalController.cs",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\PrincipalController.cs",
+              "RelativeDocumentMoniker": "webControlAsistencia\\Controllers\\PrincipalController.cs",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\PrincipalController.cs",
+              "RelativeToolTip": "webControlAsistencia\\Controllers\\PrincipalController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T18:17:28.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\appsettings.json",
+              "RelativeDocumentMoniker": "webControlAsistencia\\appsettings.json",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\appsettings.json",
+              "RelativeToolTip": "webControlAsistencia\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-04T18:04:20.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ClassLogin.cs",
               "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Models\\ClassLogin.cs",
               "RelativeDocumentMoniker": "webControlAsistencia\\Models\\ClassLogin.cs",
               "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Models\\ClassLogin.cs",
               "RelativeToolTip": "webControlAsistencia\\Models\\ClassLogin.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-11T03:18:28.45Z",
+              "WhenOpened": "2025-10-04T17:45:41.501Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CrearTareaEstilo.css",
-              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\CrearTareaEstilo.css",
-              "RelativeDocumentMoniker": "webControlAsistencia\\wwwroot\\css\\CrearTareaEstilo.css",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\CrearTareaEstilo.css",
-              "RelativeToolTip": "webControlAsistencia\\wwwroot\\css\\CrearTareaEstilo.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-11T03:13:21.116Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DetallesTareaEstilo.css",
-              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\DetallesTareaEstilo.css",
-              "RelativeDocumentMoniker": "webControlAsistencia\\wwwroot\\css\\DetallesTareaEstilo.css",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\DetallesTareaEstilo.css",
-              "RelativeToolTip": "webControlAsistencia\\wwwroot\\css\\DetallesTareaEstilo.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-11T03:13:14.708Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "DetalleTarea.cshtml",
-              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\DetalleTarea\\DetalleTarea.cshtml",
-              "RelativeDocumentMoniker": "webControlAsistencia\\Views\\DetalleTarea\\DetalleTarea.cshtml",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\DetalleTarea\\DetalleTarea.cshtml",
-              "RelativeToolTip": "webControlAsistencia\\Views\\DetalleTarea\\DetalleTarea.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T03:12:51.751Z"
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "webControlAsistencia\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "webControlAsistencia\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAEIAAAAAAAAAAAAowFQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T17:44:14.804Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SolicitarDescanso.cshtml",
-              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\SolicitarDescanso\\SolicitarDescanso.cshtml",
-              "RelativeDocumentMoniker": "webControlAsistencia\\Views\\SolicitarDescanso\\SolicitarDescanso.cshtml",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\SolicitarDescanso\\SolicitarDescanso.cshtml",
-              "RelativeToolTip": "webControlAsistencia\\Views\\SolicitarDescanso\\SolicitarDescanso.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "webControlAsistencia\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "webControlAsistencia\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwDEAAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T03:11:59.568Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CrearTarea.cshtml",
-              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\CrearTarea\\CrearTarea.cshtml",
-              "RelativeDocumentMoniker": "webControlAsistencia\\Views\\CrearTarea\\CrearTarea.cshtml",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\CrearTarea\\CrearTarea.cshtml",
-              "RelativeToolTip": "webControlAsistencia\\Views\\CrearTarea\\CrearTarea.cshtml",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADcAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T03:10:55.587Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ActividadesAsignadas.cshtml",
-              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\ActividadesAsignadas\\ActividadesAsignadas.cshtml",
-              "RelativeDocumentMoniker": "webControlAsistencia\\Views\\ActividadesAsignadas\\ActividadesAsignadas.cshtml",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\ActividadesAsignadas\\ActividadesAsignadas.cshtml",
-              "RelativeToolTip": "webControlAsistencia\\Views\\ActividadesAsignadas\\ActividadesAsignadas.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T03:09:58.795Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "SolicitarPermisos.cshtml",
-              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\SolicitarPermisos\\SolicitarPermisos.cshtml",
-              "RelativeDocumentMoniker": "webControlAsistencia\\Views\\SolicitarPermisos\\SolicitarPermisos.cshtml",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\SolicitarPermisos\\SolicitarPermisos.cshtml",
-              "RelativeToolTip": "webControlAsistencia\\Views\\SolicitarPermisos\\SolicitarPermisos.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-11T03:04:30.583Z"
+              "WhenOpened": "2025-10-04T17:44:07.2Z",
+              "EditorCaption": ""
             }
           ]
         }
