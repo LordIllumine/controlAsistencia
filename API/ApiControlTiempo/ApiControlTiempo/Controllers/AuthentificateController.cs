@@ -74,6 +74,7 @@ namespace ApiControlTiempo.Controllers
                             #region Respuesta
                             ResUser = new ClassAuthentificateMessage();
                             ResUser.autenticado = true;
+                            ResUser.IdColaborador = itemContra.IdColaborador; 
                             ResUser.Usuario = Log.Usuario;
                             ResUser.Rol = itemContra.Rol;
                             ResUser.Token = tokenString;

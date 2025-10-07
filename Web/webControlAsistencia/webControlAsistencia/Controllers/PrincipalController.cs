@@ -5,6 +5,7 @@ namespace webControlAsistencia.Controllers
 {
     public class PrincipalController : Controller
     {
+        public static string IdColaborador;
         public static string Usuario;
         public static string Rol;
         public static string Token;
@@ -15,6 +16,7 @@ namespace webControlAsistencia.Controllers
             // Recuperar los datos que vienen del login
             if (HttpContext.Session.GetString("Usuario") != null)
             {
+                IdColaborador = HttpContext.Session.GetString("IdColaborador");
                 Usuario = HttpContext.Session.GetString("Usuario");
                 Rol = HttpContext.Session.GetString("Rol");
                 Token = HttpContext.Session.GetString("Token");

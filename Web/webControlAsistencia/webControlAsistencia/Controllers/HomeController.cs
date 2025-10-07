@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Diagnostics;
@@ -53,6 +54,7 @@ namespace webControlAsistencia.Controllers
                     {
                         ClassLoginResp datos = new ClassLoginResp
                         {
+                            IdColaborador = jsonResp.resUser.idColaborador,
                             Usuario = jsonResp.resUser.usuario,
                             Rol = jsonResp.resUser.rol,
                             Token = jsonResp.resUser.token
@@ -64,6 +66,7 @@ namespace webControlAsistencia.Controllers
                         //TempData["Token"] = datos.Token;
 
                         // También podrías usar Session si prefieres mantenerlo por más tiempo
+                        HttpContext.Session.SetString("IdColaborador", datos.IdColaborador.ToString());
                         HttpContext.Session.SetString("Usuario", datos.Usuario);
                         HttpContext.Session.SetString("Rol", datos.Rol);
                         HttpContext.Session.SetString("Token", datos.Token);

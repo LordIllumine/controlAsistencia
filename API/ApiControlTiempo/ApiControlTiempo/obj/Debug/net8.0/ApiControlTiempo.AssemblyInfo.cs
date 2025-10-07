@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApiControlTiempo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9fbd2bbf19648258556aeb5a8c7bf1452758ca8c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffd299de541c1add9ffa41fa1c6d4125f6dc82ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApiControlTiempo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApiControlTiempo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

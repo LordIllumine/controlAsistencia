@@ -21,6 +21,7 @@ namespace ApiControlTiempo.Class
     public class ClassAuthentificateMessage
     {
         public bool autenticado { get; set; }
+        public int? IdColaborador { get; set; }
         public string Usuario { get; set; }
         public string Rol { get; set; }
         public string Token { get; set; }

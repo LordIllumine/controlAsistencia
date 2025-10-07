@@ -7,12 +7,17 @@ namespace webControlAsistencia.Controllers
 {
     public class ActividadesAsignadasController : Controller
     {
-        public ActionResult ActividadesAsignadas()
+        public ActionResult ActividadesAsignadas(string filtro, DateTime? fechaInicio, DateTime? fechaFin)
         {
             var model = new ClassActividadesAsignadasViewModel
             {
-                ActividadesAsig = new List<ClassActividadesAsignadas>() // Lista vacía en vez de null
+                ActividadesAsig = new List<ClassActividadesAsignadas>()
             };
+
+            if (filtro != null) 
+            {
+                if(filtro.Equals("Todos") || filtro.Equals("Todos"))
+            }
 
             return View(model);
         }
