@@ -273,7 +273,7 @@ namespace ApiControlTiempo.Connection
             }
         }
 
-        public List<ClassTareaList> Connec_Tarea_List(string texto)
+        public List<ClassTareaList> Connec_Tarea_List(ClassTareaListParam obj)
         {
             thisDay = DateTime.Now;
 
@@ -285,7 +285,7 @@ namespace ApiControlTiempo.Connection
                     .Build();
 
                 Connection cnn = new Connection(configuration);
-                List<ClassTareaList> List = new List<ClassTareaList>();
+                List<ClassTareaList> list = new List<ClassTareaList>();
 
                 using (SqlConnection conn = cnn.AbrirConexion())
                 using (SqlCommand cmd = conn.CreateCommand())
@@ -293,18 +293,34 @@ namespace ApiControlTiempo.Connection
                     cmd.CommandText = "SP_Tarea_List";
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.AddWithValue("@texto", texto);
+                    // ⚡ Asignación correcta de parámetros
+                    cmd.Parameters.AddWithValue("@FILTRO", (object?)obj.Filtro ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@FECHA_INICIO", (object?)obj.fechaIniTarea ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@FECHA_FIN", (object?)obj.fechafinTarea ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@ID_COLABORADOR", obj.IdColaborador);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (!reader.HasRows) return List;
+                        if (!reader.HasRows)
+                            return list;
 
                         // Cachear índices de columnas
                         int idxIdTarea = reader.GetOrdinal("IDTAREA");
                         int idxNombre = reader.GetOrdinal("NOMBRE");
                         int idxDescripcion = reader.GetOrdinal("DESCRIPCION");
-                        int idxFechaCreacion = reader.GetOrdinal("FECHA_CREACION");
-                        int idxFechaActualizacion = reader.GetOrdinal("FECHA_ACTUALIZACION");
+                        int idxEstadoTarea = reader.GetOrdinal("ESTADOTAREA");
+                        int idxFechaInicio = reader.GetOrdinal("FECHA_INICIO_TAREA");
+                        int idxFechaFin = reader.GetOrdinal("FECHA_FIN_TAREA");
+                        int idxIdAsignacion = reader.GetOrdinal("IDASIGNACION");
+                        int idxFechaAsignacion = reader.GetOrdinal("FECHAASIGNACION");
+                        int idxEstadoAsignacion = reader.GetOrdinal("ESTADO_ASIGNACION_TAREA");
+                        int idxIdColaborador = reader.GetOrdinal("IDCOLABORADOR");
+                        int idxNombreColaborador = reader.GetOrdinal("NOMBRE_COLABORADOR");
+                        int idxApellido = reader.GetOrdinal("APELLIDO");
+                        int idxCorreo = reader.GetOrdinal("CORREO");
+                        int idxTelefono = reader.GetOrdinal("TELEFONO");
+                        int idxRol = reader.GetOrdinal("ROL");
+                        int idxEstadoColaborador = reader.GetOrdinal("ESTADOCOLABORADOR");
 
                         while (reader.Read())
                         {
@@ -315,30 +331,38 @@ namespace ApiControlTiempo.Connection
                                     idTarea = !reader.IsDBNull(idxIdTarea) ? reader.GetInt32(idxIdTarea) : 0,
                                     Nombre = !reader.IsDBNull(idxNombre) ? reader.GetString(idxNombre) : "",
                                     Descripcion = !reader.IsDBNull(idxDescripcion) ? reader.GetString(idxDescripcion) : "",
-                                    fechaCreacion = !reader.IsDBNull(idxFechaCreacion)
-                                                       ? reader.GetDateTime(idxFechaCreacion)
-                                                       : (DateTime?)null,
-                                    fechaActualizacion = !reader.IsDBNull(idxFechaActualizacion)
-                                                       ? reader.GetDateTime(idxFechaActualizacion)
-                                                       : (DateTime?)null
+                                    estadoTarea = !reader.IsDBNull(idxEstadoTarea) ? reader.GetString(idxEstadoTarea) : "",
+                                    fechafinTarea = !reader.IsDBNull(idxFechaFin) ? reader.GetDateTime(idxFechaFin) : (DateTime?)null,
 
+                                    // Asignación
+                                    idAsignacion = !reader.IsDBNull(idxIdAsignacion) ? reader.GetInt32(idxIdAsignacion) : (int?)null,
+                                    fechaAsignacion = !reader.IsDBNull(idxFechaAsignacion) ? reader.GetDateTime(idxFechaAsignacion) : (DateTime?)null,
+                                    estadoAsignacion = !reader.IsDBNull(idxEstadoAsignacion) ? reader.GetString(idxEstadoAsignacion) : "",
+
+                                    // Colaborador
+                                    idColaborador = !reader.IsDBNull(idxIdColaborador) ? reader.GetInt32(idxIdColaborador) : (int?)null,
+                                    nombreColaborador = !reader.IsDBNull(idxNombreColaborador) ? reader.GetString(idxNombreColaborador) : "",
+                                    apellido = !reader.IsDBNull(idxApellido) ? reader.GetString(idxApellido) : "",
+                                    correo = !reader.IsDBNull(idxCorreo) ? reader.GetString(idxCorreo) : "",
+                                    telefono = !reader.IsDBNull(idxTelefono) ? reader.GetString(idxTelefono) : "",
+                                    rol = !reader.IsDBNull(idxRol) ? reader.GetString(idxRol) : "",
+                                    estadoColaborador = !reader.IsDBNull(idxEstadoColaborador) ? reader.GetString(idxEstadoColaborador) : ""
                                 };
 
-                                List.Add(objList);
+                                list.Add(objList);
                             }
                             catch (Exception rowEx)
                             {
                                 logsFile.WriteLogs("\nError al procesar fila en Connec_Tarea_List: "
                                                    + rowEx.Message + " "
                                                    + thisDay.ToString("MM/dd/yy H:mm:ss"));
-                                // Puedes decidir: continuar con las demás filas o lanzar excepción
                                 continue;
                             }
                         }
                     }
                 }
 
-                return List;
+                return list;
             }
             catch (Exception ex)
             {
@@ -348,6 +372,5 @@ namespace ApiControlTiempo.Connection
                 throw;
             }
         }
-
     }
 }

@@ -61,25 +61,41 @@
 <table class="grid mt-3">
     <thead>
         <tr>
-            <th>Id</th>
+            <!--Tareas-->
+            <th hidden>Id</th>
             <th>Tarea</th>
+            <th>Nombre</th>
             <th>Descripción</th>
+            <th>Estado Tarea</th>
             <th>Fecha inicio</th>
             <th>Fecha Fin</th>
+            <!--Asignacion Tareas-->
+            <th hidden>IdAsignacion</th>
+            <th>Fecha Asignacion</th>
+            <th>Estado Asignacion</th>
+            <th hidden>IdColaborador</th>
+            <th>Nombre Colaborador</th>
             <th>Acciones</th>
         </tr>
     </thead>
     <tbody id="table-body">
-        @if (Model.ActividadesAsig != null && Model.ActividadesAsig.Any())
+        @if (Model.listTareas != null && Model.listTareas.Any())
         {
-            foreach (var item in Model.ActividadesAsig)
+            foreach (var item in Model.listTareas)
             {
                 <tr>
-                    <td>@item.Id</td>
+                    <td hidden>@item.Id</td>
                     <td>@item.Tarea</td>
+                    <td>@item.Nombre</td>
                     <td>@item.Descripcion</td>
+                    <td>@item.EstadoTarea</td>
                     <td>@item.FechaInicio</td>
                     <td>@item.FechaFin</td>
+                    <td hidden>@item.IdAsignacion</td>
+                    <td>@item.FechaAsignacion</td>
+                    <td>@item.EstadoAsigancion</td>
+                    <td hidden>@item.IdColaborador</td>
+                    <td>@item.NombreColaborador @item.Apellido</td>
                     <td class="acciones">
                         <input type="button" value="Detalles" class="btn-pill"
                                onclick="location.href='@Url.Action("DetalleTarea","DetalleTarea", new { id = item.Id })'">

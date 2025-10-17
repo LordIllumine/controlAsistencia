@@ -434,14 +434,14 @@
   {
     "ContainingType": "ApiControlTiempo.Controllers.TareasyAsignacionesController",
     "Method": "TareaList",
-    "RelativePath": "api/TareasyAsignaciones/TareaList/{ParametroBusqueda}",
-    "HttpMethod": "GET",
+    "RelativePath": "api/TareasyAsignaciones/TareaList",
+    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "ParametroBusqueda",
-        "Type": "System.String",
+        "Name": "obj",
+        "Type": "ApiControlTiempo.Class.ClassTareasyAsignaciones\u002BClassTareaListParam",
         "IsRequired": true
       }
     ],

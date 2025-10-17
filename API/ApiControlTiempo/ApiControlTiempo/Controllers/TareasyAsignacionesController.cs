@@ -128,8 +128,8 @@ namespace ApiControlTiempo.Controllers
             }
         }
 
-        [HttpGet("TareaList/{ParametroBusqueda}")]
-        public IActionResult TareaList(string? ParametroBusqueda)
+        [HttpPost("TareaList")]
+        public IActionResult TareaList(ClassTareaListParam obj)
         {
             try
             {
@@ -139,12 +139,9 @@ namespace ApiControlTiempo.Controllers
                     .AddJsonFile("appsettings.json")
                     .Build();
                 string mensaje = string.Empty;
-                if (ParametroBusqueda.Equals("Null") || ParametroBusqueda.Equals("NULL"))
-                {
-                    ParametroBusqueda = null;
-                }
+
                 ConnectionTareasyAsignaciones Aut = new ConnectionTareasyAsignaciones(configuration);
-                List<ClassTareaList> ListTareas = Aut.Connec_Tarea_List(ParametroBusqueda);
+                List<ClassTareaList> ListTareas = Aut.Connec_Tarea_List(obj);
 
                 if (ListTareas.Count > 0)
                 {

@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\views\\actividadesasignadas\\actividadesasignadas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\views\\actividadesasignadas\\actividadesasignadas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\controllers\\actividadesasignadascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\controllers\\actividadesasignadascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\views\\actividadesasignadas\\actividadesasignadas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\views\\actividadesasignadas\\actividadesasignadas.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\models\\classactividadesasignadas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -17,6 +17,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\controllers\\principalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\controllers\\principalcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,15 +34,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ActividadesAsignadasController.cs",
-              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\ActividadesAsignadasController.cs",
-              "RelativeDocumentMoniker": "webControlAsistencia\\Controllers\\ActividadesAsignadasController.cs",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\ActividadesAsignadasController.cs",
-              "RelativeToolTip": "webControlAsistencia\\Controllers\\ActividadesAsignadasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAwAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "webControlAsistencia\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "webControlAsistencia\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwBkAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T03:01:32.711Z",
+              "WhenOpened": "2025-10-15T02:11:29.842Z",
               "EditorCaption": ""
             },
             {
@@ -49,20 +53,33 @@
               "RelativeDocumentMoniker": "webControlAsistencia\\Models\\ClassActividadesAsignadas.cs",
               "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Models\\ClassActividadesAsignadas.cs",
               "RelativeToolTip": "webControlAsistencia\\Models\\ClassActividadesAsignadas.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T03:01:30.43Z",
+              "WhenOpened": "2025-10-15T01:55:20.353Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ActividadesAsignadasController.cs",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\ActividadesAsignadasController.cs",
+              "RelativeDocumentMoniker": "webControlAsistencia\\Controllers\\ActividadesAsignadasController.cs",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\ActividadesAsignadasController.cs",
+              "RelativeToolTip": "webControlAsistencia\\Controllers\\ActividadesAsignadasController.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAcwDsAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-06T03:01:32.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "ActividadesAsignadas.cshtml",
               "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\ActividadesAsignadas\\ActividadesAsignadas.cshtml",
               "RelativeDocumentMoniker": "webControlAsistencia\\Views\\ActividadesAsignadas\\ActividadesAsignadas.cshtml",
               "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Views\\ActividadesAsignadas\\ActividadesAsignadas.cshtml",
               "RelativeToolTip": "webControlAsistencia\\Views\\ActividadesAsignadas\\ActividadesAsignadas.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAABUAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAFMAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-10-06T03:01:24.917Z",
               "EditorCaption": ""
@@ -75,7 +92,7 @@
               "RelativeDocumentMoniker": "webControlAsistencia\\Controllers\\PrincipalController.cs",
               "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\PrincipalController.cs",
               "RelativeToolTip": "webControlAsistencia\\Controllers\\PrincipalController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-04T18:17:28.019Z",
               "EditorCaption": ""

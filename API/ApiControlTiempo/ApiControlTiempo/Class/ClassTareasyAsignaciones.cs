@@ -61,13 +61,36 @@ namespace ApiControlTiempo.Class
             public string? mensaje { get; set; } = null;
         }
 
+        public class ClassTareaListParam
+        {
+            public string? Filtro { get; set; }
+            public DateTime? fechaIniTarea { get; set; }
+            public DateTime? fechafinTarea { get; set; }
+            public int IdColaborador { get; set; }
+        }
+
         public class ClassTareaList
         {
             public int idTarea { get; set; }
             public string? Nombre { get; set; }
             public string? Descripcion { get; set; }
-            public DateTime? fechaCreacion { get; set; }
-            public DateTime? fechaActualizacion { get; set; }
+            public string? estadoTarea { get; set; }
+            public DateTime? fechaIniTarea { get; set; }
+            public DateTime? fechafinTarea { get; set; }
+
+            //ASIGNACIONES
+            public int? idAsignacion { get; set; }
+            public DateTime? fechaAsignacion { get; set; }
+            public string? estadoAsignacion { get; set; }
+
+            //COLABORADOR
+            public int? idColaborador { get; set; }
+            public string? nombreColaborador { get; set; }
+            public string? apellido { get; set; }
+            public string? correo { get; set; }
+            public string? telefono { get; set; }
+            public string? rol { get; set; }
+            public string? estadoColaborador { get; set; }
         }
     }
 }
