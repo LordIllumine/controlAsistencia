@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\connection\\connectiontareasyasignaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\connection\\connectiontareasyasignaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\controllers\\tareasyasignacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\controllers\\tareasyasignacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\class\\classtareasyasignaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\class\\classtareasyasignaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\connection\\connectiontareasyasignaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\connection\\connectiontareasyasignaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,44 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "TareasyAsignacionesController.cs",
               "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Controllers\\TareasyAsignacionesController.cs",
               "RelativeDocumentMoniker": "ApiControlTiempo\\Controllers\\TareasyAsignacionesController.cs",
               "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Controllers\\TareasyAsignacionesController.cs",
               "RelativeToolTip": "ApiControlTiempo\\Controllers\\TareasyAsignacionesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGYAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAQwFYAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-06T03:07:25.146Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ClassTareasyAsignaciones.cs",
               "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Class\\ClassTareasyAsignaciones.cs",
               "RelativeDocumentMoniker": "ApiControlTiempo\\Class\\ClassTareasyAsignaciones.cs",
               "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Class\\ClassTareasyAsignaciones.cs",
               "RelativeToolTip": "ApiControlTiempo\\Class\\ClassTareasyAsignaciones.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAA6wD8AAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAABUAAAAAAAAAAAAUwC0AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T03:07:17.272Z"
+              "WhenOpened": "2025-10-06T03:07:17.272Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "ConnectionTareasyAsignaciones.cs",
               "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Connection\\ConnectionTareasyAsignaciones.cs",
               "RelativeDocumentMoniker": "ApiControlTiempo\\Connection\\ConnectionTareasyAsignaciones.cs",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Connection\\ConnectionTareasyAsignaciones.cs",
-              "RelativeToolTip": "ApiControlTiempo\\Connection\\ConnectionTareasyAsignaciones.cs",
-              "ViewState": "AgIAAJsAAAAAAAAAAAAwwBMBAAA1AAAAAAAAAA==",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Connection\\ConnectionTareasyAsignaciones.cs*",
+              "RelativeToolTip": "ApiControlTiempo\\Connection\\ConnectionTareasyAsignaciones.cs*",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAWwNEAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-06T03:07:14.918Z"
+              "WhenOpened": "2025-10-06T03:07:14.918Z",
+              "EditorCaption": ""
             }
           ]
         }

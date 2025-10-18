@@ -1,0 +1,86 @@
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:41:37
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:41:37
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:42:55
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:42:55
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:43:17
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:43:17
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:48:15
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:48:15
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:50:26
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:50:26
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:51:58
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:51:58
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:52:04
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:52:04
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:52:35
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 20:52:35
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:00:07
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:00:07
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:02:12
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:02:12
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:04:56
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:04:56
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:05:20
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:05:20
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:05:36
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:05:36
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:06:40
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:06:40
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:06:42
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:06:42
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:07:02
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:07:02
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:07:08
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:07:08
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:08:36
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:08:36
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:11:04
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:11:09
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:11:50
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:13:10
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:13:10
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:15:27
+
+Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/17/25 21:15:27

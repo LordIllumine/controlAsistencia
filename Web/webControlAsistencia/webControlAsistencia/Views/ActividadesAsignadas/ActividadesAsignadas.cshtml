@@ -26,8 +26,8 @@
             <select name="filtro" id="filtro" class="cbx-filtro form-select">
                 <!--<option value="Todos">Seleccione un Filtro</option>-->
                 <option value="Todos">Todos</option>
-                <option value="Completadas">Completadas</option>
-                <option value="Pendientes">Pendientes</option>
+                <option value="Completada">Completadas</option>
+                <option value="Pendiente">Pendientes</option>
             </select>
         </div>
 
@@ -64,7 +64,6 @@
             <!--Tareas-->
             <th hidden>Id</th>
             <th>Tarea</th>
-            <th>Nombre</th>
             <th>Descripción</th>
             <th>Estado Tarea</th>
             <th>Fecha inicio</th>
@@ -85,12 +84,11 @@
             {
                 <tr>
                     <td hidden>@item.Id</td>
-                    <td>@item.Tarea</td>
                     <td>@item.Nombre</td>
                     <td>@item.Descripcion</td>
                     <td>@item.EstadoTarea</td>
-                    <td>@item.FechaInicio</td>
-                    <td>@item.FechaFin</td>
+                    <td>@item.fechaIniTarea</td>
+                    <td>@item.fechafinTarea</td>
                     <td hidden>@item.IdAsignacion</td>
                     <td>@item.FechaAsignacion</td>
                     <td>@item.EstadoAsigancion</td>

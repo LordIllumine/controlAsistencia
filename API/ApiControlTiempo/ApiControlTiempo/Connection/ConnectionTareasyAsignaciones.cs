@@ -184,8 +184,10 @@ namespace ApiControlTiempo.Connection
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Parámetros de entrada
-                    cmd.Parameters.AddWithValue("@nombre", obj.nombre);
+                    cmd.Parameters.AddWithValue("@nombre", obj.Tarea);
                     cmd.Parameters.AddWithValue("@descripcion", obj.descripcion);
+                    cmd.Parameters.AddWithValue("@fechaInicio", obj.fechaInicio);
+                    cmd.Parameters.AddWithValue("@fechaFin", obj.fechaFin);
 
                     // Parámetros de salida
                     var pidTarea = new SqlParameter("@idTarea", SqlDbType.Int)
@@ -205,7 +207,7 @@ namespace ApiControlTiempo.Connection
                     cmd.ExecuteNonQuery();
 
                     // Construimos el objeto
-                    resp.nombre = obj.nombre;
+                    resp.Tarea = obj.Tarea;
                     resp.descripcion = obj.descripcion;
                     resp.idTarea = Convert.ToInt32(pidTarea.Value.ToString());
                     resp.mensaje = pMensaje.Value.ToString();
@@ -332,6 +334,7 @@ namespace ApiControlTiempo.Connection
                                     Nombre = !reader.IsDBNull(idxNombre) ? reader.GetString(idxNombre) : "",
                                     Descripcion = !reader.IsDBNull(idxDescripcion) ? reader.GetString(idxDescripcion) : "",
                                     estadoTarea = !reader.IsDBNull(idxEstadoTarea) ? reader.GetString(idxEstadoTarea) : "",
+                                    fechaIniTarea = !reader.IsDBNull(idxFechaInicio) ? reader.GetDateTime(idxFechaInicio) : (DateTime?)null,
                                     fechafinTarea = !reader.IsDBNull(idxFechaFin) ? reader.GetDateTime(idxFechaFin) : (DateTime?)null,
 
                                     // Asignación
@@ -346,7 +349,7 @@ namespace ApiControlTiempo.Connection
                                     correo = !reader.IsDBNull(idxCorreo) ? reader.GetString(idxCorreo) : "",
                                     telefono = !reader.IsDBNull(idxTelefono) ? reader.GetString(idxTelefono) : "",
                                     rol = !reader.IsDBNull(idxRol) ? reader.GetString(idxRol) : "",
-                                    estadoColaborador = !reader.IsDBNull(idxEstadoColaborador) ? reader.GetString(idxEstadoColaborador) : ""
+                                    estadoColaborador = reader.IsDBNull(idxEstadoColaborador) ? null : (reader.GetBoolean(idxEstadoColaborador) ? "Activo" : "Desactivado")
                                 };
 
                                 list.Add(objList);

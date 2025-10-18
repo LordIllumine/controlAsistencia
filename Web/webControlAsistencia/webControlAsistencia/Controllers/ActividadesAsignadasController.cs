@@ -29,7 +29,6 @@ namespace webControlAsistencia.Controllers
 
         public async Task<IActionResult> ActividadesAsignadas(string filtro, DateTime? fechaInicio, DateTime? fechaFin)
         {
-            // Recuperar los datos que vienen del login
             if (HttpContext.Session.GetString("Usuario") != null)
             {
                 IdColaborador = HttpContext.Session.GetString("IdColaborador");
@@ -45,19 +44,34 @@ namespace webControlAsistencia.Controllers
                 client.DefaultRequestHeaders.Accept.Add(
                     new System.Net.Http.Headers.MediaTypeWithQualityHeaderValue("application/json"));
 
-                string fechaini = DateTime.Parse("1/10/2024 12:00:00 AM");
-                string formatoISO = fecha.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
+                if (!string.IsNullOrEmpty(Token))
+                {
+                    client.DefaultRequestHeaders.Authorization =
+                        new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", Token);
+                }
+
+                string fechaInicioISO = null;
+                string fechaFinISO = null;
+
+                if (fechaInicio.HasValue)
+                {
+                    var fechaInicioAjustada = new DateTime(fechaInicio.Value.Year, fechaInicio.Value.Month, fechaInicio.Value.Day, 0, 0, 0, 0, DateTimeKind.Local);
+                    fechaInicioISO = fechaInicioAjustada.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
+                }
+
+                if (fechaFin.HasValue)
+                {
+                    var fechaFinAjustada = new DateTime(fechaFin.Value.Year, fechaFin.Value.Month, fechaFin.Value.Day, 23, 59, 59, 999, DateTimeKind.Local);
+                    fechaFinISO = fechaFinAjustada.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
+                }
 
                 var obj = new
                 {
                     filtro = filtro,
-                    fechaIniTarea = fechaInicio ,
-                    fechafinTarea = fechaFin,
+                    fechaIniTarea = fechaInicioISO,
+                    fechafinTarea = fechaFinISO,
                     idColaborador = IdColaborador
                 };
-
-                //fecha = DateTime.Parse("1/10/2024 12:00:00 AM");
-                //string formatoISO = fecha.ToUniversalTime().ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
 
                 var json = JsonConvert.SerializeObject(obj);
                 var content = new StringContent(json, Encoding.UTF8, "application/json");
@@ -68,8 +82,10 @@ namespace webControlAsistencia.Controllers
                 {
                     string result = await response.Content.ReadAsStringAsync();
 
-                    //Deserializar el JSON que regresa el API
-                    List<ClassActividadesAsignadas> jsonResp = JsonConvert.DeserializeObject<List<ClassActividadesAsignadas>>(result);
+                    //Deserializar el objeto completo que contiene listTareas y message
+                    ClassActividadesAsignadasViewModel jsonResp =
+                        JsonConvert.DeserializeObject<ClassActividadesAsignadasViewModel>(result);
+
                     return View(jsonResp);
                 }
                 else
@@ -82,7 +98,7 @@ namespace webControlAsistencia.Controllers
                     return View(model);
                 }
             }
-            
         }
+
     }
 }

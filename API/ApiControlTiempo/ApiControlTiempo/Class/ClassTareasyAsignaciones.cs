@@ -43,9 +43,13 @@ namespace ApiControlTiempo.Class
         public class ClassTarea_Create
         {
             [Required]
-            public string nombre { get; set; }
+            public string Tarea { get; set; }
             [Required]
             public string descripcion { get; set; }
+            [Required]
+            public DateTime fechaInicio { get; set; }
+            [Required]
+            public DateTime fechaFin { get; set; }
             public int? idTarea { get; set; } = null;
             public string? mensaje { get; set; } = null;
         }

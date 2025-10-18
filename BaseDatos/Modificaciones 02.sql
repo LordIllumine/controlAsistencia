@@ -11,7 +11,10 @@ GO
 --EXEC SP_Tarea_List null, '2024-10-11 00:26:24.097','2026-10-11 00:26:24.097', 1016
 --EXEC SP_Tarea_List 'Pendiente', null, null, 1016
 --EXEC SP_Tarea_List 'Completada', null, null, 1016
+--EXEC SP_Tarea_List 'Cancelada', null, null, 1
+--EXEC SP_Tarea_List 'Todos', null, null, 1
 --GO
+
 CREATE OR ALTER PROCEDURE SP_Tarea_List
   @FILTRO         VARCHAR(100) = NULL,
   @FECHA_INICIO   DATETIME     = NULL,
@@ -20,6 +23,11 @@ CREATE OR ALTER PROCEDURE SP_Tarea_List
 AS
 BEGIN
     SET NOCOUNT ON;
+
+	IF (@FILTRO = 'Todos')
+	BEGIN
+		SET @FILTRO = NULL
+	END
 
     DECLARE @ROL_COLABORADOR VARCHAR(50);
 
@@ -58,7 +66,7 @@ BEGIN
 
     WHERE 
         (
-            -- 🧩 Condición general por rol
+            -- Condición general por rol
             (
                 @ROL_COLABORADOR = 'administrador'
                 OR (
@@ -101,4 +109,33 @@ BEGIN
         );
 
 END;
+GO
+
+----------------------------------------------------------------------------------------------------
+-- Procedimientos almacenados SP_Tarea_Create / SP_Tarea_Update / SP_Tarea_List
+-- Author: Damian Alvarado Avilés
+-- Fecha: 02/09/2025
+-- Procedimientos CRUD de Tareas
+----------------------------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE SP_Tarea_Create
+  @nombre		NVARCHAR(200),
+  @descripcion	NVARCHAR(MAX) = NULL,
+  @fechaInicio	DATETIME,
+  @fechaFin		DATETIME,
+  @idTarea		INT OUT,
+  @mensaje		NVARCHAR(200) OUT
+AS
+BEGIN
+  SET NOCOUNT ON;
+  BEGIN TRY
+    INSERT INTO TAREAS (NOMBRE, DESCRIPCION, FECHA_INICIO_TAREA, FECHA_FIN_TAREA, FECHA_CREACION, FECHA_ACTUALIZACION) 
+			    VALUES (@nombre, @descripcion, @fechaInicio, @fechaFin, GETDATE(), GETDATE());
+    SET @idTarea = SCOPE_IDENTITY();
+    SET @mensaje = N'Tarea creada.';
+  END TRY
+  BEGIN CATCH
+    SET @mensaje = N'Error al crear tarea.';
+    EXEC SP_Bitacora_LogError N'Tarea_Create', ERROR_MESSAGE;
+  END CATCH
+END
 GO

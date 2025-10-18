@@ -18,20 +18,19 @@
 
 <h1>Ingresar actividad nueva</h1>
 
+@if (ViewBag.Message != null)
+{
+    <div class="alert">@ViewBag.Message</div>
+}
+
 <div class="crear-wrapper">
-  <form asp-action="CrearTarea" class="crear-form">
+    <form asp-action="CrearTarea" class="crear-form" asp-controller="CrearTarea" method="get" id="formCrear">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-    @* Si el Id lo genera la BD, puedes ocultarlo *@
-    <div class="field" style="display:none">
-      <label asp-for="Id" class="label"></label>
-      <input asp-for="Id" class="input"/>
-    </div>
-
     <div class="field">
-      <label asp-for="Actividad" class="label">Actividad:</label>
-      <input asp-for="Actividad" class="input" />
-      <span asp-validation-for="Actividad" class="text-danger"></span>
+      <label asp-for="Tarea" class="label">Tarea:</label>
+            <input asp-for="Tarea" class="input" required />
+      <span asp-validation-for="Tarea" class="text-danger"></span>
     </div>
 
     <div class="field">
@@ -42,13 +41,13 @@
 
     <div class="field">
       <label asp-for="FechaInicio" class="label">Fecha y hora de inicio:</label>
-      <input asp-for="FechaInicio" class="input" />
+            <input asp-for="FechaInicio" class="input" id="fechaInicio" name="fechaInicio" required/>
       <span asp-validation-for="FechaInicio" class="text-danger"></span>
     </div>
 
     <div class="field">
       <label asp-for="FechaFin" class="label">Fecha y hora fin:</label>
-      <input asp-for="FechaFin" class="input" />
+            <input asp-for="FechaFin" class="input" id="fechaFin" name="fechaFin" required />
       <span asp-validation-for="FechaFin" class="text-danger"></span>
     </div>
 
@@ -58,6 +57,22 @@
   </form>
 </div>
 
+<script>
+    $(document).ready(function () {
+
+        // VALIDACIÓN DE FECHAS
+        $("#formCrear").on("submit", function (e) {
+            var inicio = $("#fechaInicio").val();
+            var fin = $("#fechaFin").val();
+
+            if (inicio && fin && new Date(inicio) > new Date(fin)) {
+                alert("La fecha de inicio no puede ser mayor que la fecha fin.");
+                e.preventDefault();
+                return false;
+            }
+        });
+    });
+</script>
 
 @* 
 <h1>Ingresar actividad nueva</h1>

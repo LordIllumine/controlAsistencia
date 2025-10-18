@@ -5,10 +5,12 @@
 -- Procedimientos CRUD de Tareas
 ----------------------------------------------------------------------------------------------------
 CREATE OR ALTER PROCEDURE SP_Tarea_Create
-  @nombre    NVARCHAR(200),
-  @descripcion NVARCHAR(MAX) = NULL,
-  @idTarea   INT OUT,
-  @mensaje   NVARCHAR(200) OUT
+  @nombre		NVARCHAR(200),
+  @descripcion	NVARCHAR(MAX) = NULL,
+  @fechaInicio	DATETIME,
+  @fechaFin		DATETIME,
+  @idTarea		INT OUT,
+  @mensaje		NVARCHAR(200) OUT
 AS
 BEGIN
   SET NOCOUNT ON;
