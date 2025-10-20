@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\models\\classcreartarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\models\\classcreartarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\controllers\\creartareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\controllers\\creartareacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\models\\classcreartarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|solutionrelative:webcontrolasistencia\\models\\classcreartarea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E53E258A-9FA1-4B1F-AA72-CEA4E8E2DD67}|webControlAsistencia\\webControlAsistencia.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\web\\webcontrolasistencia\\webcontrolasistencia\\views\\creartarea\\creartarea.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -34,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
@@ -46,8 +46,7 @@
               "RelativeToolTip": "webControlAsistencia\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-18T05:00:38.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T05:00:38.574Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "webControlAsistencia\\Views\\ActividadesAsignadas\\ActividadesAsignadas.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACYAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-18T04:13:30.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T04:13:30.504Z"
             },
             {
               "$type": "Document",
@@ -72,12 +70,11 @@
               "RelativeToolTip": "webControlAsistencia\\Views\\CrearTarea\\CrearTarea.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAABsAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-18T04:07:04.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T04:07:04.504Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "ClassCrearTarea.cs",
               "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Models\\ClassCrearTarea.cs",
               "RelativeDocumentMoniker": "webControlAsistencia\\Models\\ClassCrearTarea.cs",
@@ -85,18 +82,17 @@
               "RelativeToolTip": "webControlAsistencia\\Models\\ClassCrearTarea.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T04:06:50.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T04:06:50.186Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "CrearTareaController.cs",
               "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\CrearTareaController.cs",
               "RelativeDocumentMoniker": "webControlAsistencia\\Controllers\\CrearTareaController.cs",
               "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\Controllers\\CrearTareaController.cs",
               "RelativeToolTip": "webControlAsistencia\\Controllers\\CrearTareaController.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAgwBoAAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAowEoAAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T04:06:34.476Z",
               "EditorCaption": ""
@@ -111,8 +107,7 @@
               "RelativeToolTip": "webControlAsistencia\\Controllers\\ActividadesAsignadasController.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAQwB0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T04:06:32.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T04:06:32.125Z"
             }
           ]
         }

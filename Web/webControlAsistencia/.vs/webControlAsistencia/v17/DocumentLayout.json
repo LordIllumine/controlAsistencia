@@ -46,8 +46,7 @@
               "RelativeToolTip": "webControlAsistencia\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-18T05:00:38.574Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T05:00:38.574Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "webControlAsistencia\\Views\\ActividadesAsignadas\\ActividadesAsignadas.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAACYAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-18T04:13:30.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T04:13:30.504Z"
             },
             {
               "$type": "Document",
@@ -72,8 +70,7 @@
               "RelativeToolTip": "webControlAsistencia\\Views\\CrearTarea\\CrearTarea.cshtml",
               "ViewState": "AgIAABIAAAAAAAAAAAAAABsAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-10-18T04:07:04.504Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T04:07:04.504Z"
             },
             {
               "$type": "Document",
@@ -85,8 +82,7 @@
               "RelativeToolTip": "webControlAsistencia\\Models\\ClassCrearTarea.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAkAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T04:06:50.186Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T04:06:50.186Z"
             },
             {
               "$type": "Document",
@@ -111,8 +107,7 @@
               "RelativeToolTip": "webControlAsistencia\\Controllers\\ActividadesAsignadasController.cs",
               "ViewState": "AgIAABEAAAAAAAAAAAAQwB0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-18T04:06:32.125Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-18T04:06:32.125Z"
             }
           ]
         }

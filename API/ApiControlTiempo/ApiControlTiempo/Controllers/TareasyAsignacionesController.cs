@@ -160,5 +160,38 @@ namespace ApiControlTiempo.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        //[HttpPost("TareaListId")]
+        //public IActionResult TareaListId(ClassTareaListParam obj)
+        //{
+        //    //try
+        //    //{
+        //    //    // Consultar usuario en BD
+        //    //    var configuration = new ConfigurationBuilder()
+        //    //        .SetBasePath(Directory.GetCurrentDirectory())
+        //    //        .AddJsonFile("appsettings.json")
+        //    //        .Build();
+        //    //    string mensaje = string.Empty;
+
+        //    //    ConnectionTareasyAsignaciones Aut = new ConnectionTareasyAsignaciones(configuration);
+        //    //    List<ClassTareaList> ListTareas = Aut.Connec_Tarea_List(obj);
+
+        //    //    if (ListTareas.Count > 0)
+        //    //    {
+        //    //        mensaje = "Consulta exitosa";
+        //    //    }
+        //    //    else
+        //    //    {
+        //    //        mensaje = "No hay tareas para mostrar";
+        //    //    }
+
+        //    //    return Ok(new { ListTareas, message = mensaje });
+
+        //    //}
+        //    //catch (Exception ex)
+        //    //{
+        //    //    return BadRequest(ex.Message);
+        //    //}
+        //}
     }
 }
