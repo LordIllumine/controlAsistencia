@@ -1,4 +1,0 @@
-
-Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/14/25 19:42:47
-
-Error al procesar fila en Connec_Tarea_List: Unable to cast object of type 'System.Boolean' to type 'System.String'. 10/14/25 19:42:47

@@ -1,0 +1,48 @@
+# Visual Studio cache
+.vs/
+.vscode/
+
+# Build folders
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs and temporary files
+*.log
+*.tlog
+*.cache
+*.dbmdl
+*.jfm
+*.pdb
+
+# ASP.NET Core generated files
+*.deps.json
+*.runtimeconfig.json
+*.staticwebassets.*
+Logs/
+EndpointInfo/
+
+# Backup and publish folders
+[Dd]ebug/
+[Rr]elease/
+publish/
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+*.nuget.props
+*.nuget.targets
+
+# Misc
+*.tmp
+*.bak
+*.swp
+Thumbs.db
+ehthumbs.db

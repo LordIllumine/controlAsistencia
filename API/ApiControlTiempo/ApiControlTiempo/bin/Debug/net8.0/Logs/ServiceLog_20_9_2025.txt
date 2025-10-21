@@ -1,4 +1,0 @@
-
-Error en Connec_Asistencia_MarcarEntrada Unable to cast object of type 'System.DateOnly' to type 'System.IConvertible'. 09/20/25 23:08:27
-
-Error en Connec_Asistencia_MarcarEntrada Could not find stored procedure 'SP_Asistencia_MarcarEntrada'. 09/20/25 23:09:53
