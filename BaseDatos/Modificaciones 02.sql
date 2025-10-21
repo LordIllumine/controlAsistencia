@@ -1,19 +1,14 @@
-﻿ALTER TABLE TAREAS ADD FECHA_INICIO_TAREA DATETIME 
-ALTER TABLE TAREAS ADD FECHA_FIN_TAREA DATETIME 
-GO
-
+﻿----------------------------------------------------------------------------------------------------
+-- Pruebas de SP's
 ----------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------
-----------------------------------------------------------------------------------------------------
---EXEC SP_Tarea_List 'Pendiente', '2024-10-11 00:26:24.097','2026-10-11 00:26:24.097', 1016
---EXEC SP_Tarea_List 'Completada', '2024-10-11 00:26:24.097','2026-10-11 00:26:24.097', 1016
---EXEC SP_Tarea_List null, '2024-10-11 00:26:24.097','2026-10-11 00:26:24.097', 1016
---EXEC SP_Tarea_List 'Pendiente', null, null, 1016
---EXEC SP_Tarea_List 'Completada', null, null, 1016
---EXEC SP_Tarea_List 'Cancelada', null, null, 1
---EXEC SP_Tarea_List 'Todos', null, null, 1
---GO
+-- EXEC SP_Tarea_List 'Pendiente', '2024-10-11 00:26:24.097','2026-10-11 00:26:24.097', 1016
+-- EXEC SP_Tarea_List 'Completada', '2024-10-11 00:26:24.097','2026-10-11 00:26:24.097', 1016
+-- EXEC SP_Tarea_List null, '2024-10-11 00:26:24.097','2026-10-11 00:26:24.097', 1016
+-- EXEC SP_Tarea_List 'Pendiente', null, null, 1016
+-- EXEC SP_Tarea_List 'Completada', null, null, 1016
+-- EXEC SP_Tarea_List 'Cancelada', null, null, 1
+-- EXEC SP_Tarea_List 'Todos', null, null, 1
+-- GO
 
 CREATE OR ALTER PROCEDURE SP_Tarea_List
   @FILTRO         VARCHAR(100) = NULL,
