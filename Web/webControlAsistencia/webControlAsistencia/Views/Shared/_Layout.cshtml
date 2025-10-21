@@ -16,7 +16,7 @@
                 <a asp-controller="SolicitarPermisos" asp-action="SolicitarPermisos" class="nav-btn">Permisos</a>
                 <a asp-controller="ActividadesAsignadas" asp-action="ActividadesAsignadas" class="nav-btn">Actividades</a>
                 <a asp-controller="SolicitarDescanso" asp-action="SolicitarDescanso" class="nav-btn">Descanso</a>
-                <a href="#" class="nav-btn">Reportes</a>
+                <a asp-controller="Reporte" asp-action="Reporte" class="nav-btn">Reporte</a>
             </div>
             <div class="right-section">
                 <div class="user-info">
@@ -24,7 +24,7 @@
                     <span class="status-label">Estado:</span>
                     <span class="status-dot"></span>
                 </div>
-                <a href="#" class="nav-btn close-btn">Cerrar</a>
+                <a asp-controller="Home" asp-action="Index" class="nav-btn">Cerrar</a>
             </div>
         </nav>
     </header>
