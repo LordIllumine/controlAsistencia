@@ -1,85 +1,202 @@
 ﻿@model webControlAsistencia.Models.ClassDetalleTarea
 
 @{
-    ViewData["Title"] = "DetalleTarea";
+    ViewData["Title"] = "Detalle de Tarea";
+
+    // Si ViewBag.Validar NO es "1", entonces isReadOnly = 'true'.
+    var isReadOnly = (ViewBag.Validar != "1");
 }
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/DetallesTareaEstilo.css" />
+    <link rel="stylesheet" href="~/css/ActividadesAsignadasEstilo.css" />
 </head>
 
 <br />
 <br />
 
-<div class="detalle-wrapper">
-    <div class="detalle">
-        <h4 class="detalle-title">Detalles de actividad</h4>
-        <hr class="detalle-hr" />
-        <dl class="detalle-grid">
-            <dt>@Html.DisplayNameFor(m => m.Actividad)</dt>
-            <dd>@Html.DisplayFor(m => m.Actividad)</dd>
+<div class="container-fluid">
+    <form method="post">
+        
+        <div class="row">
 
-            <dt>@Html.DisplayNameFor(m => m.Descripcion)</dt>
-            <dd>@Html.DisplayFor(m => m.Descripcion)</dd>
+            <div class="col-md-7">
+                <div class="detalle-wrapper">
+                    <div class="detalle">
+                        <h4 class="detalle-title">Detalles de Tarea</h4>
+                        <hr class="detalle-hr" />
 
-            <dt>Fecha y hora de inicio:</dt>
-            <dd>@Html.DisplayFor(m => m.FechaInicio)</dd>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        
+                        <div class="form-group mb-3">
+                            <label asp-for="Actividad" class="control-label"></label>
+                            <input asp-for="Actividad" class="form-control" readonly="@isReadOnly" />
+                            <span asp-validation-for="Actividad" class="text-danger"></span>
+                        </div>
 
-            <dt>Fecha y hora fin:</dt>
-            <dd>@Html.DisplayFor(m => m.FechaFin)</dd>
-        </dl>
+                        <div class="form-group mb-3">
+                            <label asp-for="Descripcion" class="control-label"></label>
+                            <textarea asp-for="Descripcion" class="form-control" rows="3" readonly="@isReadOnly"></textarea>
+                            <span asp-validation-for="Descripcion" class="text-danger"></span>
+                        </div>
 
-        <div class="detalle-actions">
-            <input type="submit" value="Finalizada" class="btn-primar" />
+                        <div class="form-group mb-3">
+                            <label asp-for="FechaInicio" class="control-label">Fecha y hora de inicio:</label>
+                            <input asp-for="FechaInicio" id="fechaInicio" name="fechaInicio" class="form-control" type="datetime-local" readonly="@isReadOnly" />
+                            <span asp-validation-for="FechaInicio" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="FechaFin" class="control-label">Fecha y hora fin:</label>
+                            <input asp-for="FechaFin" id="fechaFin" name="fechaFin" class="form-control" type="datetime-local" readonly="@isReadOnly" />
+                            <span asp-validation-for="FechaFin" class="text-danger"></span>
+                        </div>
+
+                        @if (ViewBag.Validar != null && ViewBag.Validar == "1")
+                        {
+                            <div class="form-group mb-3">
+                                <label asp-for="EstadoTarea" class="control-label">Estado de la Tarea</label>
+                                <select asp-for="EstadoTarea" class="form-select">
+                                    <option value="Finalizada">Activa</option>
+                                    <option value="Cancelada">Cancelar</option>
+                                </select>
+                                <span asp-validation-for="EstadoTarea" class="text-danger"></span>
+                            </div>
+                        }
+
+                        @if (ViewBag.Error != null)
+                        {
+                            <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="tabla-wrapper">
+                    <h4 class="detalle-title">Colaboradores asignados</h4>
+                    <hr class="detalle-hr" />
+                    
+                    @* <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <div class="toolbar-left">
+                            <input id="" value="Asignar colaborador" type="submit" class="btn btn-primary" />
+                        </div>
+                        <div class="toolbar-right">
+                            <label class="lbl" style="margin-right: 5px;">Buscar:</label>
+                            <div class="searchwrap" style="display: inline-block;">
+                                <input id="search" type="text" class="search" placeholder="Buscar..."
+                                       style="padding: 5px 10px; border: 1px solid #ccc; border-radius: 4px;" />
+                            </div>
+                        </div>
+                    </div> *@
+                    <div class="toolbar-left">
+                        <label class="lbl">Buscar:</label>
+                        <div class="searchwrap">
+                            <input id="search" type="text" class="search" placeholder="Buscar..." />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="toolbar-left">
+                        <div class="form-group mb-3">
+                            <label asp-for="EstadoTarea" class="control-label">Agregar colaborador</label>
+                            <select asp-for="EstadoTarea" class="form-select">
+                                <option value="Finalizada">Diego gonzalez | diegogv271@gmail.com</option>
+                                <option value="Cancelada">Damian Alvares | diegogv271@gmail.com </option>
+                            </select>
+                            <span asp-validation-for="EstadoTarea" class="text-danger"></span>
+                        </div>
+                        <div class="">
+                            <input id="" value="Asignar colaborador" type="submit" class="btn btn-primary" />
+                        </div>
+                    </div>
+                    <br />
+                    @* <table class="table table-striped table-hover table-sm"> *@
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Correo</th>
+                                    <th>Teléfono</th>
+                                    <th>Fecha de asignación</th>
+                                    <th>Estado</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                @if (Model.ListTareasAsignadas != null && Model.ListTareasAsignadas.Any())
+                                {
+                                    foreach (var item in Model.ListTareasAsignadas)
+                                    {
+                                        <tr>
+                                            <td hidden>@item.IdTarea</td>
+                                            <td hidden>@item.IdAsignacion</td>
+                                            <td hidden>@item.IdColaborador</td>
+                                            <td>@item.NombreColaborador @item.Apellido</td>
+                                            <td>@item.Correo</td>
+                                            <td>@item.Telefono</td>
+                                            <td>@item.FechaAsignacion</td>
+                                            <td>@item.EstadoColaborador</td>
+                                            <td class="acciones">
+                                                <input type="button" value="Eliminar" class="btn-pill"
+                                                       onclick="location.href='@Url.Action("DetalleTarea","DetalleTarea", new { id = item.IdTarea })'">
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr><td colspan="6" class="nodata">No hay datos para mostrar</td></tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+        </div> <hr class="detalle-hr" />
+        <div class="row">
+            <div class="col-12">
+                <div class="detalle-actions-centered">
+                    <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-@* 
-<h1>DetalleTarea</h1>
+    </form>
+</div> 
 
-<div>
-    <h4>ClassDetalleTarea</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Id)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Id)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Actividad)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Actividad)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Descripcion)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaInicio)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaInicio)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaFin)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaFin)
-        </dd>
-    </dl>
-</div>
-<div class="form-group">
-    <input type="submit" value="Finalizada" class="btn-primar" />
-</div>
- *@
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // FILTRO DE BÚSQUEDA EN TIEMPO REAL
+            $("#search").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#table-body tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+
+            // VALIDACIÓN DE FECHAS
+            $("#formFiltro").on("submit", function (e) {
+                var inicio = $("#fechaInicio").val();
+                var fin = $("#fechaFin").val();
+
+                if (inicio && fin && new Date(inicio) > new Date(fin)) {
+                    alert("La fecha de inicio no puede ser mayor que la fecha fin.");
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+    </script>
+}

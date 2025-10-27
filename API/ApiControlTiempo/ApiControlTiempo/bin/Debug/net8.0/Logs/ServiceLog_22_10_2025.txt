@@ -1,0 +1,5 @@
+Error al abrir conexión Error: Error relacionado con la red o específico de la instancia mientras se establecía una conexión con el servidor SQL Server. No se encontró el servidor o éste no estaba accesible. Compruebe que el nombre de la instancia es correcto y que SQL Server está configurado para admitir conexiones remotas. (provider: Interfaces de red SQL, error: 26 - Error al buscar el servidor/instancia especificado)
+
+Error al obtener los credenciales ExecuteNonQuery requiere una Connection abierta y disponible. El estado actual de la conexión es cerrada. 10/22/25 23:21:13
+
+Error en Connec_ConsultarColaboradorID IDCOLABORADOR 10/22/25 23:23:52

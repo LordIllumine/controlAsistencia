@@ -11,7 +11,7 @@ namespace webControlAsistencia.Models
     public class ClassActividadesAsignadas
     {
         [Display(Name = "Id")]
-        public int? Id { get; set; }
+        public int? idTarea { get; set; }
 
         [Display(Name = "Tarea")]
         public string? Tarea { get; set; }
@@ -32,21 +32,6 @@ namespace webControlAsistencia.Models
 
         [Display(Name = "Fecha fin")]
         public DateTime? fechafinTarea { get; set; }
-
-        [Display(Name = "Id Asignación")]
-        public int? IdAsignacion { get; set; }
-
-        [Display(Name = "Fecha Asignación")]
-        public DateTime? FechaAsignacion { get; set; }
-
-        [Display(Name = "Estado Asignación")]
-        public string? EstadoAsigancion { get; set; }
-
-        [Display(Name = "Id Colaborador")]
-        public int? IdColaborador { get; set; }
-
-        [Display(Name = "Nombre Colaborador")]
-        public string? NombreColaborador { get; set; }
     }
 
     public class ArticulosUsuario

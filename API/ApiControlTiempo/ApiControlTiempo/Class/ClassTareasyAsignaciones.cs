@@ -81,12 +81,15 @@ namespace ApiControlTiempo.Class
             public string? estadoTarea { get; set; }
             public DateTime? fechaIniTarea { get; set; }
             public DateTime? fechafinTarea { get; set; }
+        }
 
+        public class ClassAsignacionTareaList
+        {
             //ASIGNACIONES
+            public int? idTarea { get; set; }
             public int? idAsignacion { get; set; }
             public DateTime? fechaAsignacion { get; set; }
             public string? estadoAsignacion { get; set; }
-
             //COLABORADOR
             public int? idColaborador { get; set; }
             public string? nombreColaborador { get; set; }

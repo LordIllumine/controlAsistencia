@@ -68,12 +68,6 @@
             <th>Estado Tarea</th>
             <th>Fecha inicio</th>
             <th>Fecha Fin</th>
-            <!--Asignacion Tareas-->
-            <th hidden>IdAsignacion</th>
-            <th>Fecha Asignacion</th>
-            <th>Estado Asignacion</th>
-            <th hidden>IdColaborador</th>
-            <th>Nombre Colaborador</th>
             <th>Acciones</th>
         </tr>
     </thead>
@@ -83,20 +77,15 @@
             foreach (var item in Model.listTareas)
             {
                 <tr>
-                    <td hidden>@item.Id</td>
+                    <td hidden>@item.idTarea</td>
                     <td>@item.Nombre</td>
                     <td>@item.Descripcion</td>
                     <td>@item.EstadoTarea</td>
                     <td>@item.fechaIniTarea</td>
                     <td>@item.fechafinTarea</td>
-                    <td hidden>@item.IdAsignacion</td>
-                    <td>@item.FechaAsignacion</td>
-                    <td>@item.EstadoAsigancion</td>
-                    <td hidden>@item.IdColaborador</td>
-                    <td>@item.NombreColaborador @item.Apellido</td>
                     <td class="acciones">
                         <input type="button" value="Detalles" class="btn-pill"
-                               onclick="location.href='@Url.Action("DetalleTarea","DetalleTarea", new { id = item.Id })'">
+                               onclick="location.href='@Url.Action("DetalleTarea","DetalleTarea", new { id = item.idTarea })'">
                     </td>
                 </tr>
             }

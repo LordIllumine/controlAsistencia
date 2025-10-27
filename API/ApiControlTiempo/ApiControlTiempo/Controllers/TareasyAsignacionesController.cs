@@ -161,37 +161,68 @@ namespace ApiControlTiempo.Controllers
             }
         }
 
-        //[HttpPost("TareaListId")]
-        //public IActionResult TareaListId(ClassTareaListParam obj)
-        //{
-        //    //try
-        //    //{
-        //    //    // Consultar usuario en BD
-        //    //    var configuration = new ConfigurationBuilder()
-        //    //        .SetBasePath(Directory.GetCurrentDirectory())
-        //    //        .AddJsonFile("appsettings.json")
-        //    //        .Build();
-        //    //    string mensaje = string.Empty;
+        [HttpGet("TareaListId/{Id_Tarea}")]
+        public IActionResult TareaListId(int Id_Tarea)
+        {
+            try
+            {
+                // Consultar usuario en BD
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+                string mensaje = string.Empty;
 
-        //    //    ConnectionTareasyAsignaciones Aut = new ConnectionTareasyAsignaciones(configuration);
-        //    //    List<ClassTareaList> ListTareas = Aut.Connec_Tarea_List(obj);
+                ConnectionTareasyAsignaciones Aut = new ConnectionTareasyAsignaciones(configuration);
+                ClassTareaList ListTareas = Aut.Connec_Tarea_List_Id(Id_Tarea);
 
-        //    //    if (ListTareas.Count > 0)
-        //    //    {
-        //    //        mensaje = "Consulta exitosa";
-        //    //    }
-        //    //    else
-        //    //    {
-        //    //        mensaje = "No hay tareas para mostrar";
-        //    //    }
+                if (ListTareas != null)
+                {
+                    mensaje = "Consulta exitosa";
+                }
+                else
+                {
+                    mensaje = "No hay tareas para mostrar";
+                }
 
-        //    //    return Ok(new { ListTareas, message = mensaje });
+                return Ok(new { ListTareas, message = mensaje });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
 
-        //    //}
-        //    //catch (Exception ex)
-        //    //{
-        //    //    return BadRequest(ex.Message);
-        //    //}
-        //}
+        [HttpGet("AsignacionesListId/IdTarea/{idTarea}/IdColaborador/{idColaborador}")]
+        public IActionResult AsignacionesListId(int idTarea, int idColaborador)
+        {
+            try
+            {
+                // Consultar usuario en BD
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+                string mensaje = string.Empty;
+
+                ConnectionTareasyAsignaciones Aut = new ConnectionTareasyAsignaciones(configuration);
+                List<ClassAsignacionTareaList> ListAsignaciones = Aut.Connec_Asignaciones_List(idTarea, idColaborador);
+
+                if (ListAsignaciones != null)
+                {
+                    mensaje = "Consulta exitosa";
+                }
+                else
+                {
+                    mensaje = "No hay tareas para mostrar";
+                }
+
+                return Ok(new { ListAsignaciones, message = mensaje });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

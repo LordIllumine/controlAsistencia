@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "nBCR4mr2cYi9vzsrHC9cRIH1sPltfEXmCet56r/enbk=",
+  "Source": "ApiControlTiempo",
+  "BasePath": "_content/ApiControlTiempo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

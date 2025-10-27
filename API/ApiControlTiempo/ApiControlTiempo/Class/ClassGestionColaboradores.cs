@@ -65,6 +65,7 @@ namespace ApiControlTiempo.Class
 
         public class ClassConsultarColaboradorFiltro
         {
+            public int idColaborador { get; set; }
             public string texto { get; set; }
             public string rol { get; set; }
             public bool estado { get; set; }

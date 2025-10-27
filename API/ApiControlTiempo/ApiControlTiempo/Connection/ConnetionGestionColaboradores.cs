@@ -209,6 +209,7 @@ namespace ApiControlTiempo.Connection
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Parámetro de entrada
+                    cmd.Parameters.AddWithValue("@idColaborador", ObjFiltro.idColaborador);
                     cmd.Parameters.AddWithValue("@texto", ObjFiltro.texto);
                     cmd.Parameters.AddWithValue("@rol", ObjFiltro.rol);
                     cmd.Parameters.AddWithValue("@estado", ObjFiltro.estado);
