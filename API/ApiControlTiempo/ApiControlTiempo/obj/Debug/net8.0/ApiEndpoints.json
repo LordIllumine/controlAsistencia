@@ -305,6 +305,22 @@
   },
   {
     "ContainingType": "ApiControlTiempo.Controllers.PermisosController",
+    "Method": "ListarPermisosID",
+    "RelativePath": "api/Permisos/ListarPermisosID",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassPermisos\u002BClassPermiso_Id",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.PermisosController",
     "Method": "Permiso_Solicitar",
     "RelativePath": "api/Permisos/Permiso_Solicitar",
     "HttpMethod": "PUT",
@@ -431,6 +447,27 @@
       {
         "Name": "obj_Json",
         "Type": "ApiControlTiempo.Class.ClassTareasyAsignaciones\u002BClassAsignacion_List",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.TareasyAsignacionesController",
+    "Method": "EliminarAsignacionesId",
+    "RelativePath": "api/TareasyAsignaciones/EliminarAsignacionesId/IdTarea/{idTarea}/IdColaborador/{idColaborador}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "idTarea",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "idColaborador",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

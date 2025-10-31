@@ -19,7 +19,7 @@
     /* Opcional: añade bordes o sombras*/
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,.40);
-    /*margin-left:inherit;*/
+    margin-left:40%;
 }
 
 
@@ -92,7 +92,7 @@
 */
 .detalle-actions-centered {
     margin-top: 14px;
-    text-align: left; /* <-- Esto centra el botón */
+    text-align: center; /* <-- Esto centra el botón */
     width: 100%;
 }
 

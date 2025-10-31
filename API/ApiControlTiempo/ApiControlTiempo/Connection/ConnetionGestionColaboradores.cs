@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
+using System.Collections.Generic;
 using System.Data;
 using static ApiControlTiempo.Class.ClassGestionColaboradores;
 
@@ -136,7 +137,7 @@ namespace ApiControlTiempo.Connection
             }
         }
 
-        public ClassConsultarColaborador Connec_ConsultarColaboradorID(int idColaborador)
+        public List<ClassConsultarColaborador> Connec_ConsultarColaboradorID(int idColaborador)
         {
             thisDay = DateTime.Now;
 
@@ -149,7 +150,7 @@ namespace ApiControlTiempo.Connection
 
                 Connection cnn = new Connection(configuration);
                 ClassConsultarColaborador colaborador = null;
-
+                List<ClassConsultarColaborador> ListColaborador = new List<ClassConsultarColaborador>();
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = cnn.AbrirConexion();
@@ -161,7 +162,7 @@ namespace ApiControlTiempo.Connection
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
                             colaborador = new ClassConsultarColaborador
                             {
@@ -173,11 +174,13 @@ namespace ApiControlTiempo.Connection
                                 rol = reader["ROL"]?.ToString(),
                                 estado = reader["ESTADO"] != DBNull.Value && Convert.ToBoolean(reader["ESTADO"])
                             };
+                            
+                            ListColaborador.Add(colaborador);
                         }
                     }
                 }
 
-                return colaborador;
+                return ListColaborador;
             }
             catch (Exception ex)
             {

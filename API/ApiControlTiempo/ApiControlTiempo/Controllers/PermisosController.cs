@@ -100,5 +100,37 @@ namespace ApiControlTiempo.Controllers
             }
         }
 
+        [HttpPost("ListarPermisosID")]
+        public IActionResult ListarPermisosID([FromBody] ClassPermiso_Id objJson)
+        {
+            try
+            {
+                // Consultar usuario en BD
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+                string mensaje = string.Empty;
+                ConnectionPermisos Aut = new ConnectionPermisos(configuration);
+                ClassPermiso_List_Resp ListarPermiso = Aut.Connec_PermisoID(objJson);
+
+                if (ListarPermiso != null)
+                {
+                    mensaje = "Consulta exitosa";
+                }
+                else
+                {
+                    mensaje = "No hay Permisos para mostrar";
+                }
+
+                return Ok(new { ListarPermiso, message = mensaje });
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
     }
 }

@@ -158,3 +158,256 @@ BEGIN
     AND (@estado IS NULL OR ESTADO = @estado);
 END
 GO
+
+----------------------------------------------------------------------------------------------------
+-- Procedimiento almacenado SP_Colaborador_GetById
+-- Author: Damian Alvarado Avilés
+-- Fecha: 02/09/2025
+-- Procedimiento lista los colaboradores con un ID y varios filtros opcionales
+----------------------------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE SP_Colaborador_GetById
+  @idColaborador INT
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  DECLARE @ROL_COLABORADOR VARCHAR(50);
+
+   --Obtener el rol del colaborador
+   SELECT @ROL_COLABORADOR = ROL 
+   FROM COLABORADORES 
+   WHERE IDCOLABORADOR = @idColaborador;
+
+   IF(@ROL_COLABORADOR = 'Administrador')
+   BEGIN
+	   SELECT IDCOLABORADOR, 
+			  NOMBRE, 
+			  APELLIDO, 
+			  CORREO, 
+			  TELEFONO, 
+			  ROL, 
+			  ESTADO, 
+			  FECHA_CREACION AS [CREACION], 
+			  FECHA_ACTUALIZACION AS [ACTUALIZACION]
+		 FROM COLABORADORES
+		ORDER BY NOMBRE ASC
+   END
+   ELSE
+   BEGIN
+	   SELECT IDCOLABORADOR AS [IDENTIFICADOR], 
+			  NOMBRE, 
+			  APELLIDO, 
+			  CORREO, 
+			  TELEFONO, 
+			  ROL, 
+			  ESTADO, 
+			  FECHA_CREACION AS [CREACION], 
+			  FECHA_ACTUALIZACION AS [ACTUALIZACION]
+		 FROM COLABORADORES 
+		WHERE IDCOLABORADOR = @idColaborador;
+   END
+END
+GO
+
+----------------------------------------------------------------------------------------------------
+-- Procedimientos almacenados SP_Tarea_Create / SP_Tarea_Update / SP_Tarea_List
+-- Author: Damian Alvarado Avilés
+-- Fecha: 02/09/2025
+-- Procedimientos CRUD de Tareas
+----------------------------------------------------------------------------------------------------
+CREATE OR ALTER PROCEDURE SP_Tarea_Create
+  @nombre		NVARCHAR(200),
+  @descripcion	NVARCHAR(MAX) = NULL,
+  @fechaInicio	DATETIME,
+  @fechaFin		DATETIME,
+  @idTarea		INT OUT,
+  @mensaje		NVARCHAR(200) OUT
+AS
+BEGIN
+  SET NOCOUNT ON;
+  BEGIN TRY
+    INSERT INTO TAREAS (NOMBRE, DESCRIPCION, FECHA_INICIO_TAREA, FECHA_FIN_TAREA, FECHA_CREACION, FECHA_ACTUALIZACION, ESTADO) 
+			    VALUES (@nombre, @descripcion, @fechaInicio, @fechaFin, GETDATE(), GETDATE(), 'Activa');
+    SET @idTarea = SCOPE_IDENTITY();
+    SET @mensaje = N'Tarea creada.';
+  END TRY
+  BEGIN CATCH
+    SET @mensaje = N'Error al crear tarea.';
+    EXEC SP_Bitacora_LogError N'Tarea_Create', ERROR_MESSAGE;
+  END CATCH
+END
+GO
+
+CREATE OR ALTER PROCEDURE SP_Elimianr_Asignaciones
+  @idTarea		 INT,
+  @idColaborador INT
+AS
+BEGIN
+  SET NOCOUNT ON;
+  BEGIN TRY
+    DELETE FROM TAREASASIGNADAS 
+	WHERE IDCOLABORADOR = @idColaborador
+	  AND IDTAREA = @idTarea
+  END TRY
+  BEGIN CATCH
+    EXEC SP_Bitacora_LogError N'SP_Elimianr_Asignaciones', ERROR_MESSAGE;
+  END CATCH
+END
+GO
+
+CREATE OR ALTER PROCEDURE SP_Tarea_Update
+  @idTarea		INT,
+  @nombre		NVARCHAR(200) = NULL,
+  @descripcion	NVARCHAR(MAX) = NULL,
+  @estadoTarea	NVARCHAR(50) = NULL,
+  @fechaInicio	DATETIME	  = NULL,
+  @fechaFin		DATETIME	  = NULL,
+  @mensaje		NVARCHAR(200) OUT
+AS
+BEGIN
+  SET NOCOUNT ON;
+  BEGIN TRY
+    UPDATE TAREAS
+       SET NOMBRE = COALESCE(@nombre, NOMBRE),
+           DESCRIPCION = COALESCE(@descripcion, DESCRIPCION),
+           FECHA_ACTUALIZACION = GETDATE(),
+		   ESTADO = @estadoTarea,
+		   FECHA_INICIO_TAREA = @fechaInicio,
+		   FECHA_FIN_TAREA = @fechaFin
+     WHERE IDTAREA = @idTarea;
+
+    IF @@ROWCOUNT = 0 SET @mensaje = N'No se encontró la tarea.'; ELSE SET @mensaje = N'Tarea actualizada.';
+  END TRY
+  BEGIN CATCH
+    SET @mensaje = N'Error al actualizar tarea.';
+    EXEC SP_Bitacora_LogError N'Tarea_Update', ERROR_MESSAGE;
+  END CATCH
+END
+GO
+
+----------------------------------------------------------------------------------------------------
+-- Procedimientos almacenados SP_Asignacion_Create / SP_Asignacion_List
+-- Author: Damian Alvarado Avilés
+-- Fecha: 02/09/2025
+-- Procedimientos SP_Asignacion_Create asigna una tarea creada SP_Asignacion_List lista tareas asignadas
+----------------------------------------------------------------------------------------------------
+ALTER   PROCEDURE [dbo].[SP_Asignacion_Create]
+  @idColaborador INT,
+  @idTarea       INT,
+  --@fechaAsignacion DATETIME,
+  @idAsignacion  INT OUT,
+  @mensaje       NVARCHAR(200) OUT
+AS
+BEGIN
+  SET NOCOUNT ON;
+  BEGIN TRY
+	IF NOT EXISTS(SELECT IDASIGNACION FROM TAREASASIGNADAS WHERE IDCOLABORADOR = @idColaborador AND IDTAREA = @idTarea)
+	BEGIN
+		INSERT INTO TAREASASIGNADAS (IDCOLABORADOR, IDTAREA, FECHAASIGNACION)
+		VALUES (@idColaborador, @idTarea, GETDATE());
+
+		SET @idAsignacion = SCOPE_IDENTITY();
+		SET @mensaje = N'Asignación creada.';
+	END
+    
+  END TRY
+  BEGIN CATCH
+    SET @mensaje = N'Error al crear la asignación.';
+    EXEC SP_Bitacora_LogError N'Asignacion_Create', ERROR_MESSAGE;
+  END CATCH
+END
+GO
+
+----------------------------------------------------------------------------------------------------
+ALTER TABLE PERMISOS ADD DESCRIPCION VARCHAR(MAX)
+go
+
+CREATE OR ALTER   PROCEDURE [dbo].[SP_Permiso_List]
+  @idColaborador INT = NULL,
+  @estado        NVARCHAR(50) = NULL,
+  @desde         DATETIME = NULL,
+  @hasta         DATETIME = NULL
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  DECLARE @ROL_COLABORADOR VARCHAR(50);
+
+   --Obtener el rol del colaborador
+   SELECT @ROL_COLABORADOR = ROL 
+   FROM COLABORADORES 
+   WHERE IDCOLABORADOR = @idColaborador;
+   
+   IF(@ROL_COLABORADOR = 'Administrador')
+   BEGIN
+	   SELECT IDPERMISO, IDCOLABORADOR, FECHASOLICITUD, FECHAINICIO,
+				 FECHAFIN, MOTIVO, DESCRIPCION, ESTADO, FECHA_CREACION, FECHA_ACTUALIZACION
+		 FROM PERMISOS
+		WHERE (@estado IS NULL OR ESTADO = @estado)
+		  AND (@desde IS NULL OR FECHAINICIO >= @desde)
+		  AND (@hasta IS NULL OR FECHAFIN <= @hasta);
+   END
+   ELSE
+   BEGIN
+		 SELECT IDPERMISO, IDCOLABORADOR, FECHASOLICITUD, FECHAINICIO,
+				 FECHAFIN, MOTIVO, DESCRIPCION, ESTADO, FECHA_CREACION, FECHA_ACTUALIZACION
+		FROM PERMISOS
+		WHERE (@idColaborador IS NULL OR IDCOLABORADOR = @idColaborador)
+		  AND (@estado IS NULL OR ESTADO = @estado)
+		  AND (@desde IS NULL OR FECHAINICIO >= @desde)
+		  AND (@hasta IS NULL OR FECHAFIN <= @hasta);
+   END
+  
+END
+GO
+
+CREATE OR ALTER   PROCEDURE [dbo].[SP_Permiso_ID]
+  @idColaborador INT = NULL,
+  @idPermiso INT = NULL
+AS
+BEGIN
+  SET NOCOUNT ON;
+	   SELECT IDPERMISO, IDCOLABORADOR, FECHASOLICITUD, FECHAINICIO,
+				 FECHAFIN, MOTIVO, DESCRIPCION, ESTADO, FECHA_CREACION, FECHA_ACTUALIZACION
+		 FROM PERMISOS
+		WHERE IDPERMISO = @idPermiso AND IDCOLABORADOR = @idColaborador
+  
+END
+GO
+
+----------------------------------------------------------------------------------------------------
+-- Procedimientos almacenados SP_Permiso_Solicitar / SP_Permiso_CambiarEstado / SP_Permiso_List
+-- Author: Damian Alvarado Avilés
+-- Fecha: 02/09/2025
+-- Procedimientos 
+----------------------------------------------------------------------------------------------------
+ALTER   PROCEDURE [dbo].[SP_Permiso_Solicitar]
+  @idColaborador INT,
+  @fechaInicio   DATETIME,
+  @fechaFin      DATETIME,
+  @motivo        NVARCHAR(MAX) = NULL,
+  @descripcion	 NVARCHAR(MAX) = NULL,
+  @idPermiso     INT OUT,
+  @mensaje       NVARCHAR(200) OUT
+AS
+BEGIN
+  SET NOCOUNT ON;
+  BEGIN TRY
+    IF @fechaFin < @fechaInicio
+    BEGIN
+      SET @mensaje = N'El fin del permiso no puede ser anterior al inicio.';
+      RETURN;
+    END
+
+    INSERT INTO PERMISOS (IDCOLABORADOR, FECHASOLICITUD, FECHAINICIO, FECHAFIN, MOTIVO, DESCRIPCION, ESTADO)
+    VALUES (@idColaborador, GETDATE(), @fechaInicio, @fechaFin, @motivo,@descripcion, N'Pendiente');
+
+    SET @idPermiso = SCOPE_IDENTITY();
+    SET @mensaje = N'Permiso solicitado.';
+  END TRY
+  BEGIN CATCH
+    SET @mensaje = N'Error al solicitar permiso.';
+    EXEC SP_Bitacora_LogError N'Permiso_Solicitar', ERROR_MESSAGE;
+  END CATCH
+END
+GO

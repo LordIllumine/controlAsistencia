@@ -1,0 +1,4 @@
+
+Error en Connec_ConsultarColaboradorID IDCOLABORADOR 10/27/25 21:56:07
+
+Error en Connec_ConsultarColaboradorID IDCOLABORADOR 10/27/25 21:58:54

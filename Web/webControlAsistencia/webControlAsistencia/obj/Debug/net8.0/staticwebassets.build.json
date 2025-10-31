@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6fqZunRP1dGTxwDj/XAvF1lqsFvOOM3Hv2ztgI+mzEk=",
+  "Hash": "IRyDaWU2uvCzk3N0GhlAPFcArgRCV+q1RsFl3rXWrc8=",
   "Source": "webControlAsistencia",
   "BasePath": "_content/webControlAsistencia",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\CrearTareaEstilo.css"
+    },
+    {
+      "Identity": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\DetallePermisoEstilo.css",
+      "SourceId": "webControlAsistencia",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\",
+      "BasePath": "_content/webControlAsistencia",
+      "RelativePath": "css/DetallePermisoEstilo.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\DetallePermisoEstilo.css"
     },
     {
       "Identity": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\DetallesTareaEstilo.css",

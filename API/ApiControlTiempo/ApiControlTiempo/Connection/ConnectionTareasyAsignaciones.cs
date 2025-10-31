@@ -42,7 +42,7 @@ namespace ApiControlTiempo.Connection
                     // Parámetros de entrada
                     cmd.Parameters.AddWithValue("@idColaborador", obj.idColaborador);
                     cmd.Parameters.AddWithValue("@idTarea", obj.idTarea);
-                    cmd.Parameters.AddWithValue("@fechaAsignacion", obj.fechaAsignacion);
+                    //cmd.Parameters.AddWithValue("@fechaAsignacion", obj.fechaAsignacion);
 
                     // Parámetros de salida
                     var pidAsignacion = new SqlParameter("@idAsignacion", SqlDbType.Int)
@@ -64,7 +64,7 @@ namespace ApiControlTiempo.Connection
                     // Construimos el objeto de autenticación
                     resp.idColaborador = obj.idColaborador;
                     resp.idTarea = obj.idTarea;
-                    resp.fechaAsignacion = obj.fechaAsignacion;
+                    //resp.fechaAsignacion = obj.fechaAsignacion;
                     resp.idAsignacion = Convert.ToInt32(pidAsignacion.Value.ToString());
                     resp.mensaje = pMensaje.Value.ToString();
                 }
@@ -248,6 +248,9 @@ namespace ApiControlTiempo.Connection
                     cmd.Parameters.AddWithValue("@idTarea", obj.idTarea);
                     cmd.Parameters.AddWithValue("@nombre", obj.nombre);
                     cmd.Parameters.AddWithValue("@descripcion", obj.descripcion);
+                    cmd.Parameters.AddWithValue("@fechaInicio", obj.fechaInicio);
+                    cmd.Parameters.AddWithValue("@fechaFin", obj.fechaFin);
+                    cmd.Parameters.AddWithValue("@estadoTarea", obj.estadoTarea); 
 
                     // Parámetros de salida
                     var pMensaje = new SqlParameter("@mensaje", SqlDbType.NVarChar, 200)
@@ -505,6 +508,35 @@ namespace ApiControlTiempo.Connection
             catch (Exception ex)
             {
                 logsFile.WriteLogs("\nError en Connec_Tarea_List "
+                                   + ex.Message + " "
+                                   + thisDay.ToString("MM/dd/yy H:mm:ss"));
+                throw;
+            }
+        }
+
+        public void Connec_Eliminar_Asignaciones(int IdTarea, int IdColaborador)
+        {
+            thisDay = DateTime.Now;
+            try
+            {
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+                Connection cnn = new Connection(configuration);
+                using (SqlConnection conn = cnn.AbrirConexion())
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "SP_Elimianr_Asignaciones";
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@idTarea", IdTarea);
+                    cmd.Parameters.AddWithValue("@idColaborador", IdColaborador);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                logsFile.WriteLogs("\nError en Connec_Eliminar_Asignaciones "
                                    + ex.Message + " "
                                    + thisDay.ToString("MM/dd/yy H:mm:ss"));
                 throw;

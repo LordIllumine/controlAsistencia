@@ -80,7 +80,7 @@ namespace ApiControlTiempo.Controllers
                     .Build();
 
                 ConnetionGestionColaboradores Aut = new ConnetionGestionColaboradores(configuration);
-                ClassConsultarColaborador objJson = Aut.Connec_ConsultarColaboradorID(Id_colaborador);
+                List<ClassConsultarColaborador> objJson = Aut.Connec_ConsultarColaboradorID(Id_colaborador);
                 string mensaje = string.Empty;
 
                 if (objJson == null)

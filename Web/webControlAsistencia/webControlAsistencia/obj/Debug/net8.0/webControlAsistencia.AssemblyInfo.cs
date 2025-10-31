@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("webControlAsistencia")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ccd0647a80d4211f977d2b57cc74f6b5a0c00f54")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+874661dd0e3d95055c54ac54162115ac60829dfb")]
 [assembly: System.Reflection.AssemblyProductAttribute("webControlAsistencia")]
 [assembly: System.Reflection.AssemblyTitleAttribute("webControlAsistencia")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

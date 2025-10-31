@@ -19,7 +19,7 @@
 <br />
 
 <div class="container-fluid">
-    <form method="post">
+    <form asp-action="GuardarDetalleTarea" class="crear-form" asp-controller="DetalleTarea" method="post" id="formCrear">
         
         <div class="row">
 
@@ -31,6 +31,12 @@
 
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         
+                        <div class="form-group mb-3">
+                            <label asp-for="Id" class="control-label"></label>
+                            <input asp-for="Id" class="form-control" readonly/>
+                            <span asp-validation-for="Id" class="text-danger"></span>
+                        </div>
+
                         <div class="form-group mb-3">
                             <label asp-for="Actividad" class="control-label"></label>
                             <input asp-for="Actividad" class="form-control" readonly="@isReadOnly" />
@@ -55,17 +61,15 @@
                             <span asp-validation-for="FechaFin" class="text-danger"></span>
                         </div>
 
-                        @if (ViewBag.Validar != null && ViewBag.Validar == "1")
-                        {
-                            <div class="form-group mb-3">
-                                <label asp-for="EstadoTarea" class="control-label">Estado de la Tarea</label>
-                                <select asp-for="EstadoTarea" class="form-select">
-                                    <option value="Finalizada">Activa</option>
-                                    <option value="Cancelada">Cancelar</option>
-                                </select>
-                                <span asp-validation-for="EstadoTarea" class="text-danger"></span>
-                            </div>
-                        }
+                        <div class="form-group mb-3">
+                            <label asp-for="EstadoTarea" class="control-label">Estado de la Tarea</label>
+                            <select asp-for="EstadoTarea" class="form-select">
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="Completada">Completada</option>
+                                <option value="Cancelada">Cancelada</option>
+                            </select>
+                            <span asp-validation-for="EstadoTarea" class="text-danger"></span>
+                        </div>
 
                         @if (ViewBag.Error != null)
                         {
@@ -101,15 +105,21 @@
                     <br />
                     <div class="toolbar-left">
                         <div class="form-group mb-3">
-                            <label asp-for="EstadoTarea" class="control-label">Agregar colaborador</label>
-                            <select asp-for="EstadoTarea" class="form-select">
-                                <option value="Finalizada">Diego gonzalez | diegogv271@gmail.com</option>
-                                <option value="Cancelada">Damian Alvares | diegogv271@gmail.com </option>
+                            <label asp-for="IdColaboradorSeleccionado" class="control-label">Agregar colaborador</label>
+                            <select asp-for="IdColaboradorSeleccionado"
+                                    class="form-select">
+                                <option value="0">-- Seleccione un colaborador --</option>
+                                @if (Model.ListColaboradores != null)
+                                {
+                                    @foreach (var colaborador in Model.ListColaboradores)
+                                    {
+                                        <option value="@colaborador.idColaborador">
+                                            @colaborador.nombre @colaborador.apellido | @colaborador.correo
+                                        </option>
+                                    }
+                                }
                             </select>
-                            <span asp-validation-for="EstadoTarea" class="text-danger"></span>
-                        </div>
-                        <div class="">
-                            <input id="" value="Asignar colaborador" type="submit" class="btn btn-primary" />
+                            <span asp-validation-for="IdColaboradorSeleccionado" class="text-danger"></span>
                         </div>
                     </div>
                     <br />
@@ -122,8 +132,11 @@
                                     <th>Correo</th>
                                     <th>Teléfono</th>
                                     <th>Fecha de asignación</th>
-                                    <th>Estado</th>
-                                    <th>Acción</th>
+                                    <th>Estado Colaborador</th>
+                                    @if (ViewBag.Validar != null && ViewBag.Validar == "1")
+                                    {
+                                        <th>Acción</th>
+                                    }                           
                                 </tr>
                             </thead>
                             <tbody id="table-body">
@@ -140,10 +153,13 @@
                                             <td>@item.Telefono</td>
                                             <td>@item.FechaAsignacion</td>
                                             <td>@item.EstadoColaborador</td>
-                                            <td class="acciones">
-                                                <input type="button" value="Eliminar" class="btn-pill"
-                                                       onclick="location.href='@Url.Action("DetalleTarea","DetalleTarea", new { id = item.IdTarea })'">
-                                            </td>
+                                            @if (ViewBag.Validar != null && ViewBag.Validar == "1")
+                                            {
+                                                <td class="acciones">
+                                                    <input type="button" value="Eliminar" class="btn-pill"
+                                                    onclick="location.href='@Url.Action("EliminarAsignacionTarea","DetalleTarea", new { id = item.IdTarea, idColaborador = item.IdColaborador })'">
+                                                </td>
+                                            }
                                         </tr>
                                     }
                                 }

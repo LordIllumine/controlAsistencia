@@ -44,6 +44,7 @@ namespace ApiControlTiempo.Connection
                     cmd.Parameters.AddWithValue("@fechaInicio", obj.fechaInicio);
                     cmd.Parameters.AddWithValue("@fechaFin", obj.fechaFin);
                     cmd.Parameters.AddWithValue("@motivo", obj.motivo);
+                    cmd.Parameters.AddWithValue("@descripcion", obj.Descripcion);
 
                     // Parámetros de salida
                     var pidPermiso = new SqlParameter("@idPermiso", SqlDbType.Int)
@@ -153,9 +154,9 @@ namespace ApiControlTiempo.Connection
 
                     // Parámetros de entrada
                     cmd.Parameters.AddWithValue("@idColaborador", obj.idColaborador);
-                    cmd.Parameters.AddWithValue("@estado", obj.estado);
-                    cmd.Parameters.AddWithValue("@desde", obj.desde);
-                    cmd.Parameters.AddWithValue("@hasta", obj.hasta);
+                    cmd.Parameters.AddWithValue("@estado", (object)obj.estado ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@desde", (object)obj.desde ?? DBNull.Value);
+                    cmd.Parameters.AddWithValue("@hasta", (object)obj.hasta ?? DBNull.Value);
 
                     using (SqlDataReader reader = cmd.ExecuteReader())
                     {
@@ -168,6 +169,7 @@ namespace ApiControlTiempo.Connection
                         int idxFechaInicio = reader.GetOrdinal("FECHAINICIO");
                         int idxFechaFin = reader.GetOrdinal("FECHAFIN");
                         int idxMotivo = reader.GetOrdinal("MOTIVO");
+                        int idxDescripcion = reader.GetOrdinal("DESCRIPCION");
                         int idxEstado = reader.GetOrdinal("ESTADO");
                         int idxFechaCreacion = reader.GetOrdinal("FECHA_CREACION");
                         int idxFechaActualizacion = reader.GetOrdinal("FECHA_ACTUALIZACION");
@@ -190,6 +192,7 @@ namespace ApiControlTiempo.Connection
                                                        ? reader.GetDateTime(idxFechaFin)
                                                        : (DateTime?)null,
                                     Motivo = !reader.IsDBNull(idxMotivo) ? reader.GetString(idxMotivo) : "",
+                                    Descripcion = !reader.IsDBNull(idxDescripcion) ? reader.GetString(idxDescripcion) : "",
                                     Estado = !reader.IsDBNull(idxEstado) ? reader.GetString(idxEstado) : "",
                                     fechaCreacion = !reader.IsDBNull(idxFechaCreacion)
                                                        ? reader.GetDateTime(idxFechaCreacion)
@@ -224,5 +227,97 @@ namespace ApiControlTiempo.Connection
             }
         }
 
+        public ClassPermiso_List_Resp Connec_PermisoID(ClassPermiso_Id obj)
+        {
+            thisDay = DateTime.Now;
+
+            try
+            {
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+
+                Connection cnn = new Connection(configuration);
+                ClassPermiso_List_Resp List = new ClassPermiso_List_Resp();
+
+                using (SqlConnection conn = cnn.AbrirConexion())
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = "SP_Permiso_ID";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Parámetros de entrada
+                    cmd.Parameters.AddWithValue("@idColaborador", obj.idColaborador);
+                    cmd.Parameters.AddWithValue("@idPermiso", (object)obj.idPermiso ?? DBNull.Value);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (!reader.HasRows) return List;
+
+                        // Cachear índices de columnas
+                        int idxIdPermiso = reader.GetOrdinal("IDPERMISO");
+                        int idxIdColaborador = reader.GetOrdinal("IDCOLABORADOR");
+                        int idxFechaSolicitud = reader.GetOrdinal("FECHASOLICITUD");
+                        int idxFechaInicio = reader.GetOrdinal("FECHAINICIO");
+                        int idxFechaFin = reader.GetOrdinal("FECHAFIN");
+                        int idxMotivo = reader.GetOrdinal("MOTIVO");
+                        int idxDescripcion = reader.GetOrdinal("DESCRIPCION");
+                        int idxEstado = reader.GetOrdinal("ESTADO");
+                        int idxFechaCreacion = reader.GetOrdinal("FECHA_CREACION");
+                        int idxFechaActualizacion = reader.GetOrdinal("FECHA_ACTUALIZACION");
+
+                        while (reader.Read())
+                        {
+                            try
+                            {
+                                var objList = new ClassPermiso_List_Resp
+                                {
+                                    idPermiso = !reader.IsDBNull(idxIdPermiso) ? reader.GetInt32(idxIdPermiso) : 0,
+                                    idColaborador = !reader.IsDBNull(idxIdColaborador) ? reader.GetInt32(idxIdColaborador) : 0,
+                                    fechaSolicitud = !reader.IsDBNull(idxFechaSolicitud)
+                                                       ? reader.GetDateTime(idxFechaSolicitud)
+                                                       : (DateTime?)null,
+                                    fechaInicio = !reader.IsDBNull(idxFechaInicio)
+                                                       ? reader.GetDateTime(idxFechaInicio)
+                                                       : (DateTime?)null,
+                                    fechaFin = !reader.IsDBNull(idxFechaFin)
+                                                       ? reader.GetDateTime(idxFechaFin)
+                                                       : (DateTime?)null,
+                                    Motivo = !reader.IsDBNull(idxMotivo) ? reader.GetString(idxMotivo) : "",
+                                    Descripcion = !reader.IsDBNull(idxDescripcion) ? reader.GetString(idxDescripcion) : "",
+                                    Estado = !reader.IsDBNull(idxEstado) ? reader.GetString(idxEstado) : "",
+                                    fechaCreacion = !reader.IsDBNull(idxFechaCreacion)
+                                                       ? reader.GetDateTime(idxFechaCreacion)
+                                                       : (DateTime?)null,
+                                    fechaActualizacion = !reader.IsDBNull(idxFechaActualizacion)
+                                                       ? reader.GetDateTime(idxFechaActualizacion)
+                                                       : (DateTime?)null
+                                };
+
+                                List = objList;
+                            }
+                            catch (Exception rowEx)
+                            {
+                                logsFile.WriteLogs("\nError al procesar fila en Connec_PermisoList: "
+                                                   + rowEx.Message + " "
+                                                   + thisDay.ToString("MM/dd/yy H:mm:ss"));
+                                // Puedes decidir: continuar con las demás filas o lanzar excepción
+                                continue;
+                            }
+                        }
+                    }
+                }
+
+                return List;
+            }
+            catch (Exception ex)
+            {
+                logsFile.WriteLogs("\nError en Connec_PermisoList "
+                                   + ex.Message + " "
+                                   + thisDay.ToString("MM/dd/yy H:mm:ss"));
+                throw;
+            }
+        }
     }
 }

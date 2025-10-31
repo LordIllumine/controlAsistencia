@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\css\\CrearTareaEstilo.css"
     },
     {
+      "Id": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\DetallePermisoEstilo.css",
+      "PackagePath": "staticwebassets\\css\\DetallePermisoEstilo.css"
+    },
+    {
       "Id": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\DetallesTareaEstilo.css",
       "PackagePath": "staticwebassets\\css\\DetallesTareaEstilo.css"
     },

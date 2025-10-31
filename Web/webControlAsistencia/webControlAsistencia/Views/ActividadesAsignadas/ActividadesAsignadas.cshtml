@@ -21,7 +21,7 @@
 <!-- FORMULARIO DE FILTRO -->
 <form asp-action="ActividadesAsignadas" asp-controller="ActividadesAsignadas" method="get" id="formFiltro">
     <div class="toolbar">
-        <div class="toolbar-left">
+        <div class="toolbar-center">
             <label class="lbl">Filtro:</label>
             <select name="filtro" id="filtro" class="cbx-filtro form-select">
                 <!--<option value="Todos">Seleccione un Filtro</option>-->
@@ -31,7 +31,7 @@
             </select>
         </div>
 
-        <div class="toolbar-center">
+        <div class="toolbar-left">
             <label class="lbl">Fecha inicio:</label>
             <input type="date" id="fechaInicio" name="fechaInicio" class="form-control" />
 

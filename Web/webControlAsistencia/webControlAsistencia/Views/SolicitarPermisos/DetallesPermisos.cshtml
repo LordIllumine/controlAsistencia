@@ -1,0 +1,128 @@
+﻿@model webControlAsistencia.Models.ClassPermiso_List
+
+@{
+    ViewData["Title"] = "DetallesPermisos";
+}
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/DetallePermisoEstilo.css" />
+    @*     <link rel="stylesheet" href="~/css/DetallesTareaEstilo.css" /> *@
+    <link rel="stylesheet" href="~/css/ActividadesAsignadasEstilo.css" />
+</head>
+<br />
+<br />
+
+<form asp-action="CambiarEstadoPermiso" asp-controller="SolicitarPermisos" method="get">
+    <div class="row">
+
+        <div class="col-md-8">
+            <div class="detalle-wrapper">
+                <div class="detalle">
+                    <h4 class="detalle-title">Detalle del permiso</h4>
+                    @if (ViewBag.Validar != null && ViewBag.Validar == "1")
+                    {
+                        <h6 class="detalle-title" style="color:red">Los permisos que ya hayan superado la fecha de vencimiento no podrán ser editados</h6>
+                    }
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+                    }
+                    <hr class="detalle-hr" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="IdPermiso" class="control-label"></label>
+                        <input asp-for="IdPermiso" class="form-control" readonly />
+                        <span asp-validation-for="IdPermiso" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="IdColaborador" class="control-label"></label>
+                        <input asp-for="IdColaborador" class="form-control" readonly />
+                        <span asp-validation-for="IdColaborador" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="FechaSolicitud" class="control-label"></label>
+                        <input asp-for="FechaSolicitud" class="form-control" readonly />
+                        <span asp-validation-for="FechaSolicitud" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="FechaInicio" class="control-label"></label>
+                        <input asp-for="FechaInicio" class="form-control" readonly />
+                        <span asp-validation-for="FechaInicio" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="FechaFin" class="control-label"></label>
+                        <input asp-for="FechaFin" class="form-control" readonly />
+                        <span asp-validation-for="FechaFin" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Motivo" class="control-label"></label>
+                        <input asp-for="Motivo" class="form-control" readonly />
+                        <span asp-validation-for="Motivo" class="text-danger"></span>
+                    </div>
+                    @*             <div class="form-group mb-3">
+                    <label asp-for="Asunto" class="control-label"></label>
+                    <input asp-for="Asunto" class="form-control" />
+                    <span asp-validation-for="Asunto" class="text-danger"></span>
+                    </div> *@
+                    <div class="form-group mb-3">
+                        <label asp-for="Descripcion" class="control-label"></label>
+                        <textarea asp-for="Descripcion" class="form-control" rows="5" style="height:100%" readonly></textarea>
+                        <span asp-validation-for="Descripcion" class="text-danger"></span>
+                    </div>
+                    @* <div class="form-group mb-3">
+                    <label asp-for="Estado" class="control-label"></label>
+                    <input asp-for="Estado" class="form-control" />
+                    <span asp-validation-for="Estado" class="text-danger"></span>
+                    </div> *@
+                    @*             <div class="form-group mb-3">
+                    <label asp-for="FechaCreacion" class="control-label"></label>
+                    <input asp-for="FechaCreacion" class="form-control" readonly/>
+                    <span asp-validation-for="FechaCreacion" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                    <label asp-for="FechaActualizacion" class="control-label"></label>
+                    <input asp-for="FechaActualizacion" class="form-control" readonly />
+                    <span asp-validation-for="FechaActualizacion" class="text-danger"></span>
+                    </div> *@
+
+                    @if (ViewBag.Validar != null && ViewBag.Validar == "1")
+                    {
+                        <div class="form-group mb-3">
+                            <label asp-for="Estado" class="control-label">Estado de la Tarea</label>
+                            <select asp-for="Estado" class="form-select">
+                                <option value="Pendiente">Pendiente</option>
+                                <option value="Aceptada">Aceptada</option>
+                                <option value="Rechazada">Rechazada</option>
+                                <option value="Vencido">Vencido</option>
+                            </select>
+                            <span asp-validation-for="Estado" class="text-danger"></span>
+                        </div>
+
+                        <hr class="detalle-hr" />
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="detalle-actions-centered">
+                                    <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

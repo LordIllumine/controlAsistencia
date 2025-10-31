@@ -1,10 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.ComponentModel.DataAnnotations;
 using System.Runtime.Serialization;
 
 namespace webControlAsistencia.Models
 {
     public class ClassDetalleTarea
     {
+        [Display(Name = "Id tarea")]
         public int? Id { get; set; }
 
         [Display(Name = "Actividad")]
@@ -20,9 +22,31 @@ namespace webControlAsistencia.Models
         public DateTime? FechaFin { get; set; }
 
         public string? EstadoTarea { get; set; }
-
+        public string? EstadoAsignacion { get; set; }
+        public int IdColaboradorSeleccionado { get; set; }
         public List<Asignacion>? ListTareasAsignadas { get; set; }
+        public List<ClassConsultarColaborador>? ListColaboradores { get; set; }
     }
+
+    #region RepColaboradores
+    public class ClassConsultarColaborador
+    {
+        public int idColaborador { get; set; }
+        public string nombre { get; set; }
+        public string apellido { get; set; }
+        public string correo { get; set; }
+        public string telefono { get; set; }
+        public string rol { get; set; }
+        public bool estado { get; set; }
+    }
+
+    public class RespuestaJSON
+    {
+        public List<ClassConsultarColaborador>? objJson { get; set; }
+    }
+
+
+    #endregion
 
     #region Leer los colaboradores asignados
     public class Asignacion
@@ -63,6 +87,25 @@ namespace webControlAsistencia.Models
         public string estadoTarea { get; set; }
         public DateTime fechaIniTarea { get; set; }
         public DateTime fechafinTarea { get; set; }
+    }
+    #endregion
+
+    #region Update Tarea y asignacion
+    public class UpdateTarea
+    {
+        public int? idTarea { get; set; }
+        public string nombre { get; set; }
+        public string descripcion { get; set; }
+        public string estadoTarea { get; set; }
+        public DateTime? fechaInicio { get; set; }
+        public DateTime? fechaFin { get; set; }
+    }
+
+    public class UpdateAsignacion
+    {
+        public int? idColaborador { get; set; }
+        public int? idTarea { get; set; }
+        public DateTime? fechaAsignacion { get; set; }
     }
     #endregion
 }

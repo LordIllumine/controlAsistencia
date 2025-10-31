@@ -12,8 +12,8 @@ namespace ApiControlTiempo.Class
             public int idColaborador { get; set; }
             [Required]
             public int idTarea { get; set; }
-            [Required]
-            public DateTime fechaAsignacion{ get; set; }
+            //[Required]
+            //public DateTime fechaAsignacion{ get; set; }
             public int? idAsignacion { get; set; } = null;
             public string? mensaje { get; set; } = null;
         }
@@ -62,6 +62,12 @@ namespace ApiControlTiempo.Class
             public string nombre { get; set; }
             [Required]
             public string descripcion { get; set; }
+            [Required]
+            public string estadoTarea { get; set; }
+            [Required]
+            public DateTime fechaInicio { get; set; }
+            [Required]
+            public DateTime fechaFin { get; set; }
             public string? mensaje { get; set; } = null;
         }
 

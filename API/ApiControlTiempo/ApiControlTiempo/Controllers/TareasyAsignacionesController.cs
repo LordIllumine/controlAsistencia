@@ -224,5 +224,27 @@ namespace ApiControlTiempo.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpDelete("EliminarAsignacionesId/IdTarea/{idTarea}/IdColaborador/{idColaborador}")]
+        public IActionResult EliminarAsignacionesId(int idTarea, int idColaborador)
+        {
+            try
+            {
+                // Consultar usuario en BD
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+
+                ConnectionTareasyAsignaciones Aut = new ConnectionTareasyAsignaciones(configuration);
+                Aut.Connec_Eliminar_Asignaciones(idTarea, idColaborador);
+
+                return Ok(new { message = "Asignación Eliminada con éxito" });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
