@@ -19,7 +19,7 @@
     /* Opcional: añade bordes o sombras*/
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,.40);
-    /*margin-left:inherit;*/
+    margin-left:-9%;
 }
 
 
@@ -108,7 +108,7 @@
     /* Opcional: añade bordes o sombras estas 2 lineas*/
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0,0,0,.40);
-    margin-left: -45%;
+    margin-left: -55%;
     height: 100%;
     /* Añadimos display: flex para controlar el flujo de los elementos internos */
     display: flex;
@@ -139,4 +139,47 @@
 .toolbar-left input.btn-primary {
     /* Alinea el botón con el borde de la tabla */
     margin-top: 10px;
+}
+
+
+
+/* Estilos para hacer el formulario responsive, apilando los elementos */
+
+/* Aplica Flexbox al contenedor principal del formulario para controlar la dirección */
+#formFiltro > .toolbar-left {
+    display: flex;
+    flex-direction: row; /* Por defecto, que sigan en fila si ya lo están */
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben */
+    gap: 15px; /* Espacio entre los grupos de elementos */
+}
+
+/* Media Query para pantallas pequeñas (móviles y tabletas pequeñas) */
+/* Ancho máximo de 768px */
+@media (max-width: 768px) {
+    /* Hace que los contenedores principales (.toolbar-left) se apilen verticalmente */
+    #formFiltro > .toolbar-left {
+        flex-direction: column;
+        gap: 10px; /* Ajusta el espacio vertical entre secciones (Filtro, Fechas, Botón) */
+        padding: 10px; /* Opcional: añade algo de padding alrededor del formulario */
+    }
+
+    /* Hace que los grupos internos de elementos (los labels, selects e inputs) también se apilen verticalmente */
+    #formFiltro .toolbar-left .toolbar-left {
+        display: flex;
+        flex-direction: column;
+        width: 100%; /* Ocupa todo el ancho disponible */
+        box-sizing: border-box; /* Incluye padding y border en el width */
+    }
+
+    /* Opcional: Ajusta el ancho de los select e inputs para que ocupen todo el ancho dentro de su contenedor */
+    #formFiltro .form-select,
+    #formFiltro .form-control {
+        width: 100%;
+    }
+
+    /* Opcional: Centra el botón al apilar */
+    #formFiltro .detalle-actions-centered {
+        width: 100%;
+        text-align: center;
+    }
 }

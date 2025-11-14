@@ -52,10 +52,10 @@ namespace ApiControlTiempo.Class
     {
         [Required]
         public int idColaborador { get; set; }
-        [Required]
-        public DateTime fecha { get; set; }
-        [Required]
-        public string horaEntrada { get; set; }
+        //[Required]
+        //public DateTime fecha { get; set; }
+        //[Required]
+        //public string horaEntrada { get; set; }
         [Required]
         public string ip { get; set; }
         [Required]
@@ -67,10 +67,10 @@ namespace ApiControlTiempo.Class
     {
         [Required]
         public int idColaborador { get; set; }
-        [Required]
-        public DateTime fecha { get; set; }
-        [Required]
-        public string horaSalida { get; set; }
+        //[Required]
+        //public DateTime fecha { get; set; }
+        //[Required]
+        //public string horaSalida { get; set; }
         public string? mensaje { get; set; } = null;
     }
 

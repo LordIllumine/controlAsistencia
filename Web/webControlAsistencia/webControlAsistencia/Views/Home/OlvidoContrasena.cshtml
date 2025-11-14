@@ -1,0 +1,79 @@
+﻿@model webControlAsistencia.Models.ClassResetPassword
+
+@{
+    ViewData["Title"] = "Olvido Contraseña";
+}
+
+@{
+    Layout = null;
+}
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recuperar Contraseña</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/OlvidoContraEstilo.css" />
+    @*     <link rel="stylesheet" href="~/css/DetallesTareaEstilo.css" /> *@
+    <link rel="stylesheet" href="~/css/ActividadesAsignadasEstilo.css" />
+
+</head>
+<br />
+<br />
+
+
+<form asp-action="OlvidoContrasena" asp-controller="Home" method="get">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="detalle-wrapper">
+                <div class="detalle">
+                    <h4 class="detalle-title">Recuperar contraseña</h4>
+                    <p>
+                        <h6 class="detalle-title" style="color:red" id="mensaje-token">
+                            Al solicitar el cambio de contraseña se le hara llegar un token a su correo con una validez de 10 minutos.
+                        </h6>
+                    </p>
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+                    }
+                    <hr class="detalle-hr" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="Correo" class="control-label"></label>
+                        <input asp-for="Correo" class="form-control" />
+                        <span asp-validation-for="Correo" class="text-danger"></span>
+                    </div>   
+                    
+                    @* <div class="form-group mb-3">
+                        <label asp-for="Token" class="control-label"></label>
+                        <input asp-for="Token" class="form-control" />
+                        <span asp-validation-for="Token" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="NuevaContraseña" class="control-label"></label>
+                        <input asp-for="NuevaContraseña" class="form-control" />
+                        <span asp-validation-for="NuevaContraseña" class="text-danger"></span>
+                    </div> *@
+
+                    <hr class="detalle-hr" />
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="detalle-actions-centered">
+                                <input type="submit" value="Enviar Token" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

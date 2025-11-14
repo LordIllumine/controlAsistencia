@@ -67,7 +67,7 @@ namespace ApiControlTiempo.Connection
                     cmd.ExecuteNonQuery();
 
                     // Construimos el objeto de autenticación
-                    resp.idColaborador = Convert.ToInt32(pIdColaborador.Value.ToString());
+                    resp.idColaborador = Convert.ToInt32(pIdColaborador.Value.ToString() ?? "0");
                     resp.Mensaje = pMensaje.Value.ToString();
                 }
 
@@ -110,6 +110,7 @@ namespace ApiControlTiempo.Connection
                     cmd.Parameters.AddWithValue("@telefono", user.telefono);
                     cmd.Parameters.AddWithValue("@rol", user.rol);
                     cmd.Parameters.AddWithValue("@estado", user.estado);
+                    cmd.Parameters.AddWithValue("@password", user.password); 
 
                     // Parámetros de salida
                     var pMensaje = new SqlParameter("@mensaje", SqlDbType.NVarChar, 200)
@@ -185,6 +186,59 @@ namespace ApiControlTiempo.Connection
             catch (Exception ex)
             {
                 logsFile.WriteLogs("\n" + "Error en Connec_ConsultarColaboradorID "
+                                   + ex.Message + " "
+                                   + thisDay.ToString("MM/dd/yy H:mm:ss"));
+                throw;
+            }
+        }
+
+        public ClassConsultarColaboradorUpdate Connec_ConsultarColaboradorIDEspecifico(int idColaborador)
+        {
+            thisDay = DateTime.Now;
+
+            try
+            {
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+
+                Connection cnn = new Connection(configuration);
+                ClassConsultarColaboradorUpdate colaborador = null;
+
+                using (SqlCommand cmd = new SqlCommand())
+                {
+                    cmd.Connection = cnn.AbrirConexion();
+                    cmd.CommandText = "SP_Colaborador_GetByIdEspecific";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Parámetro de entrada
+                    cmd.Parameters.AddWithValue("@idColaborador", idColaborador);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            colaborador = new ClassConsultarColaboradorUpdate
+                            {
+                                idColaborador = reader["IDCOLABORADOR"] != DBNull.Value ? Convert.ToInt32(reader["IDCOLABORADOR"]) : 0,
+                                nombre = reader["NOMBRE"]?.ToString(),
+                                apellido = reader["APELLIDO"]?.ToString(),
+                                correo = reader["CORREO"]?.ToString(),
+                                telefono = reader["TELEFONO"]?.ToString(),
+                                rol = reader["ROL"]?.ToString(),
+                                estado = reader["ESTADO"] != DBNull.Value && Convert.ToBoolean(reader["ESTADO"]),
+                                password = reader["CONTRASEÑA"]?.ToString(),
+                            };
+                        }
+                    }
+                }
+
+                return colaborador;
+            }
+            catch (Exception ex)
+            {
+                logsFile.WriteLogs("\n" + "Error en Connec_ConsultarColaboradorIDEspecifico "
                                    + ex.Message + " "
                                    + thisDay.ToString("MM/dd/yy H:mm:ss"));
                 throw;

@@ -30,6 +30,18 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWN0aXZpZGFkZXNBc2lnbmFkYXNcQWN0aXZpZGFkZXNBc2lnbmFkYXMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ESTUDIO/UNED/Proyecto TFG/Proyecto/Repositorios/controlAsistencia/Web/webControlAsistencia/webControlAsistencia/Views/Colaborador/ActualizarColaborador.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sYWJvcmFkb3JcQWN0dWFsaXphckNvbGFib3JhZG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ESTUDIO/UNED/Proyecto TFG/Proyecto/Repositorios/controlAsistencia/Web/webControlAsistencia/webControlAsistencia/Views/Colaborador/CrearColaborador.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sYWJvcmFkb3JcQ3JlYXJDb2xhYm9yYWRvci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ESTUDIO/UNED/Proyecto TFG/Proyecto/Repositorios/controlAsistencia/Web/webControlAsistencia/webControlAsistencia/Views/Colaborador/ListarColaboradores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29sYWJvcmFkb3JcTGlzdGFyQ29sYWJvcmFkb3Jlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ESTUDIO/UNED/Proyecto TFG/Proyecto/Repositorios/controlAsistencia/Web/webControlAsistencia/webControlAsistencia/Views/CrearTarea/CrearTarea.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3JlYXJUYXJlYVxDcmVhclRhcmVhLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,8 +54,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/ESTUDIO/UNED/Proyecto TFG/Proyecto/Repositorios/controlAsistencia/Web/webControlAsistencia/webControlAsistencia/Views/Home/OlvidoContrasena.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxPbHZpZG9Db250cmFzZW5hLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/ESTUDIO/UNED/Proyecto TFG/Proyecto/Repositorios/controlAsistencia/Web/webControlAsistencia/webControlAsistencia/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/ESTUDIO/UNED/Proyecto TFG/Proyecto/Repositorios/controlAsistencia/Web/webControlAsistencia/webControlAsistencia/Views/Home/ValidoToken.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxWYWxpZG9Ub2tlbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/ESTUDIO/UNED/Proyecto TFG/Proyecto/Repositorios/controlAsistencia/Web/webControlAsistencia/webControlAsistencia/Views/Principal/Principal.cshtml]

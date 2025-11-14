@@ -165,6 +165,8 @@ namespace ApiControlTiempo.Connection
                         // Cachear índices de columnas
                         int idxIdPermiso = reader.GetOrdinal("IDPERMISO");
                         int idxIdColaborador = reader.GetOrdinal("IDCOLABORADOR");
+                        int idxNombre = reader.GetOrdinal("NOMBRE");
+                        int idxCorreo = reader.GetOrdinal("CORREO");
                         int idxFechaSolicitud = reader.GetOrdinal("FECHASOLICITUD");
                         int idxFechaInicio = reader.GetOrdinal("FECHAINICIO");
                         int idxFechaFin = reader.GetOrdinal("FECHAFIN");
@@ -182,6 +184,8 @@ namespace ApiControlTiempo.Connection
                                 {
                                     idPermiso = !reader.IsDBNull(idxIdPermiso) ? reader.GetInt32(idxIdPermiso) : 0,
                                     idColaborador = !reader.IsDBNull(idxIdColaborador) ? reader.GetInt32(idxIdColaborador) : 0,
+                                    Nombre = !reader.IsDBNull(idxNombre) ? reader.GetString(idxNombre) : "",
+                                    Correo = !reader.IsDBNull(idxCorreo) ? reader.GetString(idxCorreo) : "",
                                     fechaSolicitud = !reader.IsDBNull(idxFechaSolicitud)
                                                        ? reader.GetDateTime(idxFechaSolicitud)
                                                        : (DateTime?)null,
@@ -258,6 +262,8 @@ namespace ApiControlTiempo.Connection
                         // Cachear índices de columnas
                         int idxIdPermiso = reader.GetOrdinal("IDPERMISO");
                         int idxIdColaborador = reader.GetOrdinal("IDCOLABORADOR");
+                        int idxNombre = reader.GetOrdinal("NOMBRE");
+                        int idxCorreo = reader.GetOrdinal("CORREO");
                         int idxFechaSolicitud = reader.GetOrdinal("FECHASOLICITUD");
                         int idxFechaInicio = reader.GetOrdinal("FECHAINICIO");
                         int idxFechaFin = reader.GetOrdinal("FECHAFIN");
@@ -275,6 +281,8 @@ namespace ApiControlTiempo.Connection
                                 {
                                     idPermiso = !reader.IsDBNull(idxIdPermiso) ? reader.GetInt32(idxIdPermiso) : 0,
                                     idColaborador = !reader.IsDBNull(idxIdColaborador) ? reader.GetInt32(idxIdColaborador) : 0,
+                                    Nombre = !reader.IsDBNull(idxNombre) ? reader.GetString(idxNombre) : "",
+                                    Correo = !reader.IsDBNull(idxCorreo) ? reader.GetString(idxCorreo) : "",
                                     fechaSolicitud = !reader.IsDBNull(idxFechaSolicitud)
                                                        ? reader.GetDateTime(idxFechaSolicitud)
                                                        : (DateTime?)null,

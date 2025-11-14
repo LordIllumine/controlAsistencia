@@ -2,10 +2,12 @@
 using Microsoft.CodeAnalysis.Elfie.Serialization;
 using Newtonsoft.Json;
 using System.Text;
+using webControlAsistencia.Filters;
 using webControlAsistencia.Models;
 
 namespace webControlAsistencia.Controllers
 {
+    [SessionAuthorize]
     public class CrearTareaController : Controller
     {
         public static string IdColaborador;

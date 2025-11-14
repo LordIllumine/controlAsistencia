@@ -144,6 +144,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "ApiControlTiempo.Controllers.DescansosController",
+    "Method": "ListarDescansos",
+    "RelativePath": "api/Descansos/ListarDescansos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "objJson",
+        "Type": "ApiControlTiempo.Class.ClassDescansos\u002BClassDescanso_Obj",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "ApiControlTiempo.Controllers.GestionColaboradoresController",
     "Method": "ActColaboradorEstado",
     "RelativePath": "api/GestionColaboradores/ActColaboradorEstado",
@@ -170,6 +186,22 @@
       {
         "Name": "objJson",
         "Type": "ApiControlTiempo.Class.ClassGestionColaboradores\u002BClassActColaborador",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ApiControlTiempo.Controllers.GestionColaboradoresController",
+    "Method": "ConsultaColaboradorIDEspecifico",
+    "RelativePath": "api/GestionColaboradores/ConsultaColaboradorIDEspecifico/{Id_colaborador}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id_colaborador",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

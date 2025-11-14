@@ -17,14 +17,29 @@
                 <a asp-controller="ActividadesAsignadas" asp-action="ActividadesAsignadas" class="nav-btn">Actividades</a>
                 <a asp-controller="SolicitarDescanso" asp-action="SolicitarDescanso" class="nav-btn">Descanso</a>
                 <a asp-controller="Reporte" asp-action="Reporte" class="nav-btn">Reporte</a>
+                <a asp-controller="Colaborador" asp-action="ListarColaboradores" class="nav-btn">Perfil</a>
             </div>
+            
+            @using Microsoft.AspNetCore.Http
+            @inject IHttpContextAccessor HttpContextAccessor
+
+            @{
+                var nombreUsuario = HttpContextAccessor.HttpContext.Session.GetString("Usuario");
+                var rol = HttpContextAccessor.HttpContext.Session.GetString("Rol");
+            }
+
+            @if (string.IsNullOrEmpty(nombreUsuario))
+            {
+                nombreUsuario = "Usuario";
+            }
+
             <div class="right-section">
                 <div class="user-info">
-                    <span class="user-label">Usuario</span><br />
+                    <span class="user-label">@nombreUsuario | @rol</span><br />
                     <span class="status-label">Estado:</span>
                     <span class="status-dot"></span>
                 </div>
-                <a asp-controller="Home" asp-action="Index" class="nav-btn">Cerrar</a>
+                <a asp-controller="Home" asp-action="MarcarSalida" class="nav-btn">Cerrar</a>
             </div>
         </nav>
     </header>

@@ -1,0 +1,2 @@
+
+Error en Connec_ConsultarColaboradorID IDCOLABORADOR 11/03/25 23:24:44

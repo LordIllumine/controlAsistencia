@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\css\\DetallesTareaEstilo.css"
     },
     {
+      "Id": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\ListarColaboradorEstilo.css",
+      "PackagePath": "staticwebassets\\css\\ListarColaboradorEstilo.css"
+    },
+    {
+      "Id": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\OlvidoContraEstilo.css",
+      "PackagePath": "staticwebassets\\css\\OlvidoContraEstilo.css"
+    },
+    {
       "Id": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\SolicitarDescansoEstilo.css",
       "PackagePath": "staticwebassets\\css\\SolicitarDescansoEstilo.css"
     },

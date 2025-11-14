@@ -80,7 +80,7 @@ namespace ApiControlTiempo.Controllers
                 <html>
                     <body style='font-family: Arial;'>
                         <h2>Recuperación de Contraseña</h2>
-                        <p>Se ha solicitado una recuperación de contraseña para su cuenta copie el siguiente token y péguelo en la pantalla de recuperación del sistema.</p>
+                        <p>Se ha solicitado una recuperación de contraseña para su cuenta copie el siguiente token y péguelo en la pantalla de recuperación del sistema, el token tiene una duración de 10 minutos antes de expirar y tener que solicitar otro.</p>
                         <p><strong>Token:</strong> {ObjResp.token}</p>
                         <p>Si usted no realizó esta solicitud, puede ignorar este correo y comunicarse con el equipo de soporte.</p>
                         <br />

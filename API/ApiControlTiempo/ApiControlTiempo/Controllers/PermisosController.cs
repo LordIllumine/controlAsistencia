@@ -131,6 +131,5 @@ namespace ApiControlTiempo.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
     }
 }

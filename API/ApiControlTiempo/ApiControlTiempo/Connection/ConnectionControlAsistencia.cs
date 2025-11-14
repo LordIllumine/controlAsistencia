@@ -255,13 +255,13 @@ namespace ApiControlTiempo.Connection
 
                     // Parámetros de entrada
                     cmd.Parameters.AddWithValue("@idColaborador", obj.idColaborador);
-                    cmd.Parameters.AddWithValue("@fecha", DateOnly.FromDateTime(Convert.ToDateTime(obj.fecha)));
+                    //cmd.Parameters.AddWithValue("@fecha", DateOnly.FromDateTime(Convert.ToDateTime(obj.fecha)));
 
-                    // Convierte los strings a TimeSpan si no son nulos/vacíos
-                    if (!string.IsNullOrEmpty(obj.horaEntrada))
-                        cmd.Parameters.AddWithValue("@horaEntrada", TimeSpan.Parse(obj.horaEntrada));
-                    else
-                        cmd.Parameters.AddWithValue("@horaEntrada", DBNull.Value);
+                    //// Convierte los strings a TimeSpan si no son nulos/vacíos
+                    //if (!string.IsNullOrEmpty(obj.horaEntrada))
+                    //    cmd.Parameters.AddWithValue("@horaEntrada", TimeSpan.Parse(obj.horaEntrada));
+                    //else
+                    //    cmd.Parameters.AddWithValue("@horaEntrada", DBNull.Value);
                     
                     cmd.Parameters.AddWithValue("@ip", obj.ip);
                     cmd.Parameters.AddWithValue("@mac", obj.mac);
@@ -273,7 +273,6 @@ namespace ApiControlTiempo.Connection
                     };
 
                     cmd.Parameters.Add(pMensaje);
-
                     cmd.ExecuteNonQuery();
 
                     Mensaje = pMensaje.Value?.ToString();
@@ -311,13 +310,13 @@ namespace ApiControlTiempo.Connection
 
                     // Parámetros de entrada
                     cmd.Parameters.AddWithValue("@idColaborador", obj.idColaborador);
-                    cmd.Parameters.AddWithValue("@fecha", DateOnly.FromDateTime(Convert.ToDateTime(obj.fecha)));
+                    //cmd.Parameters.AddWithValue("@fecha", DateOnly.FromDateTime(Convert.ToDateTime(obj.fecha)));
 
-                    // Convierte los strings a TimeSpan si no son nulos/vacíos
-                    if (!string.IsNullOrEmpty(obj.horaSalida))
-                        cmd.Parameters.AddWithValue("@horaSalida", TimeSpan.Parse(obj.horaSalida));
-                    else
-                        cmd.Parameters.AddWithValue("@horaSalida", DBNull.Value);
+                    //// Convierte los strings a TimeSpan si no son nulos/vacíos
+                    //if (!string.IsNullOrEmpty(obj.horaSalida))
+                    //    cmd.Parameters.AddWithValue("@horaSalida", TimeSpan.Parse(obj.horaSalida));
+                    //else
+                    //    cmd.Parameters.AddWithValue("@horaSalida", DBNull.Value);
 
                     // Parámetros de salida
                     var pMensaje = new SqlParameter("@mensaje", SqlDbType.NVarChar, 200)

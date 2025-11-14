@@ -169,6 +169,7 @@ namespace ApiControlTiempo.Connection
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Parámetros de entrada
+                    cmd.Parameters.AddWithValue("@IP", ResetPass.IP); 
                     cmd.Parameters.AddWithValue("@correo", ResetPass.correo);
 
                     // Parámetros de salida
@@ -222,11 +223,11 @@ namespace ApiControlTiempo.Connection
                 using (SqlCommand cmd = new SqlCommand())
                 {
                     cmd.Connection = cnn.AbrirConexion();
-                    cmd.CommandText = "SP_Auth_ResetPassword_Confirm";
+                    cmd.CommandText = "SP_Auth_ResetPassword_ConfirmToken";
                     cmd.CommandType = CommandType.StoredProcedure;
 
                     // Parámetros de entrada
-                    cmd.Parameters.AddWithValue("@correo", ResetPass.correo);
+                    cmd.Parameters.AddWithValue("@token", ResetPass.token);
                     cmd.Parameters.AddWithValue("@passwordNueva", ResetPass.passwordNueva);
 
                     // Parámetros de salida

@@ -52,6 +52,8 @@ namespace ApiControlTiempo.Class
         {
             public int idPermiso { get; set; }
             public int idColaborador { get; set; }
+            public string Nombre { get; set; }
+            public string Correo { get; set; }
             public DateTime? fechaSolicitud { get; set; }
             public DateTime? fechaInicio { get; set; }
             public DateTime? fechaFin { get; set; }

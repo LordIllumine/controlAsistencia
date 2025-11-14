@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using webControlAsistencia.Filters;
 
 namespace webControlAsistencia.Controllers
 {
+    [SessionAuthorize]
     public class PrincipalController : Controller
     {
         public static string IdColaborador;
@@ -10,7 +12,7 @@ namespace webControlAsistencia.Controllers
         public static string Rol;
         public static string Token;
 
-        // GET: PrincipalController
+        // GET: PrincipalController       
         public ActionResult Principal()
         {
             // Recuperar los datos que vienen del login
@@ -20,6 +22,10 @@ namespace webControlAsistencia.Controllers
                 Usuario = HttpContext.Session.GetString("Usuario");
                 Rol = HttpContext.Session.GetString("Rol");
                 Token = HttpContext.Session.GetString("Token");
+            }
+            else 
+            {
+                return RedirectToAction("Index", "Home");
             }
 
             //si quisieramos borrar la session 

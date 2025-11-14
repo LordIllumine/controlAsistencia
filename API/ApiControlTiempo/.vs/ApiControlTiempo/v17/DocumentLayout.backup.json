@@ -3,16 +3,28 @@
   "WorkspaceRootPath": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\class\\classpermisos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\class\\classpermisos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\connection\\connectioncontrolasistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\connection\\connectioncontrolasistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\controllers\\permisoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\controllers\\permisoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\controllers\\controlasistenciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\controllers\\controlasistenciacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\connection\\connectionpermisos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\connection\\connectionpermisos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\class\\classcontrolasistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\class\\classcontrolasistencia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\class\\classgestioncolaboradores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\class\\classgestioncolaboradores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\connection\\connetiongestioncolaboradores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\connection\\connetiongestioncolaboradores.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|d:\\estudio\\uned\\proyecto tfg\\proyecto\\repositorios\\controlasistencia\\api\\apicontroltiempo\\apicontroltiempo\\controllers\\gestioncolaboradorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EF9004D-2A7D-417D-AF39-AAE85F7432BA}|ApiControlTiempo\\ApiControlTiempo.csproj|solutionrelative:apicontroltiempo\\controllers\\gestioncolaboradorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,46 +34,83 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PermisosController.cs",
-              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Controllers\\PermisosController.cs",
-              "RelativeDocumentMoniker": "ApiControlTiempo\\Controllers\\PermisosController.cs",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Controllers\\PermisosController.cs",
-              "RelativeToolTip": "ApiControlTiempo\\Controllers\\PermisosController.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAgwCgAAAAIAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "ConnectionControlAsistencia.cs",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Connection\\ConnectionControlAsistencia.cs",
+              "RelativeDocumentMoniker": "ApiControlTiempo\\Connection\\ConnectionControlAsistencia.cs",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Connection\\ConnectionControlAsistencia.cs",
+              "RelativeToolTip": "ApiControlTiempo\\Connection\\ConnectionControlAsistencia.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAuwOwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T05:53:27.773Z",
+              "WhenOpened": "2025-11-14T04:01:15.605Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ConnectionPermisos.cs",
-              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Connection\\ConnectionPermisos.cs",
-              "RelativeDocumentMoniker": "ApiControlTiempo\\Connection\\ConnectionPermisos.cs",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Connection\\ConnectionPermisos.cs",
-              "RelativeToolTip": "ApiControlTiempo\\Connection\\ConnectionPermisos.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwCYAAAAUAAAAAAAAAA==",
+              "Title": "ClassControlAsistencia.cs",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Class\\ClassControlAsistencia.cs",
+              "RelativeDocumentMoniker": "ApiControlTiempo\\Class\\ClassControlAsistencia.cs",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Class\\ClassControlAsistencia.cs",
+              "RelativeToolTip": "ApiControlTiempo\\Class\\ClassControlAsistencia.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAA4wDIAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T05:53:12.383Z",
+              "WhenOpened": "2025-11-14T04:00:26.547Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ClassPermisos.cs",
-              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Class\\ClassPermisos.cs",
-              "RelativeDocumentMoniker": "ApiControlTiempo\\Class\\ClassPermisos.cs",
-              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Class\\ClassPermisos.cs*",
-              "RelativeToolTip": "ApiControlTiempo\\Class\\ClassPermisos.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBEAAAAaAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "ControlAsistenciaController.cs",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Controllers\\ControlAsistenciaController.cs",
+              "RelativeDocumentMoniker": "ApiControlTiempo\\Controllers\\ControlAsistenciaController.cs",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Controllers\\ControlAsistenciaController.cs",
+              "RelativeToolTip": "ApiControlTiempo\\Controllers\\ControlAsistenciaController.cs",
+              "ViewState": "AgIAAEoAAAAAAAAAAAA9wHcAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-29T05:51:15.436Z",
+              "WhenOpened": "2025-11-14T04:00:17.469Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ConnetionGestionColaboradores.cs",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Connection\\ConnetionGestionColaboradores.cs",
+              "RelativeDocumentMoniker": "ApiControlTiempo\\Connection\\ConnetionGestionColaboradores.cs",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Connection\\ConnetionGestionColaboradores.cs",
+              "RelativeToolTip": "ApiControlTiempo\\Connection\\ConnetionGestionColaboradores.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAgwFQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-07T05:06:00.417Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ClassGestionColaboradores.cs",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Class\\ClassGestionColaboradores.cs",
+              "RelativeDocumentMoniker": "ApiControlTiempo\\Class\\ClassGestionColaboradores.cs",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Class\\ClassGestionColaboradores.cs",
+              "RelativeToolTip": "ApiControlTiempo\\Class\\ClassGestionColaboradores.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAiwDAAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T04:57:59.918Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GestionColaboradoresController.cs",
+              "DocumentMoniker": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Controllers\\GestionColaboradoresController.cs",
+              "RelativeDocumentMoniker": "ApiControlTiempo\\Controllers\\GestionColaboradoresController.cs",
+              "ToolTip": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\API\\ApiControlTiempo\\ApiControlTiempo\\Controllers\\GestionColaboradoresController.cs",
+              "RelativeToolTip": "ApiControlTiempo\\Controllers\\GestionColaboradoresController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAowDYAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-04T04:57:43.918Z"
             }
           ]
         }

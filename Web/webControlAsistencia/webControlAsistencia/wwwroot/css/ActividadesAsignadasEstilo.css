@@ -150,3 +150,131 @@ body, input, select, button {
     padding: 24px;
     font-weight: 500;
 }
+
+.btn-primary {
+    border: none !important;
+    border-radius: 999px !important;
+    padding: 10px 16px !important;
+    background: #6BD569 !important;
+    color: #0a0a0a !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 0 rgba(0,0,0,.15) !important;
+    transition: transform .05s ease, filter .15s ease !important;
+}
+
+    .btn-primary:hover {
+        filter: brightness(0.97);
+        background: #6BD569 !important; /* Mantiene el color en hover */
+        color: #0a0a0a !important;
+    }
+
+    .btn-primary:active {
+        transform: translateY(1px);
+    }
+
+/* Contenedor para el botón centrado
+  Reemplaza clase '.detalle-actions'
+*/
+.detalle-actions-centered {
+    margin-top: 14px;
+    text-align: center; /* <-- Esto centra el botón */
+    width: 100%;
+}
+
+@media (max-width: 767.98px) {
+    .tabla-wrapper {
+        margin-top: 20px;
+        width: 90%;
+        height: 100%;
+        margin-left: -1%;
+    }
+}
+
+.table-responsive {
+    flex-grow: 1; /* Permite que el contenedor de la tabla crezca */
+    margin-bottom: 0; /* Elimina márgenes inferiores si los tiene por defecto */
+    /* Añade overflow-x: auto; si la tabla puede tener muchas columnas */
+}
+
+/* Ajuste para el botón "Asignar colaborador" */
+.toolbar-left input.btn-primary {
+    /* Alinea el botón con el borde de la tabla */
+    margin-top: 10px;
+}
+
+
+/* Estilos para hacer el formulario responsive, apilando los elementos */
+
+/* Aplica Flexbox al contenedor principal del formulario para controlar la dirección */
+#formFiltro > .toolbar-left {
+    display: flex;
+    flex-direction: row; /* Por defecto, que sigan en fila si ya lo están */
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben */
+    gap: 15px; /* Espacio entre los grupos de elementos */
+}
+
+/* Media Query para pantallas pequeñas (móviles y tabletas pequeñas) */
+/* Ancho máximo de 768px */
+@media (max-width: 768px) {
+    /* Hace que los contenedores principales (.toolbar-left) se apilen verticalmente */
+    #formFiltro > .toolbar-left {
+        flex-direction: column;
+        gap: 10px; /* Ajusta el espacio vertical entre secciones (Filtro, Fechas, Botón) */
+        padding: 10px; /* Opcional: añade algo de padding alrededor del formulario */
+    }
+
+    /* Hace que los grupos internos de elementos (los labels, selects e inputs) también se apilen verticalmente */
+    #formFiltro .toolbar-left .toolbar-left {
+        display: flex;
+        flex-direction: column;
+        width: 100%; /* Ocupa todo el ancho disponible */
+        box-sizing: border-box; /* Incluye padding y border en el width */
+    }
+
+    /* Opcional: Ajusta el ancho de los select e inputs para que ocupen todo el ancho dentro de su contenedor */
+    #formFiltro .form-select,
+    #formFiltro .form-control {
+        width: 100%;
+    }
+
+    /* Opcional: Centra el botón al apilar */
+    #formFiltro .detalle-actions-centered {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* --- Estilo de Caja Contenedora para Actividades Asignadas --- */
+
+/*.actividades-container {*/
+    /* Fondo blanco, bordes y sombra para crear la "caja" */
+    /*background: #fff;
+    padding: 20px;*/ /* Espacio interno para que el contenido no toque los bordes */
+    /*border-radius: 8px;*/ /* Esquinas redondeadas */
+    /*box-shadow: 0 4px 12px rgba(0,0,0,.15);*/ /* Sombra suave */
+    /* Configuración para centrar el contenedor en la página */
+    /*max-width: 1200px;*/ /* O el ancho máximo */
+    /*margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}*/
+
+    /* Ajuste para que el encabezado del filtro y toolbar interno no sean demasiado anchos */
+    /* Hacemos el toolbar más flexible y responsivo dentro del nuevo container */
+    /*.actividades-container .toolbar-left {*/
+        /* Ajuste para que la barra de búsqueda y crear actividad funcione correctamente */
+        /*display: flex;
+        justify-content: space-between;*/ /* Distribuye el contenido (Buscar a la izq, Crear a la der) */
+        /*align-items: center;
+        width: 100%;
+        gap: 10px;
+    }*/
+
+/* Corrección de regla existente para los toolbars que podría causar problemas de alineación sin el "grid" */
+/*.toolbar-left, .toolbar-right {*/*/
+    /* Aseguramos que solo el contenedor de filtros sea flexible y no se rompa */
+    /*display: flex;
+    align-items: center;
+    gap: 10px;
+}*/

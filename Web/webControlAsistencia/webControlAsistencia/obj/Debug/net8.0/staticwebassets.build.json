@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IRyDaWU2uvCzk3N0GhlAPFcArgRCV+q1RsFl3rXWrc8=",
+  "Hash": "dZurFmHyfwF7i/qTJtqA5Z4k0cau92j/+avmegQGpCQ=",
   "Source": "webControlAsistencia",
   "BasePath": "_content/webControlAsistencia",
   "Mode": "Default",
@@ -131,6 +131,25 @@
       "OriginalItemSpec": "wwwroot\\css\\DetallesTareaEstilo.css"
     },
     {
+      "Identity": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\ListarColaboradorEstilo.css",
+      "SourceId": "webControlAsistencia",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\",
+      "BasePath": "_content/webControlAsistencia",
+      "RelativePath": "css/ListarColaboradorEstilo.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\ListarColaboradorEstilo.css"
+    },
+    {
       "Identity": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\loginEstilo.css",
       "SourceId": "webControlAsistencia",
       "SourceType": "Discovered",
@@ -148,6 +167,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\loginEstilo.css"
+    },
+    {
+      "Identity": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\OlvidoContraEstilo.css",
+      "SourceId": "webControlAsistencia",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\",
+      "BasePath": "_content/webControlAsistencia",
+      "RelativePath": "css/OlvidoContraEstilo.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\OlvidoContraEstilo.css"
     },
     {
       "Identity": "D:\\ESTUDIO\\UNED\\Proyecto TFG\\Proyecto\\Repositorios\\controlAsistencia\\Web\\webControlAsistencia\\webControlAsistencia\\wwwroot\\css\\site.css",

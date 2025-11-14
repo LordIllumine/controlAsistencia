@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis.Elfie.Serialization;
 using Newtonsoft.Json;
 using System.Text;
+using webControlAsistencia.Filters;
 using webControlAsistencia.Models;
 
 namespace webControlAsistencia.Controllers
 {
+    [SessionAuthorize]
     public class SolicitarPermisosController : Controller
     {
         public static string IdColaborador;
@@ -46,7 +48,7 @@ namespace webControlAsistencia.Controllers
                 }
 
                 ClassSolicitarPermisos ObjResp = new ClassSolicitarPermisos();
-                ClassPermiso_List listarPermiso = new ClassPermiso_List();
+                //ClassPermiso_List listarPermiso = new ClassPermiso_List();
 
                 using (HttpClient client = new HttpClient())
                 {
@@ -227,6 +229,7 @@ namespace webControlAsistencia.Controllers
                 string Usuario = string.Empty;
                 string Rol = string.Empty;
                 string Token = string.Empty;
+                Mensaje = null;
 
                 if (HttpContext.Session.GetString("Usuario") != null)
                 {
@@ -305,6 +308,7 @@ namespace webControlAsistencia.Controllers
                 string Usuario = string.Empty;
                 string Rol = string.Empty;
                 string Token = string.Empty;
+                Mensaje = null;
 
                 if (HttpContext.Session.GetString("Usuario") != null)
                 {

@@ -43,6 +43,7 @@ namespace ApiControlTiempo.Class
     public class ClassResetPasswordRequest
     {
         //[Required]
+        public string IP { get; set; }
         public string correo { get; set; }
         //[JsonIgnore]
         public string token { get; set; }
@@ -52,6 +53,8 @@ namespace ApiControlTiempo.Class
 
     public class ClassResetPasswordComfirm
     {
+        [Required]
+        public string token { get; set; }
         [Required]
         public string correo { get; set; }
         [Required]

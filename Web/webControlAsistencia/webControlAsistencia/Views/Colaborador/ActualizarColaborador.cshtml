@@ -1,0 +1,205 @@
+﻿@model webControlAsistencia.Models.ClassColaboradorID
+
+@{
+    ViewData["Title"] = "ActualizarColaborador";
+}
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/DetallePermisoEstilo.css" />
+    @*     <link rel="stylesheet" href="~/css/DetallesTareaEstilo.css" /> *@
+    <link rel="stylesheet" href="~/css/ActividadesAsignadasEstilo.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC7qOPdfyQA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<br />
+<br />
+
+<form id="validarTokenForm" asp-action="ActualizarColaboradorEjecutar" asp-controller="Colaborador" method="get">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="detalle-wrapper">
+                <div class="detalle">
+                    <h4 class="detalle-title">Actualizar Colaborador</h4>
+                    @if (ViewBag.Message != null)
+                    {
+                        <div class="alert alert-danger mt-3">@ViewBag.Message</div>
+                    }
+                    @if (ViewBag.Error != null)
+                    {
+                        <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+                    }
+                    <hr class="detalle-hr" />
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="IdColaborador" class="control-label"></label>
+                        <input asp-for="IdColaborador" class="form-control" readonly/>
+                        <span asp-validation-for="IdColaborador" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Nombre" class="control-label"></label>
+                        <input asp-for="Nombre" class="form-control" />
+                        <span asp-validation-for="Nombre" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Apellido" class="control-label"></label>
+                        <input asp-for="Apellido" class="form-control" />
+                        <span asp-validation-for="Apellido" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Correo" class="control-label"></label>
+                        <input asp-for="Correo" class="form-control" />
+                        <span asp-validation-for="Correo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Telefono" class="control-label"></label>
+                        <input asp-for="Telefono" class="form-control" />
+                        <span asp-validation-for="Telefono" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Rol" class="control-label">Rol</label>
+                        <select asp-for="Rol" class="form-select">
+                            <option value="user">Usuario</option>
+                            <option value="Administrador">Administrador</option>
+                        </select>
+                        <span asp-validation-for="Rol" class="text-danger"></span>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Estado" /> @Html.DisplayNameFor(model => model.Estado)
+                         (Activo/desactivado)</label>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Contraseña" class="control-label"></label>
+                        <input asp-for="Contraseña" class="form-control" type="password" id="Contraseña" />
+                        <span id="ContrasenaError" class="text-danger"></span>
+                        <span asp-validation-for="Contraseña" class="text-danger"></span>
+                    </div>
+                    <hr class="detalle-hr" />
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="detalle-actions-centered">
+                                <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            var $passwordInput = $('#Contraseña');
+            var $errorSpan = $('#ContrasenaError');
+            var $form = $('#validarTokenForm');
+
+            // 1. Función de Validación Central
+            function validarNuevaContrasena() {
+                var password = $passwordInput.val();
+                var isValid = true;
+
+                // Usaremos una lista para mostrar todos los requisitos faltantes.
+                var errorList = $('<ul>').addClass('list-unstyled mt-2');
+                $errorSpan.html(''); // Limpiar errores anteriores
+
+                // **Política de Contraseña**
+
+                // a. Longitud mínima de 8
+                if (password.length < 8) {
+                    errorList.append($('<li>').text('• Al menos 8 caracteres.'));
+                    isValid = false;
+                }
+
+                // b. Al menos una mayúscula ([A-Z])
+                if (!/[A-Z]/.test(password)) {
+                    errorList.append($('<li>').text('• Al menos una letra mayúscula.'));
+                    isValid = false;
+                }
+
+                // c. Al menos una minúscula ([a-z])
+                if (!/[a-z]/.test(password)) {
+                    errorList.append($('<li>').text('• Al menos una letra minúscula.'));
+                    isValid = false;
+                }
+
+                // d. Al menos un número ([0-9])
+                if (!/[0-9]/.test(password)) {
+                    errorList.append($('<li>').text('• Al menos un número.'));
+                    isValid = false;
+                }
+
+                // e. Al menos un carácter especial ([^A-Za-z0-9])
+                if (!/[^A-Za-z0-9]/.test(password)) {
+                    errorList.append($('<li>').text('• Al menos un carácter especial (ej: @@, #, $).'));
+                    isValid = false;
+                }
+
+                // f. Sin espacios en blanco
+                if (/\s/.test(password)) {
+                    errorList.append($('<li>').text('• No debe contener espacios en blanco.'));
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    // Muestra el mensaje de error
+                    $errorSpan.append($('<h6>').text('La nueva contraseña no cumple la política. Requisitos:').css('color', 'red'));
+                    $errorSpan.append(errorList);
+                }
+
+                // Devuelve el estado de validación
+                return isValid;
+            }
+
+            // 2. Conectar la validación a los eventos en tiempo real
+
+            $passwordInput.on('keyup', validarNuevaContrasena);
+            $passwordInput.on('blur', validarNuevaContrasena);
+
+            // 3. Modificar la validación al enviar el formulario (submit)
+            $form.submit(function (e) {
+                if (!validarNuevaContrasena()) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const passwordInput = document.getElementById('Contraseña');
+            const toggleButton = document.getElementById('togglePassword');
+            const eyeIcon = document.getElementById('eyeIcon');
+
+            if (toggleButton && passwordInput && eyeIcon) {
+                toggleButton.addEventListener('click', function () {
+                    // Alternar el tipo de 'password' a 'text' y viceversa
+                    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                    passwordInput.setAttribute('type', type);
+
+                    // Alternar los iconos: ojo abierto (fas fa-eye) u ojo cerrado (fas fa-eye-slash)
+                    if (type === 'text') {
+                        eyeIcon.classList.remove('fa-eye-slash');
+                        eyeIcon.classList.add('fa-eye');
+                    } else {
+                        eyeIcon.classList.remove('fa-eye');
+                        eyeIcon.classList.add('fa-eye-slash');
+                    }
+                });
+            }
+        });
+    </script>
+}

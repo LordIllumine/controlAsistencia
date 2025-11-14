@@ -45,6 +45,8 @@ namespace ApiControlTiempo.Class
             public string rol { get; set; }
             [Required]
             public bool estado { get; set; }
+            [Required]
+            public string password { get; set; }
         }
 
         public class ClassActColaboradorResp
@@ -63,12 +65,24 @@ namespace ApiControlTiempo.Class
             public bool estado { get; set; }
         }
 
+        public class ClassConsultarColaboradorUpdate
+        {
+            public int idColaborador { get; set; }
+            public string nombre { get; set; }
+            public string apellido { get; set; }
+            public string correo { get; set; }
+            public string telefono { get; set; }
+            public string rol { get; set; }
+            public bool estado { get; set; }
+            public string password { get; set; }
+        }
+
         public class ClassConsultarColaboradorFiltro
         {
             public int idColaborador { get; set; }
-            public string texto { get; set; }
-            public string rol { get; set; }
-            public bool estado { get; set; }
+            public string? texto { get; set; } = null;
+            public string? rol { get; set; } = null;
+            public bool? estado { get; set; } = null;
         }
 
         public class ClassActColaboradorEstado

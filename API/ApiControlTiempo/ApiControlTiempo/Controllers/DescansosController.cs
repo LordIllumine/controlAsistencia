@@ -11,6 +11,38 @@ namespace ApiControlTiempo.Controllers
     [ApiController]
     public class DescansosController : Controller
     {
+        [HttpPost("ListarDescansos")]
+        public IActionResult ListarDescansos([FromBody] ClassDescanso_Obj objJson)
+        {
+            try
+            {
+                // Consultar usuario en BD
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+                string mensaje = string.Empty;
+                ConnectionDescansos Aut = new ConnectionDescansos(configuration);
+                List<ClassDescanso_List> Listar = Aut.Connec_DescansoList(objJson);
+
+                if (Listar.Count > 0)
+                {
+                    mensaje = "Consulta exitosa";
+                }
+                else
+                {
+                    mensaje = "No hay Permisos para mostrar";
+                }
+
+                return Ok(new { Listar, message = mensaje });
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost("Descanso_Iniciar")]
         public IActionResult Descanso_Iniciar([FromBody] ClassDescanso_Iniciar objJson)
         {
@@ -23,15 +55,14 @@ namespace ApiControlTiempo.Controllers
                     .Build();
 
                 ConnectionDescansos Aut = new ConnectionDescansos(configuration);
-                string mensaje = Aut.Connec_Descanso_Iniciar(objJson);
+                ClassDescanso_Iniciar Resp = Aut.Connec_Descanso_Iniciar(objJson);
 
-                if (string.IsNullOrEmpty(mensaje))
-                {
-                    mensaje = "No se obtuvo respuesta del servidor, por favor reinténtelo";
-                }
+                //if (Resp.idDescanso == null)
+                //{
+                //    mensaje = "No se obtuvo respuesta del servidor, por favor reinténtelo";
+                //}
 
-                return Ok(new { message = mensaje });
-
+                return Ok(new { Resp });
             }
             catch (Exception ex)
             {

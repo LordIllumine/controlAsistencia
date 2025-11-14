@@ -1,0 +1,4 @@
+
+Error en Connec_ConsultarColaboradorIDEspecifico IDCOLABORADOR 11/07/25 0:53:27
+
+Error en Connec_ConsultarColaboradorIDEspecifico IDCOLABORADOR 11/07/25 1:02:27

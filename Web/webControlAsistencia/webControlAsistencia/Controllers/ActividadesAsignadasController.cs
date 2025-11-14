@@ -4,10 +4,12 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
+using webControlAsistencia.Filters;
 using webControlAsistencia.Models;
 
 namespace webControlAsistencia.Controllers
 {
+    [SessionAuthorize]
     public class ActividadesAsignadasController : Controller
     {
         public static string IdColaborador;

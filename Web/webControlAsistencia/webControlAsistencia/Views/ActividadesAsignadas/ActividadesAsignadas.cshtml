@@ -16,12 +16,13 @@
 <br />
 <br />
 
-<h1>ActividadesAsignadas</h1>
+<h1>Actividades asignadas</h1>
 
+<div class="actividades-container">
 <!-- FORMULARIO DE FILTRO -->
 <form asp-action="ActividadesAsignadas" asp-controller="ActividadesAsignadas" method="get" id="formFiltro">
-    <div class="toolbar">
-        <div class="toolbar-center">
+    <div class="toolbar-left">
+        <div class="toolbar-left">
             <label class="lbl">Filtro:</label>
             <select name="filtro" id="filtro" class="cbx-filtro form-select">
                 <!--<option value="Todos">Seleccione un Filtro</option>-->
@@ -38,64 +39,71 @@
             <label class="lbl">Fecha fin:</label>
             <input type="date" id="fechaFin" name="fechaFin" class="form-control" />
 
-            <button type="submit" class="btn btn-primary mt-2">Aplicar filtro</button>
+            @* <button type="submit" class="btn btn-primary mt-2">Aplicar filtro</button> *@
+            <div class="detalle-actions-centered">
+                <button type="submit" class="btn btn-primary">Aplicar filtro</button>
+            </div>
         </div>
 
-        
     </div>
 </form>
 
-<div class="toolbar-right">
+<br />
+<div class="toolbar-left">
+    @* right *@
     <label class="lbl">Buscar:</label>
     <div class="searchwrap">
         <input id="search" type="text" class="search" placeholder="Buscar..." />
     </div>
-</div>
 
+    <div class="toolbar-center text-center">
+        <a asp-action="CrearTarea" asp-controller="CrearTarea" class="btn-crear">Crear actividad</a>
+    </div>
+
+</div>
 <br />
 
-<div class="toolbar-center text-center">
-    <a asp-action="CrearTarea" asp-controller="CrearTarea" class="btn-crear">Crear actividad</a>
-</div>
-
-<table class="grid mt-3">
-    <thead>
-        <tr>
-            <!--Tareas-->
-            <th hidden>Id</th>
-            <th>Tarea</th>
-            <th>Descripción</th>
-            <th>Estado Tarea</th>
-            <th>Fecha inicio</th>
-            <th>Fecha Fin</th>
-            <th>Acciones</th>
-        </tr>
-    </thead>
-    <tbody id="table-body">
-        @if (Model.listTareas != null && Model.listTareas.Any())
-        {
-            foreach (var item in Model.listTareas)
+<div class="table-responsive">
+    <table class="table table-striped table-hover table-sm">
+        <thead class="thead-dark">
+            <tr>
+                <!--Tareas-->
+                <th hidden>Id</th>
+                <th>Tarea</th>
+                <th>Descripción</th>
+                <th>Estado Tarea</th>
+                <th>Fecha inicio</th>
+                <th>Fecha Fin</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody id="table-body">
+            @if (Model.listTareas != null && Model.listTareas.Any())
             {
-                <tr>
-                    <td hidden>@item.idTarea</td>
-                    <td>@item.Nombre</td>
-                    <td>@item.Descripcion</td>
-                    <td>@item.EstadoTarea</td>
-                    <td>@item.fechaIniTarea</td>
-                    <td>@item.fechafinTarea</td>
-                    <td class="acciones">
-                        <input type="button" value="Detalles" class="btn-pill"
-                               onclick="location.href='@Url.Action("DetalleTarea","DetalleTarea", new { id = item.idTarea })'">
-                    </td>
-                </tr>
+                foreach (var item in Model.listTareas)
+                {
+                    <tr>
+                        <td hidden>@item.idTarea</td>
+                        <td>@item.Nombre</td>
+                        <td>@item.Descripcion</td>
+                        <td>@item.EstadoTarea</td>
+                        <td>@item.fechaIniTarea</td>
+                        <td>@item.fechafinTarea</td>
+                        <td class="acciones">
+                            <input type="button" value="Detalles" class="btn-pill"
+                                   onclick="location.href='@Url.Action("DetalleTarea","DetalleTarea", new { id = item.idTarea })'">
+                        </td>
+                    </tr>
+                }
             }
-        }
-        else
-        {
-            <tr><td colspan="6" class="nodata">No hay datos para mostrar</td></tr>
-        }
-    </tbody>
-</table>
+            else
+            {
+                <tr><td colspan="6" class="nodata">No hay datos para mostrar</td></tr>
+            }
+        </tbody>
+    </table>
+</div>
+</div>
 
 @section Scripts {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

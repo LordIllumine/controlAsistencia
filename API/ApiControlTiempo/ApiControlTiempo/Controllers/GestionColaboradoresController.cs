@@ -101,6 +101,38 @@ namespace ApiControlTiempo.Controllers
             }
         }
 
+        [HttpGet("ConsultaColaboradorIDEspecifico/{Id_colaborador}")]
+        public IActionResult ConsultaColaboradorIDEspecifico(int Id_colaborador)
+        {
+            try
+            {
+                // Consultar usuario en BD
+                var configuration = new ConfigurationBuilder()
+                    .SetBasePath(Directory.GetCurrentDirectory())
+                    .AddJsonFile("appsettings.json")
+                    .Build();
+
+                ConnetionGestionColaboradores Aut = new ConnetionGestionColaboradores(configuration);
+                ClassConsultarColaboradorUpdate objJson = Aut.Connec_ConsultarColaboradorIDEspecifico(Id_colaborador);
+                string mensaje = string.Empty;
+
+                if (objJson == null)
+                {
+                    mensaje = "No se se encontró un registro con ese ID, por favor reinténtelo";
+                }
+                else
+                {
+                    mensaje = "Consultado con éxito";
+                }
+
+                return Ok(new { objJson });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost("ConsultarColaboradorFiltro")]
         public IActionResult ConsultarColaboradorFiltro([FromBody] ClassConsultarColaboradorFiltro objJson)
         {

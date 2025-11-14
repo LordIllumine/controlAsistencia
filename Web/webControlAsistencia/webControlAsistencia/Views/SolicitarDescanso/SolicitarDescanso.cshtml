@@ -7,49 +7,211 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/SolicitarDescansoEstilo.css" />
+    @* <link rel="stylesheet" href="~/css/SolicitarDescansoEstilo.css" /> *@
+    <link rel="stylesheet" href="~/css/SolicitarPermisoEstilo.css" />
+    <link rel="stylesheet" href="~/css/ActividadesAsignadasEstilo.css" />
 </head>
-
 <br />
 <br />
 
-<h1>SolicitarDescanso</h1>
+<div class="permiso-layout">
 
-<div class="descanso-wrapper">
-    <form asp-action="SolicitarDescanso" class="descanso-form">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <form asp-action="IniciarDescanso" class="permiso-form" asp-controller="SolicitarDescanso" method="get">
+        <div class="row">
+            <div class="col-md-7">
+                <div class="detalle-wrapper">
+                    <div class="detalle">
+                        <h4 class="detalle-title">Solicitar descanso</h4>
+                        <hr class="detalle-hr" />
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-        <div class="field">
-            <label asp-for="TipoDescanso" class="label">Tipo de descanso:</label>
-            <select asp-for="TipoDescanso" class="input select">
-                <option value="">Seleccione un tipo de permiso</option>
-                <option value="Ir al baño">Ir al baño</option>
-                <option value="Salida Personal">Salida Personal</option>
-                <option value="Otro">Otro</option>
-            </select>
-            <span asp-validation-for="TipoDescanso" class="text-danger"></span>
-        </div>
+                        @if (ViewBag.Error != null)
+                        {
+                            <div class="alert alert-danger mt-3">@ViewBag.Error</div>
+                        }
 
-        <div class="field field-block">
-            <label asp-for="Descripcion" class="label">Descripción:</label>
-            <textarea asp-for="Descripcion" class="input textarea" rows="5"></textarea>
-            <span asp-validation-for="Descripcion" class="text-danger"></span>
-        </div>
+                        <div class="form-group mb-3">
+                            <label asp-for="TipoDescansos" class="control-label">Tipo de descanso:</label>
+                            <select asp-for="TipoDescansos" name="filtro" id="filtro" class="cbx-filtro form-select">
+                                <option value="">Seleccione un tipo de permiso</option>
+                                <option value="baño">Ir al baño</option>
+                                <option value="SalidaPersonal">Salida Personal</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            <span asp-validation-for="TipoDescansos" class="text-danger"></span>
+                        </div>
 
-        <div class="acciones">
-            <input type="submit" value="Iniciar descanso" class="btn-primar" />
+                        <div class="form-group mb-3">
+                            <label asp-for="Descripcion" class="label">Descripción:</label>
+                            <textarea asp-for="Descripcion" class="form-control" rows="5"></textarea>
+                            <span asp-validation-for="Descripcion" class="text-danger"></span>
+                        </div>
+
+                        @* <div class="acciones">
+                        <input type="submit" value="Iniciar descanso" class="btn-primar" />
+                        </div> *@
+                        <hr class="detalle-hr" />
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="detalle-actions-centered">
+                                    <input type="submit" value="Iniciar descanso" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="col-md-5">
+                <div class="tabla-wrapper">
+                    <h4 class="detalle-title">Historial de descansos</h4>
+                    <hr class="detalle-hr" />
+
+                    <form asp-action="SolicitarDescanso" asp-controller="SolicitarPermisos" method="get" id="formFiltro">
+                        <div class="toolbar-left">
+                            <div class="toolbar-left">
+                                <label class="lbl">Filtro:</label>
+                                <select name="filtro" id="filtro" class="cbx-filtro form-select">
+                                    <option value="Todos">Sin filtro de descanso</option>
+                                    <option value="baño">Ir al baño</option>
+                                    <option value="SalidaPersonal">Salida Personal</option>
+                                    <option value="Otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div class="toolbar-left">
+                                <label class="lbl">Fecha inicio:</label>
+                                <input type="date" id="fechaInicioP" name="fechaInicioP" class="form-control" />
+
+                                <label class="lbl">Fecha fin:</label>
+                                <input type="date" id="fechaFinP" name="fechaFinP" class="form-control" />
+
+                                <div class="detalle-actions-centered">
+                                    <button type="submit" class="btn btn-primary">Aplicar filtro</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="toolbar-left">
+                        <label class="lbl">Buscar:</label>
+                        <div class="searchwrap">
+                            <input id="search" type="text" class="search" placeholder="Buscar..." />
+                        </div>
+                    </div>
+                    <br />
+
+                    @* <table class="table table-striped table-hover table-sm"> *@
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover table-sm">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>TipoDescanso</th>
+                                    <th>Descripcion</th>
+                                    <th>Colaborador</th>
+                                    <th>Correo</th>
+                                    <th>Fecha Inicio</th>
+                                    <th>Fecha Fin</th>
+                                    <th>Estado</th>
+                                    <th>Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body">
+                                @if (Model.ListDescanso != null && Model.ListDescanso.Any())
+                                {
+                                    foreach (var item in Model.ListDescanso)
+                                    {
+                                        <tr>
+                                            <td hidden>@item.idDescanso</td>
+                                            <td hidden>@item.idColaborador</td>
+                                            <td>@item.tipoDescanso</td>
+                                            <td>@item.Descripcion</td>
+                                            <td>@item.NombreColaborador</td>
+                                            <td>@item.Correo</td>
+                                            <td>@item.fechaInicio</td>
+                                            <td>@item.fechaFin</td>
+                                            <td>@item.estado</td>
+                                            @if (@item.estado != null && @item.estado == "Iniciado")
+                                            {
+                                                <td class="acciones">
+                                                    <input type="button" value="Finalizar" class="btn-pill"
+                                                           onclick="location.href='@Url.Action("DetallesPermisos","SolicitarPermisos", new { idDescanso = item.idDescanso, idColaborador = item.idColaborador })'">
+
+                                                    @* <input type="button" value="Eliminar" class="btn-pill"
+                                        onclick="confirmarEliminacion('@Url.Action("EliminarAsignacionTarea","DetalleTarea", new { id = item.IdPermiso, idColaborador = item.IdColaborador })')"> *@
+                                                </td>
+                                            }
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr><td colspan="6" class="nodata">No hay datos para mostrar</td></tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 </div>
 
-
-<div>
+@* <div>
     <a asp-action="Index">Back to List</a>
-</div>
+</div> *@
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        $(document).ready(function () {
+            // FILTRO DE BÚSQUEDA EN TIEMPO REAL
+            $("#search").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#table-body tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
+            });
+
+            // VALIDACIÓN DE FECHAS
+            $("#formFiltro").on("submit", function (e) {
+                var inicio = $("#fechaInicio").val();
+                var fin = $("#fechaFin").val();
+
+                if (inicio && fin && new Date(inicio) > new Date(fin)) {
+                    alert("La fecha de inicio no puede ser mayor que la fecha fin.");
+                    e.preventDefault();
+                    return false;
+                }
+            });
+        });
+
+        function confirmarEliminacion(url) {
+            Swal.fire({
+                title: "¿Desea eliminar este permiso?",
+                text: "Esta acción no se puede deshacer.",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#d33",
+                cancelButtonColor: "#3085d6",
+                confirmButtonText: "Sí, eliminar",
+                cancelButtonText: "Cancelar"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = url;
+                }
+            });
+        }
+    </script>
 }
+

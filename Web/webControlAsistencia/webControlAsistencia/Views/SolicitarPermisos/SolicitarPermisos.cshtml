@@ -6,11 +6,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
 
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/SolicitarPermisoEstilo.css" />
-    @*     <link rel="stylesheet" href="~/css/DetallesTareaEstilo.css" /> *@
+    <link rel="stylesheet" href="~/css/DetallesTareaEstilo.css" />
     <link rel="stylesheet" href="~/css/ActividadesAsignadasEstilo.css" />
 </head>
 <br />
@@ -87,13 +86,13 @@
 
             <div class="col-md-5">
                 <div class="tabla-wrapper">
-                    <h4 class="detalle-title">Colaboradores asignados</h4>
+                    <h4 class="detalle-title">Historial de permisos</h4>
                     <hr class="detalle-hr" />
 
                     <form asp-action="SolicitarPermisos" asp-controller="SolicitarPermisos" method="get" id="formFiltro">
                         <div class="toolbar-left">
                             <div class="toolbar-left">
-                                <label class="control-label">Filtro:</label>
+                                <label class="lbl">Filtro:</label>
                                 <select name="filtro" id="filtro" class="form-select">
                                     <option value="Todos">Sin filtro de motivo</option>
                                     <option value="HorasExtra">HorasExtra</option>
@@ -105,10 +104,10 @@
                             </div>
 
                             <div class="toolbar-left">
-                                <label class="control-label">Fecha inicio:</label>
+                                <label class="lbl">Fecha inicio:</label>
                                 <input type="date" id="fechaInicioP" name="fechaInicioP" class="form-control" />
 
-                                <label class="control-label">Fecha fin:</label>
+                                <label class="lbl">Fecha fin:</label>
                                 <input type="date" id="fechaFinP" name="fechaFinP" class="form-control" />
 
                                 <div class="detalle-actions-centered">
@@ -136,6 +135,8 @@
                                     <th>Motivo</th>
                                     @* <th>Asunto</th> *@
                                     @* <th>Descripción</th> *@
+                                    <th>Colaborador</th>
+                                    <th>Correo</th>
                                     <th>Fecha Solicitud</th>
                                     <th>Fecha Inicio</th>
                                     <th>Fecha Fin</th>
@@ -155,6 +156,8 @@
                                             <td hidden>@item.IdPermiso</td>
                                             <td hidden>@item.IdColaborador</td>
                                             <td>@item.Motivo</td>
+                                            <td>@item.Nombre</td>
+                                            <td>@item.Correo</td>
                                             @* <td>@item.Asunto</td> *@
                                             <td hidden>@item.Descripcion</td>
                                             <td>@item.FechaSolicitud</td>

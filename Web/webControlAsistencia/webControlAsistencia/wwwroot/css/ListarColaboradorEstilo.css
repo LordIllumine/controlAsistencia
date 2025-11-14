@@ -1,0 +1,185 @@
+﻿/* Contenedor centrado */
+.detalle-wrapper {
+    /* Eliminamos 'display: flex;' y 'width: 100%;' de aquí 
+       para que Bootstrap controle el ancho de la columna (col-md-5 o col-md-7). */
+    /*display: flex;*/
+    /*justify-content: flex-start;*/
+    /* El padding original de 20px lo moví al contenedor de la tabla 
+      y al '.detalle' para que ambos se vean iguales.
+    */
+}
+
+/* Bloque de detalle (Panel de la izquierda)*/
+.detalle {
+    font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #1b1b1b;
+    background: #fff;
+    width: 190%; /* Asegura que ocupe todo el espacio de la columna */
+    padding: 20px; /* Añadido para consistencia visual */
+    /* Opcional: añade bordes o sombras*/
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.40);
+    margin-left: -9%;
+}
+
+
+.container-fluid {
+    margin-left: -2.7%;
+    /*para poner un solo cuadro center vez defs 2*/
+    /* border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.40);*/
+}
+
+
+/* Título y línea */
+.detalle-title {
+    margin: 4px 0 0;
+    font-weight: 700;
+    text-align: left;
+}
+
+.detalle-hr {
+    margin: 10px 0 14px;
+    border: 0;
+    height: 1px;
+    background: #e9e9e9;
+}
+
+/* Grid etiqueta / valor (Este estilo no se está usando en el form) */
+.detalle-grid {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    column-gap: 18px;
+    row-gap: 10px;
+}
+
+    .detalle-grid dt {
+        font-weight: 600;
+    }
+
+    .detalle-grid dd {
+        font-weight: 500;
+        margin: 0;
+    }
+
+/* Estilo para el botón 'Guardar'. 
+  !important para sobreescribir los estilos de Bootstrap.
+*/
+.btn-primary {
+    border: none !important;
+    border-radius: 999px !important;
+    padding: 10px 16px !important;
+    background: #6BD569 !important;
+    color: #0a0a0a !important;
+    font-weight: 700 !important;
+    cursor: pointer !important;
+    box-shadow: 0 2px 0 rgba(0,0,0,.15) !important;
+    transition: transform .05s ease, filter .15s ease !important;
+}
+
+    .btn-primary:hover {
+        filter: brightness(0.97);
+        background: #6BD569 !important; /* Mantiene el color en hover */
+        color: #0a0a0a !important;
+    }
+
+    .btn-primary:active {
+        transform: translateY(1px);
+    }
+
+/* Contenedor para el botón centrado
+  Reemplaza clase '.detalle-actions'
+*/
+.detalle-actions-centered {
+    margin-top: 14px;
+    text-align: left; /* <-- Esto centra el botón */
+    width: 100%;
+}
+
+/* Contenedor para la tabla
+  Le da una apariencia similar a la del formulario.
+*/
+.tabla-wrapper {
+    font-family: system-ui, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #1b1b1b;
+    background: #fff;
+    padding: 20px;
+    width: 180%;
+    /* Opcional: añade bordes o sombras estas 2 lineas*/
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.40);
+    margin-left: -55%;
+    height: 100%;
+    /* Añadimos display: flex para controlar el flujo de los elementos internos */
+    display: flex;
+    flex-direction: column; /* Apila el título, toolbar y la tabla */
+}
+
+/* Media Query para Responsividad
+  Bootstrap apila las columnas 'md' en 767.98px.
+  Esto añade un espacio superior a la tabla cuando se apila 
+  debajo del formulario en móviles.
+*/
+@media (max-width: 767.98px) {
+    .tabla-wrapper {
+        margin-top: 20px;
+        width: 90%;
+        height: 100%;
+        margin-left: -1%;
+    }
+}
+
+.table-responsive {
+    flex-grow: 1; /* Permite que el contenedor de la tabla crezca */
+    margin-bottom: 0; /* Elimina márgenes inferiores si los tiene por defecto */
+    /* Añade overflow-x: auto; si la tabla puede tener muchas columnas */
+}
+
+/* Ajuste para el botón "Asignar colaborador" */
+.toolbar-left input.btn-primary {
+    /* Alinea el botón con el borde de la tabla */
+    margin-top: 10px;
+}
+
+
+
+/* Estilos para hacer el formulario responsive, apilando los elementos */
+
+/* Aplica Flexbox al contenedor principal del formulario para controlar la dirección */
+#formFiltro > .toolbar-left {
+    display: flex;
+    flex-direction: row; /* Por defecto, que sigan en fila si ya lo están */
+    flex-wrap: wrap; /* Permite que los elementos pasen a la siguiente línea si no caben */
+    gap: 15px; /* Espacio entre los grupos de elementos */
+}
+
+/* Media Query para pantallas pequeñas (móviles y tabletas pequeñas) */
+/* Ancho máximo de 768px */
+@media (max-width: 768px) {
+    /* Hace que los contenedores principales (.toolbar-left) se apilen verticalmente */
+    #formFiltro > .toolbar-left {
+        flex-direction: column;
+        gap: 10px; /* Ajusta el espacio vertical entre secciones (Filtro, Fechas, Botón) */
+        padding: 10px; /* Opcional: añade algo de padding alrededor del formulario */
+    }
+
+    /* Hace que los grupos internos de elementos (los labels, selects e inputs) también se apilen verticalmente */
+    #formFiltro .toolbar-left .toolbar-left {
+        display: flex;
+        flex-direction: column;
+        width: 100%; /* Ocupa todo el ancho disponible */
+        box-sizing: border-box; /* Incluye padding y border en el width */
+    }
+
+    /* Opcional: Ajusta el ancho de los select e inputs para que ocupen todo el ancho dentro de su contenedor */
+    #formFiltro .form-select,
+    #formFiltro .form-control {
+        width: 100%;
+    }
+
+    /* Opcional: Centra el botón al apilar */
+    #formFiltro .detalle-actions-centered {
+        width: 100%;
+        text-align: center;
+    }
+}

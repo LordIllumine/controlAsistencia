@@ -1,0 +1,14 @@
+
+Error en Connec_Descanso_Iniciar Unable to cast object of type 'System.DBNull' to type 'System.Int32'. 11/01/25 1:14:38
+
+Error en Connec_Descanso_Iniciar Unable to cast object of type 'System.DBNull' to type 'System.Int32'. 11/01/25 1:17:10
+
+Error en Connec_Descanso_Iniciar Unable to cast object of type 'System.DBNull' to type 'System.Int32'. 11/01/25 1:17:22
+
+Error en Connec_Descanso_Iniciar The input string '' was not in a correct format. 11/01/25 1:17:41
+
+Error en Connec_ResetPasswordRequest The formal parameter "@token" was not declared as an OUTPUT parameter, but the actual parameter passed in requested output. 11/01/25 21:04:06
+
+Error en Connec_ResetPasswordConfirm Procedure or function SP_Auth_ResetPassword_Confirm has too many arguments specified. 11/01/25 21:36:55
+
+Error en Connec_ResetPasswordConfirm Procedure or function 'SP_Auth_ResetPassword_Confirm' expects parameter '@correo', which was not supplied. 11/01/25 21:38:37
